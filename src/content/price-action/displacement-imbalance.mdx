@@ -1,73 +1,128 @@
 export const frontmatter = {
   title: 'Displacement & Imbalance',
-  description: 'Understand how strong impulsive price moves create Fair Value Gaps — imbalances in the market that price often returns to fill before continuing.',
+  description: 'How to spot the undeniable footprint of institutional volume and the resulting inefficiencies (Fair Value Gaps) they leave behind.'
 };
 
-import { ConceptCard } from '../../components/ConceptCard';
-import { AnnotatedChart } from '../../components/AnnotatedChart';
 import { Callout } from '../../components/Callout';
 import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { DisplacementSpotter } from '../../components/DisplacementSpotter';
 
-# Displacement & Imbalance
+{/* 1. Hook */}
+Retail traders move the market in inches; institutions move it in miles. If you want to trade alongside the "Smart Money," you must learn to recognize the exact moment they enter the market with massive volume. That footprint is called Displacement.
 
-<ConceptCard title="What Is Displacement?" icon="⚡">
-  **Displacement** is a sharp, aggressive price move characterised by one or more large-bodied candles with minimal wicks. It represents a sudden shift in order flow — one side of the market overwhelming the other. Displacement candles are not random volatility; they are the footprint of institutional order execution, and they frequently leave behind **imbalances** (Fair Value Gaps) that price returns to fill.
-</ConceptCard>
+{/* 2. Definition */}
+**Displacement** is a sudden, aggressive move in price characterized by large, wide-range candles that close near their extremes. This violent movement often leaves behind an **Imbalance (Fair Value Gap)**, which acts as a magnetic target for future price action.
 
-## Visualising the Fair Value Gap
+{/* 3. Deep Explanation */}
+## The Mechanics of Institutional Volume
 
-<AnnotatedChart
-  title="Fair Value Gap Created by Displacement"
+When a massive financial institution needs to buy 100,000 contracts of an asset, they cannot simply click "Market Buy." There is not enough liquidity at the current price to fill that order, so their buy order will eat through the entire order book, rocketing the price upward. 
+
+When you see a massive, full-bodied green candle (or a series of them) suddenly appear on a chart, you are witnessing this exact phenomenon. This is **Displacement**. It is the undeniable footprint that smart money has stepped into the market.
+
+### What is an Imbalance (FVG)?
+
+Because Displacement happens so violently and quickly, the market is not given a chance to efficiently match buyers and sellers. It creates a vacuum or a gap in price delivery. 
+
+In a perfectly efficient market, the wicks of consecutive candles overlap slightly, ensuring every price point was traded by both buyers and sellers. When displacement occurs, a three-candle sequence will often print where the wick of Candle 1 and the wick of Candle 3 do not touch, leaving a gap across the body of Candle 2. 
+
+This gap is an **Imbalance**, most commonly known today as a **Fair Value Gap (FVG)**.
+
+### Why Price Returns to the FVG
+
+The algorithmic pricing models used by central banks and major institutions are designed to maintain market efficiency. When a massive FVG is left behind, it represents an inefficiency. 
+
+Therefore, algorithms will actively drag price back to that gap to "repair" the inefficiency, allowing traders who missed the initial move to transact at those skipped prices. Once the gap is repaired (mitigated), the original institutional trend resumes.
+
+{/* 4. Visuals */}
+## Interactive: Spotting the Footprint
+
+Use the widget below to practice identifying choppy, retail-driven price action versus true institutional displacement.
+
+<DisplacementSpotter />
+
+Notice how the displacement candle completely dwarfs the surrounding price action. It is unmistakable.
+
+{/* 5. How to see it on a chart */}
+## How to Map Imbalances (Step-by-Step)
+
+To find highly actionable trade entries, follow this process:
+
+1. **Find the Displacement:** Look for a massive, full-bodied candle that breaks a structural level (a BOS or CHoCH). If the candle is small or has huge wicks, it is not displacement.
+2. **Isolate the 3-Candle Formation:** Look at the massive candle (Candle 2). Now, look at the candle immediately before it (Candle 1) and immediately after it (Candle 3).
+3. **Draw the Gap:** 
+   - *Bullish FVG:* Draw a box from the High of Candle 1 to the Low of Candle 3. 
+   - *Bearish FVG:* Draw a box from the Low of Candle 1 to the High of Candle 3.
+4. **Extend the Zone:** Drag that box to the right. This is your Fair Value Gap (Imbalance) zone.
+5. **Wait for the Retest:** Set an alert at the edge of the box. Do not chase the displacement. Wait patiently for price to pull back and enter the box.
+6. **Execute:** Once price enters the FVG, drop to a lower timeframe and look for a reversal pattern (like a CHoCH) to enter the market in the direction of the original displacement.
+
+{/* 6. Worked Examples */}
+## Worked Examples
+
+### Example 1: The Perfect Mitigation (Idealized)
+
+**Scenario:** The S&P 500 has been chopping sideways for hours. 
+1. Suddenly, a massive 15-Minute green candle prints, breaking a major resistance level. 
+2. Candle 1 had a High of 4100. Candle 3 has a Low of 4110. Candle 2 (the massive displacement candle) fills the space between.
+3. You draw a box between 4100 and 4110. This is the FVG.
+4. For the next hour, price slowly drifts down, eventually tagging 4105 (right in the middle of the FVG).
+5. The moment it taps the FVG, it aggressively rejects and rockets to 4150.
+
+**Walkthrough:**
+This is the holy grail of Smart Money Concepts. The initial massive candle was the institutions showing their hand (bullish). The slow drift down was the algorithms repairing the inefficiency. The tap of the FVG was the opportunity for smart money to add to their position before sending price higher.
+
+### Example 2: The Ignored FVG (Grounded)
+
+<AnnotatedChart 
+  title="When Imbalances Fail"
+  isBull={false}
+  keyLevelY={40}
   showFVG={true}
+  showSweep={true}
 />
 
-The shaded zone between candles represents the Fair Value Gap — a price area where only one side of the market participated. The gap exists because the move was so aggressive that no opposing orders were filled in that range.
+**Walkthrough:**
+In this scenario, we see a massive red displacement candle leaving a bearish FVG. However, this move occurred *without* sweeping liquidity or tapping a Higher Timeframe resistance level. 
 
-## Anatomy of a Displacement Move
+Price pulls back into the bearish FVG, but instead of rejecting, it slices straight through it, closing above it. 
 
-Displacement has specific visual characteristics that separate it from normal price movement:
+Why did it fail? Because the initial red displacement was a trap. It was designed to look like a sell-off to induce retail shorts, building liquidity above. The true intent of the market was bullish. This is why you must never trade an FVG in isolation; it must be backed by HTF context.
 
-1. **Large candle bodies.** The body-to-wick ratio is heavily skewed toward the body. A bullish displacement candle opens near its low and closes near its high, with minimal upper and lower wicks.
-2. **Multiple consecutive candles.** True displacement often involves two or three large candles in the same direction without meaningful pullbacks between them.
-3. **A Fair Value Gap (FVG).** When three consecutive candles form and there is no overlap between the first candle's high (or low) and the third candle's low (or high), the gap between them is the FVG. This is the imbalance.
-
-## What Is a Fair Value Gap?
-
-A **Fair Value Gap (FVG)** is a three-candle pattern where the wicks of candle 1 and candle 3 do not overlap, leaving a gap in the middle (candle 2's range). This gap represents a price zone where the market moved so quickly that buy and sell orders were not properly matched.
-
-**Bullish FVG:** The low of candle 3 is higher than the high of candle 1. The gap between candle 1's high and candle 3's low is the FVG — price may retrace down to fill this gap before continuing higher.
-
-**Bearish FVG:** The high of candle 3 is lower than the low of candle 1. The gap between candle 1's low and candle 3's high is the FVG — price may retrace up to fill this gap before continuing lower.
-
-## Step-by-Step: Finding and Using Imbalances
-
-1. **Spot the displacement.** Scan for candles that are significantly larger than the surrounding candles. These stand out visually — they break the rhythm of the chart.
-2. **Check for the 3-candle FVG pattern.** On the displacement candle (candle 2), check whether candle 1's wick and candle 3's wick overlap. If they don't, you have a confirmed FVG.
-3. **Mark the FVG zone.** Draw a rectangle from candle 1's high to candle 3's low (for bullish FVG) or candle 1's low to candle 3's high (for bearish FVG). This is your re-entry zone.
-4. **Wait for price to return.** Price doesn't always return to fill the FVG immediately. It may take hours, days, or even weeks depending on the timeframe. Be patient and set alerts.
-5. **Enter at the FVG with confluence.** When price re-enters the FVG, look for a reaction — a rejection candle, a lower-timeframe CHoCH, or alignment with a higher-timeframe order block. The FVG provides the zone; confluence provides the trigger.
-
-## Real-World Example
-
-On a 15-minute NAS100 chart, price is consolidating between 17,800 and 17,850. Suddenly, three consecutive bullish candles print: the first closes at 17,860, the second at 17,920, and the third at 17,970. The first candle's high is 17,865, and the third candle's low is 17,910. The gap between 17,865 and 17,910 is the FVG — a 45-point imbalance.
-
-Price continues to 18,000 before stalling. Over the next hour, it retraces back to 17,905, entering the FVG zone. A bullish pin bar forms at 17,908, within the FVG. This is your entry: long at 17,910, stop below the FVG at 17,860, target at 18,000 or above. The FVG acted as a magnet, pulling price back to fill the imbalance before the trend resumed.
-
-<Callout type="trap" title="Common Trap: Assuming Every FVG Will Be Filled">
-  <p>While many FVGs do get filled, it is not a rule that every single one will. In strongly trending markets, price can leave FVGs unfilled and continue running. An FVG created by a major news event (NFP, FOMC) may never be revisited because the fundamental landscape has shifted. Treat FVGs as **probability zones for re-entry**, not guarantees. If price is accelerating away from an FVG with increasing momentum, the gap may remain open. Always have a plan for both scenarios — fill and continuation.</p>
+{/* 7. Trap Callout */}
+<Callout type="trap" title="The Naked FVG Trap">
+  A chart is littered with Fair Value Gaps. If you blindly place limit orders at every FVG you see, you will blow your account. FVGs are only high-probability when they are created as a direct result of price bouncing off a major HTF Key Level or sweeping a major liquidity pool. If an FVG forms in the middle of a random trading range, ignore it.
 </Callout>
 
-## Displacement vs Normal Volatility
+{/* 8. Modern Restatements / Cross-links */}
+## Modern Framework Translations
 
-Not every large candle is displacement. Here's how to tell the difference:
+- **ICT:** "Displacement" and "Fair Value Gap (FVG)" are terms coined and popularized directly by the Inner Circle Trader. They form the absolute core of his methodology.
+- **Volume Spread Analysis (VSA):** VSA traders refer to displacement as an "Ultra-Wide Spread" candle accompanied by high volume, indicating the "Smart Money" has stepped in.
+- **Classic TA:** Classic traders often refer to this simply as "Momentum" or an "Impulse Leg," and refer to the FVG as a "Gap" (though traditional gaps refer to weekend closes, the concept of a price vacuum is identical).
 
-- **Displacement** opens and closes near the extremes, has minimal wicks, moves _with_ the prevailing order flow, and often leaves an FVG. It usually occurs after a sweep, at a key level, or at a session open.
-- **Normal volatility** features large wicks on both sides, doesn't commit to a direction, and often occurs during low-liquidity periods (pre-session, holiday trading). These candles are noise, not signal.
+{/* 9. FAQ */}
+## Frequently Asked Questions
 
-<KeyTakeaways>
-  - **Displacement** = large-bodied, low-wick candles representing aggressive institutional order flow.
-  - A **Fair Value Gap (FVG)** forms when the wicks of candle 1 and candle 3 in a 3-candle sequence don't overlap.
-  - FVGs are **re-entry zones** — price tends to retrace to fill the imbalance before continuing in the displacement direction.
-  - Not every FVG gets filled — strongly trending markets can leave gaps open indefinitely.
-  - Combine FVGs with **order blocks, swing structure, and session levels** for higher-probability entries.
-</KeyTakeaways>
+**Q: Does price HAVE to return to the FVG?**
+A: No. In extremely strong, runaway trends (like a crypto bull market), price may leave FVGs behind for weeks or months. However, in normal, two-way markets, FVGs are usually filled within the same session or the next.
+
+**Q: Do I enter at the start of the FVG, or the middle?**
+A: It depends on your risk tolerance. Aggressive traders enter the moment price touches the edge of the FVG. Conservative traders wait for price to hit the 50% mark of the FVG (called the Consequent Encroachment) to secure a better risk-to-reward ratio.
+
+**Q: What if price closes completely beyond the FVG?**
+A: If a candle body closes completely outside the FVG, the setup is invalidated. The FVG has failed to hold as support/resistance, and the opposing side is now in control. 
+
+{/* 10. Key Takeaways */}
+<KeyTakeaways points={[
+  "Displacement is a sudden, massive move in price indicating institutional involvement.",
+  "An Imbalance (FVG) is a gap left behind by displacement where price was delivered inefficiently.",
+  "Algorithms will naturally draw price back to the FVG to repair the inefficiency.",
+  "You identify an FVG by looking at the space between the wicks of the candles immediately preceding and following a displacement candle.",
+  "Never trade an FVG in isolation. It must align with HTF structure and context."
+]} />
+
+---
+*References:*
+Concepts of market efficiency and order flow imbalances. Terminology heavily popularized by Inner Circle Trader (ICT) and the Smart Money Concepts community.
