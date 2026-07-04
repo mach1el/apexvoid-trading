@@ -22,6 +22,17 @@ export const navigation: NavSection[] = [
     ],
   },
   {
+    label: 'Risk Management',
+    prefix: '/risk-management',
+    icon: '🛡️',
+    items: [
+      { label: 'Position Sizing', slug: 'position-sizing', path: '/risk-management/position-sizing' },
+      { label: 'Breakeven Math', slug: 'breakeven-math', path: '/risk-management/breakeven-math' },
+      { label: 'Drawdown Recovery', slug: 'drawdown-recovery', path: '/risk-management/drawdown-recovery' },
+      { label: 'Expectancy', slug: 'expectancy', path: '/risk-management/expectancy' },
+    ],
+  },
+  {
     label: 'Dow Theory',
     prefix: '/dow-theory',
     icon: '🏛️',
@@ -107,17 +118,6 @@ export const navigation: NavSection[] = [
       { label: 'What Is Confluence', slug: 'what-is-confluence', path: '/confluence/what-is-confluence' },
       { label: 'Stacking Factors', slug: 'stacking-factors', path: '/confluence/stacking-factors' },
       { label: 'Grading Levels', slug: 'grading-levels', path: '/confluence/grading-levels' },
-    ],
-  },
-  {
-    label: 'Risk Management',
-    prefix: '/risk-management',
-    icon: '🛡️',
-    items: [
-      { label: 'Position Sizing', slug: 'position-sizing', path: '/risk-management/position-sizing' },
-      { label: 'Breakeven Math', slug: 'breakeven-math', path: '/risk-management/breakeven-math' },
-      { label: 'Drawdown Recovery', slug: 'drawdown-recovery', path: '/risk-management/drawdown-recovery' },
-      { label: 'Expectancy', slug: 'expectancy', path: '/risk-management/expectancy' },
     ],
   },
   {
