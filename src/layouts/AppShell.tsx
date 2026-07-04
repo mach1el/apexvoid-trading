@@ -47,7 +47,7 @@ export function AppShell({ children }: AppShellProps) {
         </header>
 
         {/* Page content */}
-        <main className="flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-4xl w-full mx-auto">
+        <main className="flex-1 min-w-0 px-4 sm:px-6 lg:px-10 py-8 max-w-4xl w-full mx-auto">
           {children}
         </main>
 

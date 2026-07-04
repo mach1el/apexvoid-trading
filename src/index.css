@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
 
 /* ── Design tokens ── */
 @theme {
@@ -97,7 +97,7 @@
   @apply border-l-4 border-accent pl-4 italic text-text-muted my-4;
 }
 .prose table {
-  @apply w-full mb-4;
+  @apply w-full mb-4 block overflow-x-auto;
 }
 .prose th {
   @apply text-left text-text font-semibold p-3 border-b border-border;
