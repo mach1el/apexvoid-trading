@@ -1,0 +1,45 @@
+export const frontmatter = { title: 'Trend-Following Pullback', description: 'How to enter established trends with minimal risk and high probability.' };
+
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { StrategyPicker } from '../../components/StrategyPicker';
+
+# Trend-Following Pullback
+
+The trend-following pullback strategy is the bread and butter of directional trading. It relies on a simple premise: in a strongly trending market, counter-trend moves (pullbacks) are usually temporary exhaustion or profit-taking, providing a low-risk entry to join the dominant trend.
+
+## Strategy Blueprint
+
+**Required Regime:** Clean Trending Market (Higher Highs / Higher Lows for Uptrend)
+
+<Callout type="warning" title="Failure Mode">
+This strategy fails miserably in choppy or ranging environments. If you are buying pullbacks in a range, you are providing liquidity (buying) right at resistance.
+</Callout>
+
+### 1. The Setup
+- Identify a clear, undeniable trend (price is respecting moving averages, creating clean structure).
+- Wait for a retracement into a high-value area (e.g., previous resistance turned support, 20 EMA, or a VWAP band).
+- Observe a decrease in volume during the pullback, indicating a lack of counter-trend conviction.
+
+### 2. Entry Trigger
+Do not place limit orders blindly at support. Wait for a reaction. Enter when price prints a reversal candlestick (like a hammer or engulfing bar) at the support level, signaling buyers are stepping back in.
+
+### 3. Stop Placement and Management
+- **Initial Stop Loss:** Placed strictly below the pivot low of the pullback. If this level breaks, the trend structure is compromised, and the premise is void.
+- **Trade Management:** Scale out 50% at the previous swing high (the most logical area for price to stall). Trail the remaining stop behind new swing lows to capture an extended run.
+
+<StrategyPicker 
+  scenario="The asset has been making higher highs all morning. It suddenly drops 2% on very light volume and touches the 20 EMA, printing a bullish pin bar. What is the appropriate strategy?"
+  options={[
+    { id: 'a', text: 'Mean-Reversion Fade', isCorrect: false, feedback: 'Incorrect. Fading a strong trend is dangerous.' },
+    { id: 'b', text: 'Trend-Following Pullback', isCorrect: true, feedback: 'Correct! The asset is trending, pulling back on low volume to a dynamic support, and showing a reversal trigger.' },
+    { id: 'c', text: 'The Wait Protocol', isCorrect: false, feedback: 'Incorrect. The conditions for a high-probability trend continuation are met.' }
+  ]}
+/>
+
+<KeyTakeaways takeaways={[
+  "Only trade pullbacks in established, clean trends.",
+  "Require proof of buyers (entry trigger) before committing capital.",
+  "Structure your stop loss below the invalidation point of the trend."
+]} />

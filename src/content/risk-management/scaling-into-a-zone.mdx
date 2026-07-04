@@ -1,0 +1,46 @@
+export const frontmatter = { 
+  title: 'Scaling Into a Zone (Zone DCA)', 
+  description: 'How to ladder entries into a Point of Interest without blowing your risk budget.' 
+};
+
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ScaleInPlanner } from '../../components/ScaleInPlanner';
+
+# Scaling Into a Zone
+
+Trading is rarely about picking exact tops or bottoms down to the pip. Often, price will react somewhere within a structural zone—like a Fair Value Gap (FVG) or an Order Block (OB).
+
+Because you don't know exactly *where* in the zone the price will reverse, you can **scale in** by placing a ladder of limit orders across the zone. This is known as Zone DCA (Dollar Cost Averaging).
+
+<Callout type="info" title="Why Scale In?">
+Instead of placing one large order at the front of a zone (which has a wider stop and smaller position size), or one large order at the back of a zone (which often gets missed), scaling in gives you a blend: a guaranteed entry if the front is tapped, and a better average price if the zone is fully tested.
+</Callout>
+
+## Zone DCA vs. Martingale
+
+It is critical to distinguish between planned scaling in (Zone DCA) and toxic averaging down (Martingale).
+
+<CompareTable 
+  title="Planned Scaling vs Toxic Averaging"
+  headers={['Zone DCA', 'Martingale (Toxic)']}
+  rows={[
+    ['Pre-planned before the trade', 'Reactive, driven by panic or hope'],
+    ['Total risk is hard-capped (e.g. 1%)', 'Risk expands indefinitely'],
+    ['Stop loss is fixed and respected', 'Stop loss is moved or non-existent'],
+    ['Entries are placed at structural levels', 'Entries are random ("it has to bounce soon")']
+  ]}
+/>
+
+## Scale-In Planner
+
+Use the tool below to plan your laddered entries. The most important rule is that **your stop loss must be placed entirely outside the zone**. If your stop is inside the zone, the setup is invalid.
+
+<ScaleInPlanner />
+
+<KeyTakeaways items={[
+  "Scaling in allows you to catch trades at the front of a zone while improving your average entry if the zone is tested deeply.",
+  "Total risk must always be calculated and capped BEFORE placing the ladder.",
+  "Never move your stop loss or add size beyond the original plan. That is Martingale, not scaling in."
+]} />

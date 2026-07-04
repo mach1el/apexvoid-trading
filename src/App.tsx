@@ -73,10 +73,23 @@ const HtfLtfWorkflow = () => <MdxPage loader={() => import('./content/together/h
 const GlossaryPage = () => <MdxPage loader={() => import('./content/together/glossary.mdx')} />;
 
 // Risk Management
+const WhyRiskIsEverything = () => <MdxPage loader={() => import('./content/risk-management/why-risk-is-everything.mdx')} />;
 const PositionSizing = () => <MdxPage loader={() => import('./content/risk-management/position-sizing.mdx')} />;
+const ScalingIntoAZone = () => <MdxPage loader={() => import('./content/risk-management/scaling-into-a-zone.mdx')} />;
 const BreakevenMath = () => <MdxPage loader={() => import('./content/risk-management/breakeven-math.mdx')} />;
 const DrawdownRecovery = () => <MdxPage loader={() => import('./content/risk-management/drawdown-recovery.mdx')} />;
 const Expectancy = () => <MdxPage loader={() => import('./content/risk-management/expectancy.mdx')} />;
+const RiskOfRuinAndStreaks = () => <MdxPage loader={() => import('./content/risk-management/risk-of-ruin-and-streaks.mdx')} />;
+const TradeManagementAndStops = () => <MdxPage loader={() => import('./content/risk-management/trade-management-and-stops.mdx')} />;
+const TheRiskChecklist = () => <MdxPage loader={() => import('./content/risk-management/the-risk-checklist.mdx')} />;
+
+// Strategies
+const OverviewNoUniversalBest = () => <MdxPage loader={() => import('./content/strategies/overview-no-universal-best.mdx')} />;
+const TrendFollowingPullback = () => <MdxPage loader={() => import('./content/strategies/trend-following-pullback.mdx')} />;
+const BreakoutRetest = () => <MdxPage loader={() => import('./content/strategies/breakout-retest.mdx')} />;
+const MomentumContinuation = () => <MdxPage loader={() => import('./content/strategies/momentum-continuation.mdx')} />;
+const MeanReversion = () => <MdxPage loader={() => import('./content/strategies/mean-reversion.mdx')} />;
+const TheWaitProtocol = () => <MdxPage loader={() => import('./content/strategies/the-wait-protocol.mdx')} />;
 
 export function App() {
   return (
@@ -137,11 +150,24 @@ export function App() {
         <Route path="/together/htf-ltf-workflow" element={<HtfLtfWorkflow />} />
         <Route path="/together/glossary" element={<GlossaryPage />} />
 
+        {/* Strategies */}
+        <Route path="/strategies/overview-no-universal-best" element={<OverviewNoUniversalBest />} />
+        <Route path="/strategies/trend-following-pullback" element={<TrendFollowingPullback />} />
+        <Route path="/strategies/breakout-retest" element={<BreakoutRetest />} />
+        <Route path="/strategies/momentum-continuation" element={<MomentumContinuation />} />
+        <Route path="/strategies/mean-reversion" element={<MeanReversion />} />
+        <Route path="/strategies/the-wait-protocol" element={<TheWaitProtocol />} />
+
         {/* Risk Management */}
+        <Route path="/risk-management/why-risk-is-everything" element={<WhyRiskIsEverything />} />
         <Route path="/risk-management/position-sizing" element={<PositionSizing />} />
+        <Route path="/risk-management/scaling-into-a-zone" element={<ScalingIntoAZone />} />
         <Route path="/risk-management/breakeven-math" element={<BreakevenMath />} />
         <Route path="/risk-management/drawdown-recovery" element={<DrawdownRecovery />} />
         <Route path="/risk-management/expectancy" element={<Expectancy />} />
+        <Route path="/risk-management/risk-of-ruin-and-streaks" element={<RiskOfRuinAndStreaks />} />
+        <Route path="/risk-management/trade-management-and-stops" element={<TradeManagementAndStops />} />
+        <Route path="/risk-management/the-risk-checklist" element={<TheRiskChecklist />} />
 
         {/* 404 */}
         <Route path="*" element={

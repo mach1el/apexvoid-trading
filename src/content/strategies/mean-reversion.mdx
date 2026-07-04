@@ -1,0 +1,47 @@
+export const frontmatter = { title: 'Mean-Reversion', description: 'Fading the extremes when the market is trapped in a range.' };
+
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { StrategyPicker } from '../../components/StrategyPicker';
+
+# Mean-Reversion (Fading the Extremes)
+
+When the market is in a ranging regime, trend-following strategies will bleed your account through a thousand tiny cuts. In a range, breakouts fail, and price repeatedly snaps back to the average (the mean). 
+
+Mean-reversion trading is the art of selling resistance and buying support, anticipating that the boundaries will hold.
+
+## The Anatomy of a Range
+
+Ranges occur when buyers and sellers reach a temporary equilibrium. 
+- **Resistance:** The ceiling where sellers consistently step in.
+- **Support:** The floor where buyers consistently step in.
+- **The Mean:** The middle of the range, often acting as a magnet for price.
+
+<Callout type="info" title="The Rubber Band Effect">
+Think of price in a range like a rubber band. The further it stretches from the mean toward the extremes (support or resistance), the stronger the force snapping it back to the center.
+</Callout>
+
+## Strategy Blueprint
+
+1. **Regime Identification:** Confirm the market is ranging. You need at least two touches of a high and two touches of a low to define a valid range.
+2. **The Setup:** Wait for price to approach the extreme boundaries. Do not trade in the middle of the range (the chop zone).
+3. **The Trigger:** Look for exhaustion at the extremes. This often looks like a long wick piercing the boundary and immediately failing (a deviation or liquidity sweep).
+4. **Execution:** Enter a short at resistance or a long at support *after* the exhaustion candle closes.
+5. **Targets:** 
+   - Target 1 (Aggressive): The mid-point (the mean) of the range.
+   - Target 2 (Runner): The opposite end of the range.
+6. **Stop Loss:** Place the stop just outside the extreme boundary. If the range breaks, you must exit immediately.
+
+<StrategyPicker 
+  scenario="Price has been bouncing between $100 and $120 for three weeks. It just spiked to $121 on news, but immediately slammed back down to close the hour at $119, leaving a massive upper wick. What do you do?"
+  options={[
+    { id: 'a', text: 'Go Long (Breakout)', isCorrect: false, feedback: 'Incorrect. The breakout failed, indicating sellers are defending the range.' },
+    { id: 'b', text: 'Go Short (Mean Reversion)', isCorrect: true, feedback: 'Correct! This is a classic liquidity sweep and failure at range resistance. The probability favors a move back toward the mean.' }
+  ]}
+/>
+
+<KeyTakeaways takeaways={[
+  "Only deploy this in established, sideways markets.",
+  "Never initiate trades in the middle of the range.",
+  "A sweep of the boundary followed by a quick rejection is the strongest entry signal."
+]} />

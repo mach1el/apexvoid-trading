@@ -26,10 +26,15 @@ export const navigation: NavSection[] = [
     prefix: '/risk-management',
     icon: '🛡️',
     items: [
+      { label: 'Why Risk is Everything', slug: 'why-risk-is-everything', path: '/risk-management/why-risk-is-everything' },
       { label: 'Position Sizing', slug: 'position-sizing', path: '/risk-management/position-sizing' },
+      { label: 'Scaling Into a Zone', slug: 'scaling-into-a-zone', path: '/risk-management/scaling-into-a-zone' },
       { label: 'Breakeven Math', slug: 'breakeven-math', path: '/risk-management/breakeven-math' },
       { label: 'Drawdown Recovery', slug: 'drawdown-recovery', path: '/risk-management/drawdown-recovery' },
       { label: 'Expectancy', slug: 'expectancy', path: '/risk-management/expectancy' },
+      { label: 'Risk of Ruin & Streaks', slug: 'risk-of-ruin-and-streaks', path: '/risk-management/risk-of-ruin-and-streaks' },
+      { label: 'Trade Management & Stops', slug: 'trade-management-and-stops', path: '/risk-management/trade-management-and-stops' },
+      { label: 'The Risk Checklist', slug: 'the-risk-checklist', path: '/risk-management/the-risk-checklist' },
     ],
   },
   {
@@ -118,6 +123,19 @@ export const navigation: NavSection[] = [
       { label: 'What Is Confluence', slug: 'what-is-confluence', path: '/confluence/what-is-confluence' },
       { label: 'Stacking Factors', slug: 'stacking-factors', path: '/confluence/stacking-factors' },
       { label: 'Grading Levels', slug: 'grading-levels', path: '/confluence/grading-levels' },
+    ],
+  },
+  {
+    label: 'Strategies',
+    prefix: '/strategies',
+    icon: '📖',
+    items: [
+      { label: 'Overview: No Universal Best', slug: 'overview-no-universal-best', path: '/strategies/overview-no-universal-best' },
+      { label: 'Trend-Following Pullback', slug: 'trend-following-pullback', path: '/strategies/trend-following-pullback' },
+      { label: 'Breakout & Retest', slug: 'breakout-retest', path: '/strategies/breakout-retest' },
+      { label: 'Momentum Continuation', slug: 'momentum-continuation', path: '/strategies/momentum-continuation' },
+      { label: 'Mean Reversion', slug: 'mean-reversion', path: '/strategies/mean-reversion' },
+      { label: 'The WAIT Protocol', slug: 'the-wait-protocol', path: '/strategies/the-wait-protocol' },
     ],
   },
   {
