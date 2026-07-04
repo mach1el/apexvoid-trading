@@ -1,97 +1,132 @@
 export const frontmatter = {
-  title: 'Reading Candles & Volume',
-  description: 'Learn the anatomy of a candlestick — Open, High, Low, Close — and how to read what buyers and sellers did within a single bar. Volume confirms conviction.',
+  title: 'Candlesticks & Volume',
+  description: 'Understanding the mechanics of price delivery through OCHL data and trading activity.'
 };
 
-import { ConceptCard } from '../../components/ConceptCard';
-import { AnnotatedChart } from '../../components/AnnotatedChart';
 import { Callout } from '../../components/Callout';
 import { KeyTakeaways } from '../../components/KeyTakeaways';
-import { StepFlow, Step } from '../../components/StepFlow';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
 import { CompareTable } from '../../components/CompareTable';
 
-# Reading Candles & Volume
+{/* 1. Hook */}
+Every candlestick tells a story of a battle between buyers and sellers over a specific period of time. If you can read the candle, you can read the battle. 
 
-Every candlestick is a compressed story of a battle between buyers and sellers over a fixed period of time. Learning to read that story — without memorizing hundreds of named patterns — is the goal.
+{/* 2. Definition */}
+**Candlesticks** are visual representations of price movement over a defined timeframe, displaying the Open, High, Low, and Close (OHLC). **Volume** represents the total amount of the asset traded during that same period.
 
-<ConceptCard title="Candlestick Anatomy" icon="🕯️">
-  A candlestick has four data points: **Open** (where price started), **High** (highest price reached), **Low** (lowest price reached), and **Close** (where price ended). The filled area between Open and Close is the **body**. The lines above and below are the **wicks** (or shadows). A bullish candle closes above its open; a bearish candle closes below.
-</ConceptCard>
+{/* 3. Deep Explanation */}
+## Anatomy of a Candlestick
 
-## The Four Components
+A candlestick is formed by four distinct data points during its lifecycle (e.g., during 1 hour for an H1 candle):
+1. **Open:** The first price traded when the period begins.
+2. **High:** The highest price traded during the period.
+3. **Low:** The lowest price traded during the period.
+4. **Close:** The last price traded when the period ends.
 
-<AnnotatedChart title="Candlestick Anatomy" />
+The area between the Open and the Close is called the **Body**. The body is shaded (or colored) to indicate the net direction of price.
+- **Bullish Candle (Expansion):** The Close is *higher* than the Open. Buyers won the period. Usually colored green or blue.
+- **Bearish Candle (Contraction):** The Close is *lower* than the Open. Sellers won the period. Usually colored red or orange.
 
-Every candle tells you four things:
+The thin lines extending above and below the body are called **Wicks** (or shadows). They represent the extremes of price action during the period where price was pushed, but ultimately rejected before the close. 
 
-1. **Open** — Where the period began. This is the consensus price at the start.
-2. **High** — The maximum price buyers were willing to pay. The further the high extends above the body, the more buyers pushed before getting rejected.
-3. **Low** — The minimum price sellers drove to. A long lower wick means sellers pushed hard but ultimately lost control.
-4. **Close** — Where the battle ended. The close relative to the open is the single most important data point — it tells you who won.
+## Reading the Story
 
-## Bullish vs. Bearish: What Actually Matters
+The size of the body relative to the wicks tells you who is in control:
+- **Large Body, Small Wicks:** Total dominance by one side. A massive bullish body indicates aggressive buying pressure (momentum).
+- **Small Body, Large Wicks:** Indecision. A candle with a small body and huge wicks on both sides indicates a violent battle where neither buyers nor sellers could secure ground. 
+- **Small Body, One Huge Wick (Pin Bar):** A strong rejection. If price pushes way down, but then violently reverses to close near the open, leaving a long lower wick, it indicates intense buying pressure stepping in to reject lower prices.
 
-<CompareTable title="Reading the Close">
+## The Role of Volume
 
-| | Bullish Candle | Bearish Candle |
-|---|---|---|
-| **Close vs. Open** | Close > Open | Close < Open |
-| **Story** | Buyers dominated the period | Sellers dominated the period |
-| **Large body** | Strong buyer conviction | Strong seller conviction |
-| **Small body** | Indecision, even with buyer edge | Indecision, even with seller edge |
-| **Long upper wick** | Buyers pushed but got rejected | Sellers maintained rejection from highs |
-| **Long lower wick** | Buyers reclaimed from the lows | Sellers tried but buyers absorbed |
+Volume measures effort. Price measures result. If price pushes up strongly (a large bullish candle) on very high volume, the move is validated by massive participation. It is a genuine move.
 
-</CompareTable>
+If price pushes up strongly, but on extremely *low* volume, it is highly suspicious. It implies a lack of resistance rather than strong buying pressure. In institutional trading, anomalies between price spread (the size of the candle) and volume are the primary indicators of accumulation or distribution (a concept pioneered by Richard Wyckoff).
 
-## How to Read a Candle in Context
+{/* 4. Visuals */}
+## Candle Types Comparison
 
-The same candle shape means different things depending on where it appears. A long-wicked rejection candle at a key resistance level is significant. The same candle shape in the middle of a range is noise.
+<CompareTable 
+  headers={["Candle Type", "Visual Profile", "Psychology / Meaning"]}
+  rows={[
+    ["Momentum (Marubozu)", "Large body, zero/tiny wicks", "Absolute dominance. Strong institutional participation in one direction."],
+    ["Rejection (Pin Bar / Hammer)", "Small body, one very long wick", "A liquidity sweep. Price probed a level and was aggressively rejected by the opposing side."],
+    ["Indecision (Doji)", "Tiny body, equal upper/lower wicks", "Equilibrium. Buyers and sellers fought to a standstill. Trend may pause or reverse."],
+    ["Inside Bar", "Entirely contained within previous candle's range", "Consolidation and volatility contraction. The market is winding up for a breakout."]
+  ]}
+/>
 
-<StepFlow>
-  <Step>
-    **Look at the body size relative to the wick.** A candle that is 80% body and 20% wick shows conviction. A candle that is 20% body and 80% wick shows rejection or indecision.
-  </Step>
-  <Step>
-    **Compare the candle to the ones around it.** A large bullish candle that engulfs the previous 3 bearish candles tells you buyers overwhelmed recent selling. A small candle after a large impulse move signals that momentum may be fading.
-  </Step>
-  <Step>
-    **Check where the candle sits in the structure.** A rejection wick at a swing high matters. A rejection wick in the middle of a trend does not. Context is everything.
-  </Step>
-  <Step>
-    **Confirm with volume (when available).** A large bullish candle on high volume confirms buyer strength. The same candle on low volume raises questions — was it real demand or just a lack of sellers?
-  </Step>
-</StepFlow>
+<AnnotatedChart 
+  title="Candle Anatomy & Momentum"
+  isBull={true}
+  keyLevelY={90}
+  keyLevelLabel="Strong Bullish Momentum"
+/>
 
-## Volume: The Conviction Meter
+{/* 5. How to see it on a chart */}
+## How to Read Candle Context (Step-by-Step)
 
-Volume tells you how many participants agreed that the price movement mattered. It does not tell you direction — it tells you **conviction**.
+A single candlestick in isolation means nothing. A "bullish rejection" candle in the middle of nowhere is random noise. You must read candles in context.
 
-- **High volume on a move** → Many participants engaged. The move is more likely to sustain.
-- **Low volume on a move** → Few participants engaged. The move is more likely to reverse or stall.
-- **High volume on a rejection wick** → Significant battle at that price. The rejection likely holds.
-- **Volume declining during a trend** → The trend is losing steam, even if price keeps moving in the same direction.
+1. **Locate Key Levels:** Only pay attention to candle shapes when price is interacting with a major HTF key level (support/resistance, PDH/PDL, Order Block).
+2. **Observe the Approach:** Note the size of the candles approaching the level. Are they getting larger (accelerating momentum) or smaller (decelerating momentum)?
+3. **Wait for the Close:** NEVER make a decision based on a forming candle. A candle that looks like a massive bearish breakout with 1 minute left can violently reverse and close as a bullish rejection pin bar. **The close is the only thing that matters.**
+4. **Analyze the Reaction:** At the key level, does price print a high-volume rejection wick? Or does it print a large-body momentum candle blasting straight through it?
 
-<Callout type="note" title="Volume Availability">
-  True volume data is available in stocks and futures. In forex and crypto spot markets, you typically see tick volume (number of price changes) rather than actual contracts traded. Tick volume is still useful as a proxy for activity but is not identical to real volume.
+{/* 6. Worked Examples */}
+## Worked Examples
+
+### Example 1: The Liquidity Sweep (Grounded)
+
+**Scenario:** Gold (XAUUSD) is dropping towards yesterday's daily low (PDL).
+1. As price hits the PDL, it accelerates downward, printing what looks like a massive bearish 15M candle breaking through support. Retail breakout traders rush in to sell.
+2. In the final 3 minutes of the 15M period, massive buy volume steps in. 
+3. The candle closes back above the PDL, leaving a long lower wick and a small bullish body. 
+
+**Walkthrough:** 
+This is a classic trap. The long lower wick proves that the move below the PDL was rejected. It wasn't a true breakout; it was a raid on liquidity (stop-losses of early buyers). The combination of the location (PDL) and the candle shape (long lower wick rejection) provides a high-probability bullish bias.
+
+### Example 2: The Momentum Breakout (Idealized)
+
+**Scenario:** AAPL is consolidating below $150 resistance.
+1. Price pushes into $150 and prints three small Doji (indecision) candles right below the level. Volume is extremely low.
+2. Suddenly, a massive 5M candle prints, closing at $152 with zero upper wick. Volume is 3x higher than average.
+
+**Walkthrough:**
+The tight consolidation (Dojis) on low volume showed a lack of selling pressure at resistance. The massive body breakout candle on high volume confirmed institutional sponsorship. This is not a fakeout; the sheer size of the body and the volume validate the move. 
+
+{/* 7. Trap Callout */}
+<Callout type="trap" title="The Formative Candle Trap">
+  The number one mistake new traders make is acting on a candle before it closes. Institutional algorithms are designed to create extreme visual pressure mid-candle to induce emotional retail trading. A candle is just a ghost until the timer hits 00:00 and the close is printed. Wait for the close.
 </Callout>
 
-## Real Example: Rejection Candle at Resistance
+{/* 8. Modern Restatements / Cross-links */}
+## Modern Framework Translations
 
-Imagine price has been trending up and reaches a previous daily high at 1.0950 on EUR/USD. A 4H candle forms with a long upper wick: it opened at 1.0935, pushed up to 1.0958 (above the key level), but then closed back at 1.0938 — barely above the open.
+- **SMC/ICT:** The concepts of [Displacement](/price-action/displacement-imbalance) and [Fair Value Gaps (FVG)](/smc/fvg) rely entirely on large-body momentum candles. A rejection wick is often referred to as a [Liquidity Sweep](/smc/liquidity-sweep) or a "Judas Swing."
+- **Wyckoff:** Volume Spread Analysis (VSA) is the entire basis of Wyckoff. High volume on small candle spread implies supply entering the market (Effort vs. Result).
+- **Price Action:** Classic terminology uses "Pin Bars" for rejection, "Engulfing bars" for momentum shifts, and "Inside bars" for consolidation.
 
-That long upper wick tells you buyers tried to break the level but sellers stepped in hard and pushed price back down. The close near the open confirms indecision. If the next candle is bearish and closes below 1.0935, the rejection is confirmed.
+{/* 9. FAQ */}
+## Frequently Asked Questions
 
-Without any indicator, the candle itself told the entire story: attempted breakout → rejection → likely reversal.
+**Q: Do I need volume indicators to trade Forex?**
+A: Forex is decentralized, so there is no central volume data. "Tick volume" provided by brokers is a proxy for activity, but it is not true traded volume. In Forex, price action (the size of the candles and speed of delivery) is your primary indicator of institutional involvement. In centralized markets like Stocks or Futures, real volume is crucial.
 
-<Callout type="trap">
-  **Memorizing 100 candlestick patterns.** You do not need to know what a "three black crows" or "abandoned baby" pattern is. These named patterns were cataloged for reference, not for memorization. What matters is understanding the underlying mechanics: body size, wick length, and where the candle closes relative to its range. If you understand those three things, you can read any candle without a pattern name.
-</Callout>
+**Q: Why do some platforms color candles based on previous close?**
+A: Traditional Japanese charting colors candles based on Open vs Close of the *current* candle. Some modern charting platforms (like Heikin Ashi) use complex averages, while others color based on whether the close is higher than the *previous* candle's close. Stick to standard OHLC coloring (Open vs Close of the current period) for pure price action analysis.
 
-<KeyTakeaways>
-- A candlestick encodes **Open, High, Low, Close** — the close relative to the open tells you who won the period.
-- **Body size** = conviction. **Wick length** = rejection. Read them together.
-- The same candle means different things in different locations — always read candles **in context** of the surrounding structure.
-- **Volume confirms conviction**: high volume validates a move, low volume questions it.
-- Do not memorize named patterns — understand the mechanics of body, wick, and close position instead.
-</KeyTakeaways>
+**Q: Are single candle patterns (like a Doji) enough to enter a trade?**
+A: No. A single candle pattern only matters if it occurs at a highly significant structural level. A Doji in the middle of a range means nothing. 
+
+{/* 10. Key Takeaways */}
+<KeyTakeaways points={[
+  "Candlesticks map the Open, High, Low, and Close of a specific time period.",
+  "Large bodies indicate momentum and control. Long wicks indicate rejection and liquidity sweeps.",
+  "Never act on a forming candle; institutional algorithms manipulate mid-candle price action to induce emotional errors. Wait for the close.",
+  "Candle shapes are meaningless in isolation; they only provide an edge when reacting to Higher Timeframe Key Levels.",
+  "Volume validates price. A massive price move on low volume is suspicious, while high volume confirms institutional participation."
+]} />
+
+---
+*References:*
+Nison, S. (1991). *Japanese Candlestick Charting Techniques*. The foundational text that brought candlestick charting to the Western world.
