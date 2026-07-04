@@ -12,16 +12,6 @@ export function PageNavigation() {
   const prevItem = currentIndex > 0 ? flatNav[currentIndex - 1] : null;
   const nextItem = currentIndex < flatNav.length - 1 ? flatNav[currentIndex + 1] : null;
 
-  // Helper to find the section label for an item
-  const getSectionLabel = (path: string) => {
-    for (const section of navigation) {
-      if (section.items.some(i => i.path === path)) {
-        return section.label;
-      }
-    }
-    return '';
-  };
-
   return (
     <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
       {prevItem ? (
