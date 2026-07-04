@@ -1,0 +1,105 @@
+export const frontmatter = {
+  title: 'PD Arrays Overview',
+  description: 'Understanding Premium and Discount arrays in ICT methodology — the hierarchy of price levels where institutional order flow is expected to interact with the market.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+import { StepFlow, Step } from '../../components/StepFlow';
+import { Term, Glossary } from '../../components/Term';
+
+# PD Arrays Overview
+
+**PD Arrays** (Premium/Discount Arrays) are ICT's framework for classifying price levels and zones where institutional order flow is expected to enter the market. "PD" refers to **premium** (above equilibrium — expensive) and **discount** (below equilibrium — cheap). The arrays themselves are specific structural elements on the chart that act as magnets or reaction points for price.
+
+---
+
+## The Core Idea
+
+Price moves between extremes. Between any swing high and swing low, there is a midpoint — the **equilibrium** (50% level). Everything above equilibrium is considered **premium**; everything below is **discount**.
+
+- **Smart money sells in premium** — distributing positions at elevated prices.
+- **Smart money buys in discount** — accumulating positions at depressed prices.
+
+PD arrays are the specific chart features within premium or discount zones where this activity is most likely to occur.
+
+---
+
+## The PD Array Matrix
+
+ICT organizes PD arrays into a ranked hierarchy. When price is retracing, it is expected to react at the first unmitigated PD array it encounters — but if that array fails to hold, price continues to the next one in the hierarchy.
+
+<CompareTable title="PD Array Hierarchy (Bullish Retracement — Discount Arrays)">
+
+| Rank | PD Array | Description |
+|---|---|---|
+| 1 | **Order Block (OB)** | Last down-close candle before a displacement up. Highest-priority reaction zone. |
+| 2 | **Fair Value Gap (FVG)** | Three-candle imbalance. Price often returns to fill or partially fill before continuing. |
+| 3 | **Breaker Block** | A failed order block that, once broken, acts as support/resistance from the opposite direction. |
+| 4 | **Mitigation Block** | A previous failed setup that gets revisited and "mitigated" as part of a new move. |
+| 5 | **Rejection Block** | Wicks into a zone without body closes — indicates rejection at that level. |
+| 6 | **Liquidity Void** | An area where price moved so fast there are no candles with overlapping ranges — price tends to return to fill. |
+
+</CompareTable>
+
+For **bearish retracements** (premium arrays), the same concepts apply in mirror: the last up-close candle before displacement down becomes the premium OB, and so on.
+
+---
+
+## Visualizing PD Arrays
+
+<AnnotatedChart
+  title="Discount PD arrays — OB and FVG as retracement targets"
+  showOB={true}
+  showFVG={true}
+  showSwingHL={true}
+  showBOS={true}
+/>
+
+In this diagram:
+
+- Price sweeps a **swing low**, then displaces upward with a **BOS**.
+- The **+OB** (bullish order block) marks the last bearish candle before displacement — the highest-priority discount array.
+- The **FVG** (fair value gap) sits above the OB — the second-priority array.
+- On retracement, price is expected to react at the FVG first. If it doesn't hold, the OB is the next level down.
+
+---
+
+## Premium vs. Discount in Practice
+
+<ConceptCard title="Where to Buy, Where to Sell" icon="⚖️">
+  <p>The PD array framework is fundamentally a <strong>value framework</strong>: buy cheap, sell expensive.</p>
+  <ul>
+    <li><strong>Bullish bias:</strong> Look for long entries at <strong>discount</strong> PD arrays (OBs, FVGs below equilibrium).</li>
+    <li><strong>Bearish bias:</strong> Look for short entries at <strong>premium</strong> PD arrays (OBs, FVGs above equilibrium).</li>
+    <li><strong>Equilibrium (50%):</strong> Not an entry zone — it's the dividing line. Entering at equilibrium means you have no statistical edge from the PD framework.</li>
+  </ul>
+</ConceptCard>
+
+<Callout type="note">
+  Content expanding soon. Future updates will include a detailed breakdown of each PD array type with individual annotated examples, mitigation tracking, and how PD arrays nest across timeframes.
+</Callout>
+
+---
+
+## Common Mistakes
+
+<Callout type="trap" title="Common Trap">
+  <p>Trading <strong>every</strong> PD array without regard to context. A discount OB inside a bearish HTF trend is not a high-probability long — it's a counter-trend trap. PD arrays must be read within the context of the current market structure and bias.</p>
+</Callout>
+
+---
+
+<KeyTakeaways>
+  <ul>
+    <li><strong>PD arrays</strong> are ranked zones where institutional order flow is expected to interact with the market.</li>
+    <li><strong>Premium</strong> = above equilibrium (sell zone). <strong>Discount</strong> = below equilibrium (buy zone).</li>
+    <li>The hierarchy matters: price reacts at the <strong>first unmitigated array</strong> it reaches, or continues to the next.</li>
+    <li><strong>Order blocks</strong> and <strong>FVGs</strong> are the most commonly referenced PD arrays.</li>
+    <li>Always read PD arrays <strong>within the higher-timeframe structural context</strong> — not in isolation.</li>
+  </ul>
+</KeyTakeaways>

@@ -1,0 +1,102 @@
+export const frontmatter = {
+  title: 'Killzones & Session Timing',
+  description: 'Understanding ICT killzones — the London, New York, and Asian session windows where institutional activity concentrates and high-probability setups tend to form.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+import { StepFlow, Step } from '../../components/StepFlow';
+import { Term, Glossary } from '../../components/Term';
+
+# Killzones & Session Timing
+
+A **killzone** is a specific window of time within a trading session where price is more likely to make its significant directional move for that session. The term comes from ICT methodology, but the underlying observation — that volatility and volume cluster around certain hours — is well-documented across all markets.
+
+---
+
+## Why Sessions Matter
+
+Markets don't move uniformly throughout the day. Liquidity, volume, and participation vary dramatically depending on which financial centers are active. The three major sessions correspond to the world's largest trading hubs:
+
+<CompareTable title="Major Forex Sessions (UTC)">
+
+| Session | Approximate Window (UTC) | Key Characteristics |
+|---|---|---|
+| **Asian (Tokyo)** | 00:00 – 08:00 | Lowest volatility, range-building, sets up liquidity pools |
+| **London** | 07:00 – 16:00 | Highest volume session, often establishes the day's high or low |
+| **New York** | 12:00 – 21:00 | Overlaps with London (12:00–16:00), second-highest volume, often reverses or continues London's move |
+
+</CompareTable>
+
+The **London-New York overlap** (roughly 12:00–16:00 UTC) is typically the most volatile period of the day. Many of the day's largest moves originate or complete within this window.
+
+---
+
+## The Killzones
+
+ICT defines specific sub-windows within each session as killzones — narrower bands where the setup-to-noise ratio tends to be highest.
+
+<ConceptCard title="Asian Killzone" icon="🌏">
+  <p><strong>Window:</strong> ~20:00 – 00:00 UTC (New York evening into Tokyo open)</p>
+  <p>The Asian killzone often establishes a <strong>range</strong> — a high and low that London will later target. Price tends to consolidate, building equal highs/lows that serve as liquidity pools for the more volatile sessions ahead.</p>
+  <p><strong>Role in the daily narrative:</strong> Range creation. Sets the bait.</p>
+</ConceptCard>
+
+<ConceptCard title="London Killzone" icon="🇬🇧">
+  <p><strong>Window:</strong> ~07:00 – 10:00 UTC (London open)</p>
+  <p>London open is where the day's directional bias often reveals itself. Price frequently <strong>sweeps</strong> the Asian session high or low (a Judas swing) before committing to the real move. The London killzone is widely considered the most reliable window for setups.</p>
+  <p><strong>Role in the daily narrative:</strong> Displacement. Sets the direction.</p>
+</ConceptCard>
+
+<ConceptCard title="New York Killzone" icon="🇺🇸">
+  <p><strong>Window:</strong> ~12:00 – 15:00 UTC (New York open, London overlap)</p>
+  <p>The New York killzone is the second opportunity for high-probability setups. It may <strong>continue</strong> London's established direction, or in some cases, <strong>reverse</strong> it — especially if London's move was a liquidity grab that reached into a higher-timeframe level.</p>
+  <p><strong>Role in the daily narrative:</strong> Continuation or reversal. Completes the story.</p>
+</ConceptCard>
+
+---
+
+## Killzone Logic on a Chart
+
+<AnnotatedChart
+  title="Session structure — Asian range → London displacement → NY continuation"
+  showSwingHL={true}
+  showBOS={true}
+  keyLevelLabel="Asian Session High"
+  keyLevelY={60}
+/>
+
+In this simplified illustration:
+
+- The **Asian session** builds a range (the swing high and swing low).
+- **London open** sweeps the Asian high (or low), then displaces in the true direction — confirmed by a BOS.
+- **New York** continues the move or provides a retracement entry in the direction London established.
+
+<Callout type="note">
+  Content expanding soon. Future updates will include detailed session-by-session case studies, DST adjustments, and instrument-specific killzone behavior (forex, indices, crypto).
+</Callout>
+
+---
+
+## Practical Considerations
+
+- **DST shifts** change the UTC times by one hour for London (GMT → BST) and New York (EST → EDT). Always verify current local times.
+- **Not every session produces a clean killzone move.** Some days are ranging or news-driven — killzones are a filter, not a guarantee.
+- **Crypto markets** run 24/7 but still show volume clustering around traditional session opens, particularly New York.
+- **Indices** (ES, NQ) have their own session structure — the RTH (Regular Trading Hours) open at 13:30 UTC is a separate high-volume event.
+
+---
+
+<KeyTakeaways>
+  <ul>
+    <li><strong>Killzones</strong> are specific time windows within each session where high-probability moves are more likely to occur.</li>
+    <li><strong>Asian session</strong> builds the range. <strong>London</strong> displaces. <strong>New York</strong> continues or reverses.</li>
+    <li>The <strong>London-New York overlap</strong> is the highest-volume period of the day.</li>
+    <li>Killzones are a <strong>filter for timing</strong>, not a signal by themselves — combine with structure and levels.</li>
+    <li>Always account for <strong>DST</strong> when mapping killzone times.</li>
+  </ul>
+</KeyTakeaways>

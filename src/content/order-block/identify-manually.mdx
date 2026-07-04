@@ -1,0 +1,110 @@
+export const frontmatter = {
+  title: 'Identifying Order Blocks Manually',
+  description: 'A step-by-step process for marking OBs on any timeframe without indicators.'
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+
+<ConceptCard title="Manual OB Identification" icon="🔍">
+Identifying order blocks manually is a skill that sharpens your understanding of market structure. The process follows a repeatable sequence: establish bias, locate a structural break, trace back to the origin candle, and define your zone. No indicator can replace the discretionary judgment this process builds.
+</ConceptCard>
+
+<AnnotatedChart title="Bullish OB Identification — Structure Break Confirms the Zone" showOB={true} showBOS={true} />
+
+## Step 1 — Establish Higher-Timeframe Bias
+
+Before marking any OB on your execution timeframe, determine the dominant direction on the higher timeframe (HTF). If you trade the 15-minute chart, your HTF is the 1-hour or 4-hour.
+
+- **Bullish HTF bias** — Look only for bullish OBs (long entries) on the lower timeframe.
+- **Bearish HTF bias** — Look only for bearish OBs (short entries) on the lower timeframe.
+
+This single filter eliminates the majority of low-probability setups. Trading against the HTF trend using OBs is a consistency killer.
+
+## Step 2 — Identify the Swing Structure
+
+On your execution timeframe, map out the recent swing highs and swing lows. You need a clear structure to work with:
+
+- In an uptrend, price makes **higher highs (HH)** and **higher lows (HL)**.
+- In a downtrend, price makes **lower lows (LL)** and **lower highs (LH)**.
+
+Mark the most recent strong swing high and strong swing low. These define the current dealing range and help you determine whether price is in a **premium** (above equilibrium) or **discount** (below equilibrium) zone.
+
+## Step 3 — Locate the Displacement Move
+
+Scan for an **impulsive, displacing move** that breaks through a significant swing point. This is the move that confirms institutional intent.
+
+Signs of valid displacement:
+
+- Two or more consecutive full-bodied candles in one direction
+- Little to no overlap between candle bodies
+- A clear **break of structure (BOS)** — price closes beyond the previous swing high (bullish) or swing low (bearish)
+- The move creates a visible **fair value gap (FVG)** or imbalance on the chart
+
+If the move is grinding, overlapping, or lacks conviction, skip it. Weak moves do not produce reliable OBs.
+
+## Step 4 — Mark the Last Opposing Candle
+
+Trace back from the start of the displacement to find the **last candle that closed in the opposite direction**:
+
+- **For a bullish OB**: Find the last **bearish (down-close) candle** before the bullish displacement began.
+- **For a bearish OB**: Find the last **bullish (up-close) candle** before the bearish displacement began.
+
+This candle is your order block. It represents the final moment where counter-trend participants were active before being overwhelmed by institutional flow.
+
+### What if there are multiple opposing candles?
+
+If there is a cluster of opposing candles (e.g., three consecutive bearish candles before a bullish move), you have two options:
+
+1. **Conservative** — Use only the last single candle closest to the displacement. This gives a tighter zone and better risk-to-reward.
+2. **Aggressive** — Use the entire cluster as the OB zone. This gives more room for price to react but widens your stop.
+
+Choose based on your risk tolerance and backtest results. Neither approach is universally superior.
+
+## Step 5 — Define the Zone
+
+Draw a rectangle on your chart to mark the OB zone:
+
+- **Bullish OB zone**: From the **open** of the bearish candle to the **low** of the bearish candle. Some traders extend to the wick low for added buffer.
+- **Bearish OB zone**: From the **open** of the bullish candle to the **high** of the bullish candle.
+
+The zone represents the price range where institutional orders were filled. Your entry, stop-loss, and position sizing all reference this zone.
+
+## Step 6 — Validate With Context
+
+Not every correctly drawn OB is worth trading. Before committing capital, run through a validation checklist:
+
+- **Does the OB sit in a premium or discount zone that aligns with your trade direction?** Bullish OBs are stronger in discount; bearish OBs are stronger in premium.
+- **Did a liquidity sweep precede the OB formation?** OBs formed after a sweep of equal highs/lows, session levels, or trend-line liquidity are higher probability.
+- **Is the OB on or near a higher-timeframe point of interest?** Confluence with an HTF OB, FVG, or key level adds conviction.
+- **Has the OB already been mitigated?** If price has already returned to and traded through the zone, it may be consumed. First-touch OBs are preferred.
+
+<Callout type="trap" title="Forcing OBs Where None Exist">
+If you find yourself stretching definitions to justify an OB — using tiny candles, ignoring weak displacement, or marking zones in the middle of a range — step back. Not every move has a tradeable order block at its origin. Forcing setups leads to overtrading and inconsistency. If the chart does not present a clean OB, wait.
+</Callout>
+
+## Timeframe Considerations
+
+The process is identical across timeframes, but the character of OBs changes:
+
+| Timeframe | OB Characteristics |
+|-----------|-------------------|
+| **Monthly / Weekly** | Massive zones. Used for long-term directional bias, not precision entries. |
+| **Daily / 4H** | Strong structural significance. Ideal for swing trade entries or defining HTF POIs. |
+| **1H / 15M** | Common execution-timeframe OBs. Suitable for intraday setups with tight risk. |
+| **5M / 1M** | Very refined entries within HTF zones. Requires fast execution and discipline. Use for sniper entries only. |
+
+Always mark OBs on your HTF first, then drill down to the LTF to refine entry within those HTF zones.
+
+<KeyTakeaways>
+- Start by establishing HTF bias — only look for OBs that align with the dominant trend direction.
+- Displacement and a break of structure are the minimum requirements to validate any OB.
+- The OB candle is the last opposing-close candle before the impulsive move — trace back from the displacement start.
+- Define the zone from the candle's open to its extreme (low for bullish, high for bearish).
+- Always validate with context: premium/discount location, liquidity sweeps, HTF confluence, and mitigation status.
+- If the setup is not clean and obvious, do not force it. Wait for the next opportunity.
+</KeyTakeaways>

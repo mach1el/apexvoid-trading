@@ -1,0 +1,97 @@
+export const frontmatter = {
+  title: 'Reading Candles & Volume',
+  description: 'Learn the anatomy of a candlestick — Open, High, Low, Close — and how to read what buyers and sellers did within a single bar. Volume confirms conviction.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { StepFlow, Step } from '../../components/StepFlow';
+import { CompareTable } from '../../components/CompareTable';
+
+# Reading Candles & Volume
+
+Every candlestick is a compressed story of a battle between buyers and sellers over a fixed period of time. Learning to read that story — without memorizing hundreds of named patterns — is the goal.
+
+<ConceptCard title="Candlestick Anatomy" icon="🕯️">
+  A candlestick has four data points: **Open** (where price started), **High** (highest price reached), **Low** (lowest price reached), and **Close** (where price ended). The filled area between Open and Close is the **body**. The lines above and below are the **wicks** (or shadows). A bullish candle closes above its open; a bearish candle closes below.
+</ConceptCard>
+
+## The Four Components
+
+<AnnotatedChart title="Candlestick Anatomy" />
+
+Every candle tells you four things:
+
+1. **Open** — Where the period began. This is the consensus price at the start.
+2. **High** — The maximum price buyers were willing to pay. The further the high extends above the body, the more buyers pushed before getting rejected.
+3. **Low** — The minimum price sellers drove to. A long lower wick means sellers pushed hard but ultimately lost control.
+4. **Close** — Where the battle ended. The close relative to the open is the single most important data point — it tells you who won.
+
+## Bullish vs. Bearish: What Actually Matters
+
+<CompareTable title="Reading the Close">
+
+| | Bullish Candle | Bearish Candle |
+|---|---|---|
+| **Close vs. Open** | Close > Open | Close < Open |
+| **Story** | Buyers dominated the period | Sellers dominated the period |
+| **Large body** | Strong buyer conviction | Strong seller conviction |
+| **Small body** | Indecision, even with buyer edge | Indecision, even with seller edge |
+| **Long upper wick** | Buyers pushed but got rejected | Sellers maintained rejection from highs |
+| **Long lower wick** | Buyers reclaimed from the lows | Sellers tried but buyers absorbed |
+
+</CompareTable>
+
+## How to Read a Candle in Context
+
+The same candle shape means different things depending on where it appears. A long-wicked rejection candle at a key resistance level is significant. The same candle shape in the middle of a range is noise.
+
+<StepFlow>
+  <Step>
+    **Look at the body size relative to the wick.** A candle that is 80% body and 20% wick shows conviction. A candle that is 20% body and 80% wick shows rejection or indecision.
+  </Step>
+  <Step>
+    **Compare the candle to the ones around it.** A large bullish candle that engulfs the previous 3 bearish candles tells you buyers overwhelmed recent selling. A small candle after a large impulse move signals that momentum may be fading.
+  </Step>
+  <Step>
+    **Check where the candle sits in the structure.** A rejection wick at a swing high matters. A rejection wick in the middle of a trend does not. Context is everything.
+  </Step>
+  <Step>
+    **Confirm with volume (when available).** A large bullish candle on high volume confirms buyer strength. The same candle on low volume raises questions — was it real demand or just a lack of sellers?
+  </Step>
+</StepFlow>
+
+## Volume: The Conviction Meter
+
+Volume tells you how many participants agreed that the price movement mattered. It does not tell you direction — it tells you **conviction**.
+
+- **High volume on a move** → Many participants engaged. The move is more likely to sustain.
+- **Low volume on a move** → Few participants engaged. The move is more likely to reverse or stall.
+- **High volume on a rejection wick** → Significant battle at that price. The rejection likely holds.
+- **Volume declining during a trend** → The trend is losing steam, even if price keeps moving in the same direction.
+
+<Callout type="note" title="Volume Availability">
+  True volume data is available in stocks and futures. In forex and crypto spot markets, you typically see tick volume (number of price changes) rather than actual contracts traded. Tick volume is still useful as a proxy for activity but is not identical to real volume.
+</Callout>
+
+## Real Example: Rejection Candle at Resistance
+
+Imagine price has been trending up and reaches a previous daily high at 1.0950 on EUR/USD. A 4H candle forms with a long upper wick: it opened at 1.0935, pushed up to 1.0958 (above the key level), but then closed back at 1.0938 — barely above the open.
+
+That long upper wick tells you buyers tried to break the level but sellers stepped in hard and pushed price back down. The close near the open confirms indecision. If the next candle is bearish and closes below 1.0935, the rejection is confirmed.
+
+Without any indicator, the candle itself told the entire story: attempted breakout → rejection → likely reversal.
+
+<Callout type="trap">
+  **Memorizing 100 candlestick patterns.** You do not need to know what a "three black crows" or "abandoned baby" pattern is. These named patterns were cataloged for reference, not for memorization. What matters is understanding the underlying mechanics: body size, wick length, and where the candle closes relative to its range. If you understand those three things, you can read any candle without a pattern name.
+</Callout>
+
+<KeyTakeaways>
+- A candlestick encodes **Open, High, Low, Close** — the close relative to the open tells you who won the period.
+- **Body size** = conviction. **Wick length** = rejection. Read them together.
+- The same candle means different things in different locations — always read candles **in context** of the surrounding structure.
+- **Volume confirms conviction**: high volume validates a move, low volume questions it.
+- Do not memorize named patterns — understand the mechanics of body, wick, and close position instead.
+</KeyTakeaways>

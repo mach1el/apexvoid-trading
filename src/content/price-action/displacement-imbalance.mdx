@@ -1,0 +1,73 @@
+export const frontmatter = {
+  title: 'Displacement & Imbalance',
+  description: 'Understand how strong impulsive price moves create Fair Value Gaps — imbalances in the market that price often returns to fill before continuing.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+
+# Displacement & Imbalance
+
+<ConceptCard title="What Is Displacement?" icon="⚡">
+  **Displacement** is a sharp, aggressive price move characterised by one or more large-bodied candles with minimal wicks. It represents a sudden shift in order flow — one side of the market overwhelming the other. Displacement candles are not random volatility; they are the footprint of institutional order execution, and they frequently leave behind **imbalances** (Fair Value Gaps) that price returns to fill.
+</ConceptCard>
+
+## Visualising the Fair Value Gap
+
+<AnnotatedChart
+  title="Fair Value Gap Created by Displacement"
+  showFVG={true}
+/>
+
+The shaded zone between candles represents the Fair Value Gap — a price area where only one side of the market participated. The gap exists because the move was so aggressive that no opposing orders were filled in that range.
+
+## Anatomy of a Displacement Move
+
+Displacement has specific visual characteristics that separate it from normal price movement:
+
+1. **Large candle bodies.** The body-to-wick ratio is heavily skewed toward the body. A bullish displacement candle opens near its low and closes near its high, with minimal upper and lower wicks.
+2. **Multiple consecutive candles.** True displacement often involves two or three large candles in the same direction without meaningful pullbacks between them.
+3. **A Fair Value Gap (FVG).** When three consecutive candles form and there is no overlap between the first candle's high (or low) and the third candle's low (or high), the gap between them is the FVG. This is the imbalance.
+
+## What Is a Fair Value Gap?
+
+A **Fair Value Gap (FVG)** is a three-candle pattern where the wicks of candle 1 and candle 3 do not overlap, leaving a gap in the middle (candle 2's range). This gap represents a price zone where the market moved so quickly that buy and sell orders were not properly matched.
+
+**Bullish FVG:** The low of candle 3 is higher than the high of candle 1. The gap between candle 1's high and candle 3's low is the FVG — price may retrace down to fill this gap before continuing higher.
+
+**Bearish FVG:** The high of candle 3 is lower than the low of candle 1. The gap between candle 1's low and candle 3's high is the FVG — price may retrace up to fill this gap before continuing lower.
+
+## Step-by-Step: Finding and Using Imbalances
+
+1. **Spot the displacement.** Scan for candles that are significantly larger than the surrounding candles. These stand out visually — they break the rhythm of the chart.
+2. **Check for the 3-candle FVG pattern.** On the displacement candle (candle 2), check whether candle 1's wick and candle 3's wick overlap. If they don't, you have a confirmed FVG.
+3. **Mark the FVG zone.** Draw a rectangle from candle 1's high to candle 3's low (for bullish FVG) or candle 1's low to candle 3's high (for bearish FVG). This is your re-entry zone.
+4. **Wait for price to return.** Price doesn't always return to fill the FVG immediately. It may take hours, days, or even weeks depending on the timeframe. Be patient and set alerts.
+5. **Enter at the FVG with confluence.** When price re-enters the FVG, look for a reaction — a rejection candle, a lower-timeframe CHoCH, or alignment with a higher-timeframe order block. The FVG provides the zone; confluence provides the trigger.
+
+## Real-World Example
+
+On a 15-minute NAS100 chart, price is consolidating between 17,800 and 17,850. Suddenly, three consecutive bullish candles print: the first closes at 17,860, the second at 17,920, and the third at 17,970. The first candle's high is 17,865, and the third candle's low is 17,910. The gap between 17,865 and 17,910 is the FVG — a 45-point imbalance.
+
+Price continues to 18,000 before stalling. Over the next hour, it retraces back to 17,905, entering the FVG zone. A bullish pin bar forms at 17,908, within the FVG. This is your entry: long at 17,910, stop below the FVG at 17,860, target at 18,000 or above. The FVG acted as a magnet, pulling price back to fill the imbalance before the trend resumed.
+
+<Callout type="trap" title="Common Trap: Assuming Every FVG Will Be Filled">
+  <p>While many FVGs do get filled, it is not a rule that every single one will. In strongly trending markets, price can leave FVGs unfilled and continue running. An FVG created by a major news event (NFP, FOMC) may never be revisited because the fundamental landscape has shifted. Treat FVGs as **probability zones for re-entry**, not guarantees. If price is accelerating away from an FVG with increasing momentum, the gap may remain open. Always have a plan for both scenarios — fill and continuation.</p>
+</Callout>
+
+## Displacement vs Normal Volatility
+
+Not every large candle is displacement. Here's how to tell the difference:
+
+- **Displacement** opens and closes near the extremes, has minimal wicks, moves _with_ the prevailing order flow, and often leaves an FVG. It usually occurs after a sweep, at a key level, or at a session open.
+- **Normal volatility** features large wicks on both sides, doesn't commit to a direction, and often occurs during low-liquidity periods (pre-session, holiday trading). These candles are noise, not signal.
+
+<KeyTakeaways>
+  - **Displacement** = large-bodied, low-wick candles representing aggressive institutional order flow.
+  - A **Fair Value Gap (FVG)** forms when the wicks of candle 1 and candle 3 in a 3-candle sequence don't overlap.
+  - FVGs are **re-entry zones** — price tends to retrace to fill the imbalance before continuing in the displacement direction.
+  - Not every FVG gets filled — strongly trending markets can leave gaps open indefinitely.
+  - Combine FVGs with **order blocks, swing structure, and session levels** for higher-probability entries.
+</KeyTakeaways>

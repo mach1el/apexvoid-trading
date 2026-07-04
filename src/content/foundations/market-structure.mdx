@@ -1,0 +1,83 @@
+export const frontmatter = {
+  title: 'What Market Structure Is',
+  description: 'Understand how price moves in swings — Higher Highs & Higher Lows define uptrends, Lower Highs & Lower Lows define downtrends. The single most important concept before anything else.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { StepFlow, Step } from '../../components/StepFlow';
+import { CompareTable } from '../../components/CompareTable';
+
+# What Market Structure Is
+
+Market structure is the skeleton of price action. Before you study order blocks, fair value gaps, or any "advanced" concept, you need to be able to read structure — because every other concept depends on it.
+
+<ConceptCard title="Market Structure" icon="🦴">
+  Market structure describes the **pattern of swing highs and swing lows** that price leaves behind as it moves. An uptrend is a sequence of Higher Highs (HH) and Higher Lows (HL). A downtrend is a sequence of Lower Highs (LH) and Lower Lows (LL). When the pattern breaks, the trend may be shifting.
+</ConceptCard>
+
+## The Two States of Trend
+
+Price at its core only does two things: it either **continues** the current trend or it **reverses**. Market structure gives you the framework to determine which one is happening.
+
+<CompareTable title="Uptrend vs. Downtrend">
+
+| | Uptrend | Downtrend |
+|---|---|---|
+| **Swing Pattern** | Higher Highs + Higher Lows | Lower Highs + Lower Lows |
+| **Who is in control** | Buyers — each push higher exceeds the last | Sellers — each push lower exceeds the last |
+| **Continuation signal** | Price makes a new HH after holding HL | Price makes a new LL after holding LH |
+| **Break signal** | Price breaks below the most recent HL | Price breaks above the most recent LH |
+
+</CompareTable>
+
+## Visualizing Swing Points
+
+A **swing high** is a point where price pushed up, got rejected, and pulled back. A **swing low** is a point where price pushed down, found demand, and bounced. You mark them on the chart, then connect the dots.
+
+<AnnotatedChart showSwingHL={true} title="Swing Highs & Lows — Structure in Motion" />
+
+In the chart above, notice how the swing low and swing high create the scaffolding. Every candle in between is just noise unless it creates a new swing point.
+
+## How to Identify Market Structure
+
+<StepFlow>
+  <Step>
+    **Zoom out enough to see 3–5 clear swings.** On lower timeframes, this might be 200+ candles. On higher timeframes, fewer candles cover more ground.
+  </Step>
+  <Step>
+    **Mark the obvious swing highs and swing lows.** If you have to squint or debate whether something is a swing point, it probably is not one. Real swing points are visually obvious — clear pivot points where price reversed direction for at least several candles.
+  </Step>
+  <Step>
+    **Compare each swing to the previous one.** Is the most recent swing high above or below the prior swing high? Is the most recent swing low above or below the prior one? That comparison tells you the trend.
+  </Step>
+  <Step>
+    **Watch for the break.** In an uptrend, structure breaks when price closes below the most recent Higher Low. In a downtrend, structure breaks when price closes above the most recent Lower High. That break is called a Change of Character (CHoCH).
+  </Step>
+</StepFlow>
+
+## Real Example: Gold (XAU/USD) Uptrend
+
+Consider gold during a typical bullish leg. Price rallies from 1920 to 1940 (first swing high), pulls back to 1928 (higher low — it held above 1920), then pushes to 1952 (higher high — exceeded 1940), and pulls back again to 1938 (another higher low — above 1928).
+
+Each swing low holds above the previous one. Each swing high exceeds the previous one. That is a textbook bullish market structure. You do not need any indicator to see it — just the raw swing points.
+
+The moment price drops below 1938 (the most recent HL), the uptrend structure is broken. It does not necessarily mean a reversal — it means the bullish pattern is no longer intact and you should reassess.
+
+<Callout type="trap">
+  **Confusing minor pullbacks with structural swings.** Not every red candle in an uptrend is a "lower high." A genuine swing point requires a clear rejection — typically 3+ candles forming a visible pivot. If you label every minor wick as a swing, you will see structure breaks everywhere and overtrade. Keep your swing labels clean and obvious.
+</Callout>
+
+<Callout type="tip" title="Practical Filter">
+  Ask yourself: "Would a trader looking at this chart from across the room see this swing point?" If the answer is no, do not label it. The best swing points jump off the chart without zooming in.
+</Callout>
+
+<KeyTakeaways>
+- Market structure is the **sequence of swing highs and swing lows** — it tells you who is in control (buyers or sellers).
+- **Uptrend** = Higher Highs + Higher Lows. **Downtrend** = Lower Highs + Lower Lows.
+- A **break of structure** occurs when the most recent swing point is violated — this signals a potential trend shift.
+- Only label **obvious, clean swing points** — if you have to debate it, skip it.
+- Structure reading comes **before** every other concept. If you cannot read structure, nothing else will make sense.
+</KeyTakeaways>

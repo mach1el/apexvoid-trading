@@ -1,0 +1,89 @@
+export const frontmatter = {
+  title: 'Timeframes & Multi-Timeframe Thinking',
+  description: 'Higher timeframes set the direction, lower timeframes refine the entry. Learn the relationship between Daily, 1H, and 5M — and why trading without HTF context is gambling.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { StepFlow, Step } from '../../components/StepFlow';
+import { CompareTable } from '../../components/CompareTable';
+
+# Timeframes & Multi-Timeframe Thinking
+
+A 5-minute chart and a daily chart show the same market — but they tell very different stories. Understanding how timeframes nest inside each other is what separates structured analysis from guessing.
+
+<ConceptCard title="Multi-Timeframe Analysis" icon="🔭">
+  Multi-timeframe analysis (MTF) means reading the market across multiple timeframes to align your trade with the broader picture. The **higher timeframe (HTF)** defines the trend direction and key levels. The **lower timeframe (LTF)** provides the precise entry and timing. A trade taken on a lower timeframe should always agree with what the higher timeframe is saying.
+</ConceptCard>
+
+## Why One Timeframe Is Not Enough
+
+A strong bullish setup on the 5-minute chart means nothing if the daily chart shows price slamming into major resistance. Conversely, the daily chart might be bullish, but the 5-minute chart can help you avoid entering at the worst possible moment within that trend.
+
+Each timeframe answers a different question:
+
+<CompareTable title="What Each Timeframe Tells You">
+
+| Timeframe | Role | What It Answers |
+|---|---|---|
+| **Daily / 4H** | Higher Timeframe (HTF) | What is the trend? Where are the key levels? |
+| **1H / 30M** | Mid Timeframe | Is the current swing aligned with the HTF? Where is the structure shifting? |
+| **5M / 15M** | Lower Timeframe (LTF) | Where exactly do I enter? What is my precise risk? |
+
+</CompareTable>
+
+## The Drill-Down: Daily → 1H → 5M
+
+This is the core workflow for multi-timeframe analysis. You start wide and narrow down.
+
+<StepFlow>
+  <Step>
+    **Daily chart — Establish the bias.** Open the daily chart and determine the trend using market structure (HH/HL = bullish, LH/LL = bearish). Identify the key levels: recent swing highs, swing lows, and any areas where price reacted strongly. This is your directional bias — you will only take trades that agree with it.
+  </Step>
+  <Step>
+    **1H chart — Find the setup zone.** Drop to the 1-hour chart and look for price approaching a key level you identified on the daily. Is the 1H structure aligned with the daily bias? If the daily is bullish and the 1H is pulling back into a higher low, that is a potential setup zone. If the 1H structure is bearish (making lower highs), the pullback may not be done yet.
+  </Step>
+  <Step>
+    **5M chart — Time the entry.** Once the 1H shows price reaching your zone, drop to the 5-minute chart to look for a confirmation entry. This might be a Change of Character (bullish CHoCH on the 5M), a rejection candle, or a specific pattern like an order block reaction. This is where you define your exact entry price and stop loss.
+  </Step>
+</StepFlow>
+
+## How Timeframes Nest
+
+Think of timeframes like a map. The daily chart is the country view — it shows you the major highways and cities. The 1H chart is the city view — you can see streets and neighborhoods. The 5M chart is the street view — you see individual intersections and can navigate turn by turn.
+
+You would never try to drive across a country using only the street view. And you would never try to find a specific intersection using only the country map. You need both.
+
+<AnnotatedChart showSwingHL={true} showBOS={true} title="HTF Structure — Trend & Key Levels" />
+
+The chart above represents what you would see on a higher timeframe. The swing highs and lows define the trend, and the BOS (Break of Structure) confirms continuation. Your job on the lower timeframe is to find entries that align with this direction.
+
+## Practical Rules for MTF
+
+<Callout type="tip" title="Timeframe Multiplier Rule">
+  A good rule of thumb: your HTF should be roughly **4–6x** your LTF. If you trade entries on the 5M, your HTF is the 1H (12x, which is fine). If you trade entries on the 15M, your HTF is the 4H (16x). Going from the 1M directly to the daily (1440x) creates too large a gap — you will miss the intermediate structure.
+</Callout>
+
+## Real Example: EUR/USD Multi-Timeframe Workflow
+
+**Daily**: EUR/USD is in a clear uptrend. The most recent swing low is at 1.0820, and price just made a new high at 1.0950. You are bullish.
+
+**1H**: Price is pulling back from 1.0950 toward the 1.0880 area — a zone where a previous 1H swing high became support (structure flip). The 1H is making a lower low into this zone but the daily context says this is just a pullback within the uptrend.
+
+**5M**: As price reaches 1.0880, the 5M shows a series of lower lows (it has been falling on the LTF). Then you see a 5M CHoCH — price breaks above the most recent 5M lower high. This is your entry signal. You enter long at 1.0885 with a stop below the 5M swing low at 1.0872 (13 pips risk), targeting a return to 1.0950 (65 pips reward).
+
+The daily gave you the direction. The 1H gave you the zone. The 5M gave you the entry.
+
+<Callout type="trap">
+  **Trading the LTF without checking the HTF.** This is the single most common mistake among developing traders. A beautiful bullish setup on the 5M chart is worthless if the 1H is breaking structure bearish into daily resistance. Always check the higher timeframe first. If the HTF does not support your LTF setup, skip the trade — no matter how clean it looks.
+</Callout>
+
+<KeyTakeaways>
+- **Higher timeframes set the direction**, lower timeframes refine the entry. Never trade LTF setups that conflict with the HTF bias.
+- Use the **Daily → 1H → 5M** drill-down: daily for trend, 1H for setup zones, 5M for entry timing.
+- Timeframes nest like maps — the daily is the country view, the 5M is the street view. You need both to navigate.
+- Keep a **4–6x ratio** between your HTF and LTF to avoid gaps in your analysis.
+- If the higher timeframe does not support your trade idea, **do not take the trade** — discipline on this single rule will save you from most losing trades.
+</KeyTakeaways>

@@ -1,0 +1,59 @@
+export const frontmatter = {
+  title: 'PDH/PDL & PWH/PWL',
+  description: 'Understand why previous day highs, previous day lows, previous week highs, and previous week lows act as magnetic liquidity levels that institutional traders target.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+
+# PDH/PDL & PWH/PWL
+
+<ConceptCard title="Previous Period Levels" icon="📅">
+  **PDH** (Previous Day High) and **PDL** (Previous Day Low) are the highest and lowest price points from yesterday's trading session. **PWH** (Previous Week High) and **PWL** (Previous Week Low) are the same concept applied to last week's full range. These levels act as liquidity magnets because massive clusters of stop-loss orders and pending orders accumulate around them.
+</ConceptCard>
+
+## Visualising the Previous Day High
+
+<AnnotatedChart
+  title="Previous Day High as a Key Level"
+  keyLevelLabel="PDH"
+  keyLevelY={50}
+/>
+
+The horizontal line represents yesterday's high. Notice how price gravitates toward this level — it's not random. Resting liquidity above the PDH attracts price before the next directional move.
+
+## Why Previous Period Levels Matter
+
+Every trading day and week leaves behind a defined range. The extremes of that range — the high and the low — carry significance for three reasons:
+
+1. **Stop-loss clustering.** Traders who shorted near yesterday's high place their stops just above it. Traders who went long near yesterday's low place their stops just below it. These stops represent buy and sell orders waiting to be triggered.
+2. **Institutional targeting.** Large players need liquidity to fill their positions. They know where retail stops cluster. Sweeping the PDH or PDL provides the volume they need to enter at favourable prices.
+3. **Session framing.** The previous day's range gives you context for the current day. Is price trading above yesterday's high (bullish bias) or below yesterday's low (bearish bias)? This simple observation shapes your entire session plan.
+
+## Step-by-Step: Marking and Using These Levels
+
+1. **At the start of each day**, mark the PDH and PDL on your chart. Most platforms let you draw horizontal lines from the prior daily candle's high and low.
+2. **At the start of each week**, mark the PWH and PWL from last week's range. These are higher-timeframe levels and carry more weight.
+3. **Observe price's relationship.** If price is trading between the PDH and PDL, it's inside yesterday's range — expect consolidation or a buildup before expansion. If price has already broken above the PDH or below the PDL, the breakout direction gives you a bias.
+4. **Watch for sweeps.** Price may wick through the PDH, grab the liquidity sitting above it, and then reverse sharply. This is a classic liquidity sweep pattern — the level was taken to fuel the opposite move.
+5. **Align with higher-timeframe context.** A sweep of the PDH that aligns with the PWH becomes extremely significant. Confluence between daily and weekly levels strengthens the signal.
+
+## Real-World Example
+
+On GBP/USD, yesterday's high was 1.2745 and yesterday's low was 1.2680. During the London open, price rallies aggressively toward 1.2745, prints a high of 1.2752 (sweeping the PDH by 7 pips), then immediately reverses. The 7-pip sweep above the PDH triggered buy stops, providing sell-side liquidity for institutions entering short positions. Price drops 50 pips over the next two hours.
+
+Meanwhile, last week's high sat at 1.2780 — the sweep did not reach that level, confirming the PDH was the primary target rather than the PWH. This distinction matters: had price reached the PWH before reversing, the expected move would be larger because weekly levels attract more liquidity than daily levels.
+
+<Callout type="trap" title="Common Trap: Trading the Break Instead of the Sweep">
+  <p>When price breaks above the PDH, many traders enter long, expecting continuation. But if the break is a **wick** rather than a strong body close, it's likely a liquidity sweep — not a genuine breakout. Wait for confirmation: does the candle close above the PDH with momentum, or does it wick through and snap back? The difference between a break and a sweep determines whether you should join the move or fade it.</p>
+</Callout>
+
+<KeyTakeaways>
+  - **PDH/PDL** are yesterday's high and low; **PWH/PWL** are last week's high and low.
+  - These levels accumulate **stop-loss orders** and serve as liquidity pools for institutional order filling.
+  - Always mark these levels at the **start of each session** — they frame your daily and weekly bias.
+  - A **sweep** of these levels (wick through, then reversal) is one of the highest-probability setups in price action trading.
+  - Confluence between daily and weekly period levels (e.g., PDH near PWH) creates stronger reaction zones.
+</KeyTakeaways>

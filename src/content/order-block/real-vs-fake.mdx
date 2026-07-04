@@ -1,0 +1,148 @@
+export const frontmatter = {
+  title: 'Real vs. Fake Order Blocks',
+  description: 'Filtering high-probability OBs from low-quality zones that fail.'
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+
+<ConceptCard title="Real vs. Fake OBs" icon="⚖️">
+Not every candle before a move is a tradeable order block. The difference between a real OB and a fake one comes down to **displacement quality, structural context, and confluence**. Learning to filter aggressively is what separates consistent traders from those who overtrade low-quality zones.
+</ConceptCard>
+
+<AnnotatedChart title="Strong OB vs. Weak OB — Displacement and Structure Context" showOB={true} showBOS={true} />
+
+## The Core Problem
+
+Once traders learn the OB concept, a common pattern emerges: they begin seeing order blocks everywhere. Every bearish candle before a green candle becomes a "bullish OB." Every rally followed by a dip gets a rectangle drawn on it. The chart fills with zones, and the trader takes every touch — resulting in a low win rate and frustration.
+
+The reality is that **most OBs fail.** The edge is not in identifying them — it is in knowing which ones to trust and which to ignore.
+
+## Characteristics of a Real (High-Probability) Order Block
+
+### 1. Strong Displacement
+
+The move away from the OB must be **impulsive and convincing**. Look for:
+
+- Two or more consecutive full-bodied candles in the direction of the move
+- Minimal wicks against the move direction
+- A visible fair value gap (FVG) created by the displacement
+- The move covers significant price range relative to recent volatility
+
+A weak, grinding move away from a candle does not create a valid OB. If the displacement does not stand out visually on the chart, it is not strong enough.
+
+### 2. Break of Structure (BOS)
+
+The displacement should result in a **clear break of the previous swing point**:
+
+- Bullish OB: The move must break above the most recent swing high
+- Bearish OB: The move must break below the most recent swing low
+
+A BOS is the structural confirmation that the market has shifted. Without it, the move could simply be noise within a range, and the "OB" is just a candle in the middle of consolidation.
+
+### 3. Aligned With Higher-Timeframe Direction
+
+A valid OB on your execution timeframe should agree with the higher-timeframe trend:
+
+- If the daily chart is bullish, prioritize bullish OBs on the 1H/15M
+- If the 4H chart is bearish, prioritize bearish OBs on the 15M/5M
+
+Counter-trend OBs can produce reactions, but they are **lower probability** and should only be traded with exceptional confluence and reduced position size.
+
+### 4. Located in Premium or Discount
+
+The **position** of the OB within the current dealing range matters:
+
+- **Bullish OBs in discount** (below 50% of the range) — Higher probability. You are buying low within the structure.
+- **Bearish OBs in premium** (above 50% of the range) — Higher probability. You are selling high within the structure.
+- OBs at equilibrium (near 50%) — Neutral. These can go either way.
+
+### 5. Preceded by a Liquidity Sweep
+
+The highest-quality OBs form **after** a sweep of liquidity. This means price first took out a pool of stop-losses (equal highs/lows, session levels, or obvious swing points) before the displacement:
+
+- The sweep traps breakout traders and triggers stop-losses
+- Institutions use this liquidity to fill their orders
+- The OB that forms after this process is backed by genuine institutional positioning
+
+An OB without a preceding liquidity event is not automatically invalid, but it lacks the strongest form of confirmation.
+
+## Characteristics of a Fake (Low-Probability) Order Block
+
+### ❌ Weak or Absent Displacement
+
+If the move away from the candle is slow, overlapping, or only one small candle, the "OB" has no institutional backing. The candle is just noise.
+
+### ❌ No Break of Structure
+
+A move that fails to break beyond the previous swing point is contained within the existing range. There is no structural shift, and the zone has no directional conviction.
+
+### ❌ Against the Dominant Trend
+
+OBs that form counter to the HTF trend are constantly fighting against institutional flow. They may produce brief reactions, but they are far more likely to be run through.
+
+### ❌ In No-Man's Land (Equilibrium)
+
+OBs sitting right at the 50% mark of a range lack the premium/discount edge. Price has no structural reason to prefer one direction from this area.
+
+### ❌ Already Mitigated
+
+An OB that price has already returned to and traded through is consumed. The orders are gone. Trading it again is not a strategy.
+
+### ❌ Formed During Low-Volume or News Volatility
+
+OBs that form during illiquid sessions (e.g., late Friday, holiday periods) or during erratic news spikes are unreliable. The displacement may not represent genuine institutional intent but rather thin-book volatility.
+
+## The OB Quality Scorecard
+
+Use this grading system to evaluate each OB before committing capital:
+
+<ConfluenceMeter grade="A" score={5} maxScore={5}>
+
+| Factor | Criteria | Present? |
+|--------|----------|----------|
+| **Displacement** | Strong, impulsive, multi-candle move with FVG created | ✅ |
+| **Break of Structure** | Clear BOS beyond the previous swing high or low | ✅ |
+| **HTF Alignment** | OB direction matches the higher-timeframe trend | ✅ |
+| **Premium / Discount** | Bullish OB in discount or bearish OB in premium | ✅ |
+| **Liquidity Sweep** | A sweep of a visible liquidity pool preceded the OB formation | ✅ |
+
+</ConfluenceMeter>
+
+**Grading guide:**
+
+- **5/5 (Grade A)** — Take the trade with full conviction and standard position size.
+- **4/5 (Grade B)** — Tradeable, but consider waiting for lower-timeframe confirmation before entry.
+- **3/5 (Grade C)** — Marginal. Only trade with reduced size and tight management.
+- **2/5 or below** — Skip. The OB does not meet minimum quality standards.
+
+## Practical Filtering Workflow
+
+When you sit down to analyze a chart, follow this sequence to avoid marking low-quality OBs:
+
+1. **Check HTF bias first** — Only look for OBs in the trend direction.
+2. **Scan for displacement** — Let your eye be drawn to impulsive moves. If nothing stands out, there may be no setup.
+3. **Confirm BOS** — Verify that the displacement broke structure. No break, no OB.
+4. **Check location** — Is the OB in premium or discount? If it is at equilibrium or in the wrong zone, downgrade it.
+5. **Look for a preceding sweep** — Did price take liquidity before the OB formed? If yes, upgrade confidence.
+6. **Score it** — Run the OB through your scorecard. If it scores below 3/5, move on.
+
+<Callout type="trap" title="Confirmation Bias in OB Selection">
+The biggest danger is deciding you want to trade and then finding an OB to justify the entry. This is backwards. Let the OB quality filter come first. If no Grade A or B setup exists, the correct action is to wait — not to lower your standards.
+</Callout>
+
+<Callout type="tip" title="Quality Over Quantity">
+Professional traders do not take every OB they find. They may mark ten OBs in a session and only trade one or two. The discipline to skip low-quality setups is what protects capital and preserves your edge over hundreds of trades.
+</Callout>
+
+<KeyTakeaways>
+- Most OBs fail. Your edge comes from filtering, not from identifying every possible zone.
+- The five key factors for a real OB: strong displacement, BOS confirmation, HTF alignment, premium/discount location, and a preceding liquidity sweep.
+- Fake OBs share common traits: weak displacement, no BOS, counter-trend, poor location, or already mitigated.
+- Use a scorecard system to objectively grade each OB before trading. Only take Grade A and B setups.
+- Never lower your standards to justify a trade. If the chart does not present a high-quality OB, wait.
+</KeyTakeaways>

@@ -1,0 +1,82 @@
+export const frontmatter = {
+  title: 'Reading Charts Without Indicators',
+  description: 'Learn how to analyze any chart using only price action — no RSI, no MACD, no moving averages. Just candles, structure, and market context.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+
+# Reading Charts Without Indicators
+
+<ConceptCard title="Pure Price Action Analysis" icon="👁️">
+  **Reading charts without indicators** means analysing the market using only what price itself is telling you — swing structure, candle patterns, displacement, and key levels. Indicators like RSI, MACD, and moving averages are derivatives of price. They lag behind what's already visible on the chart. By learning to read price directly, you remove the delay and see the market in real time.
+</ConceptCard>
+
+## A Clean Chart in Action
+
+<AnnotatedChart
+  title="Price Action — Structure and BOS Only"
+  showSwingHL={true}
+  showBOS={true}
+/>
+
+This chart shows everything you need: swing highs, swing lows, and a Break of Structure. No indicators cluttering the view. The structure tells you the trend. The BOS confirms continuation. The swing points give you reference levels for entries and stops.
+
+## Why Indicators Can Mislead
+
+This is not about indicators being "wrong." It's about understanding their limitations:
+
+1. **Indicators lag.** A moving average crossover tells you the trend has changed — _after_ it already changed. By the time the signal appears, the best entry is gone. Price action gives you the signal at the moment of the break.
+2. **Indicators are derivatives.** RSI, Stochastic, and MACD are all calculated from price data. They cannot show you anything that price isn't already showing — they just repackage it with a delay.
+3. **Indicators create false confidence.** When RSI says "oversold," traders assume price must bounce. But in a strong downtrend, RSI can stay oversold for days while price continues falling. The indicator gives a misleading sense of certainty.
+4. **Indicator clutter obscures structure.** Five indicators on a chart make it harder to see the one thing that matters: price itself. Clean charts allow you to focus on what the market is actually doing.
+
+## Step-by-Step: Reading a Chart from Scratch
+
+Here's how to approach any chart using only price action:
+
+1. **Zoom out first.** Start with the daily or 4-hour chart. Identify the dominant trend. Is price making higher highs and higher lows, or lower highs and lower lows? This is your higher-timeframe bias. Write it down before looking at any lower timeframe.
+2. **Mark the key swing points.** On your analysis timeframe, identify and label the most recent swing highs and swing lows using the 3-candle rule. These are your structural reference points.
+3. **Define the current structure.** Based on the swing points, determine: Is the market trending (sequential BOS events in one direction) or ranging (no new highs or lows being made)? This determines your strategy — trend-following or range-trading.
+4. **Identify key levels.** Mark PDH/PDL, session highs/lows, and any round numbers near current price. These give you targets and potential reaction zones.
+5. **Watch how price interacts with levels.** This is where the reading happens. Does price reject the level aggressively (displacement candle)? Does it consolidate at the level (building orders before a move)? Does it sweep the level and reverse? Each behaviour tells a different story.
+6. **Narrate the chart.** Describe what you see in plain language: "Price swept the Asian high, displaced bearish, broke the previous swing low (CHoCH), and left a FVG. Bias is now bearish, looking for a retrace to the FVG for a short entry." This narrative approach forces clarity.
+
+## Real-World Example
+
+You open a 15-minute EUR/USD chart with no indicators. Here's what you see:
+
+- The 4H chart shows a clear uptrend with three consecutive BOS events. Bias: bullish.
+- On the 15M, price made a swing high at 1.0920 and pulled back to a swing low at 1.0890 — a higher low relative to the previous swing low at 1.0870.
+- The PDH is at 1.0915, and price has already broken above it with a strong candle body close at 1.0925.
+- There's a fair value gap between 1.0905 and 1.0910, left by the displacement candle that broke above the PDH.
+
+Your narrative: "4H uptrend intact. 15M shows a higher low at 1.0890, BOS above 1.0920. PDH at 1.0915 has been broken. FVG between 1.0905–1.0910 is the re-entry zone. If price retraces to the FVG, I'll look for a bullish reaction to enter long with a stop below 1.0890."
+
+No RSI. No MACD. No moving averages. Just structure, levels, and context.
+
+<Callout type="trap" title="Common Trap: Removing Indicators Before Building Skills">
+  <p>Stripping your chart bare without first mastering swing point identification, BOS/CHoCH reading, and key level marking will leave you staring at candles with no understanding. Price action reading is a **skill** that requires deliberate practice. Start by removing one indicator at a time. First, remove oscillators (RSI, Stochastic). Then moving averages. Keep volume if your platform has it — volume is not an indicator in the traditional sense, it's raw market data. Build your structural reading ability gradually before going fully "naked chart."</p>
+</Callout>
+
+## The Price Action Reading Framework
+
+Every time you sit down to analyse a chart, follow this checklist:
+
+- **Step 1 — Trend:** What is the higher-timeframe bias? (Up / Down / Ranging)
+- **Step 2 — Structure:** Where are the most recent swing points? Has there been a BOS or CHoCH?
+- **Step 3 — Key levels:** Where are PDH/PDL, session levels, and round numbers relative to current price?
+- **Step 4 — Narrative:** What is price doing right now? Building, breaking, sweeping, or displacing?
+- **Step 5 — Plan:** Based on the narrative, what is your trade plan? Entry zone, stop level, and target.
+
+This five-step process gives you everything that a screen full of indicators attempts to provide — but without the lag, the noise, or the false confidence.
+
+<KeyTakeaways>
+  - Indicators are **lagging derivatives** of price — they cannot show you what price isn't already showing.
+  - Start with the **higher timeframe** to establish bias, then drill down for entry triggers.
+  - Mark **swing points, key levels, and structural breaks** — these three elements replace every common indicator.
+  - Use the **narrative approach**: describe what price is doing in plain language to force analytical clarity.
+  - Remove indicators **gradually** as your structural reading skills improve — going cold turkey without the skills leads to confusion.
+</KeyTakeaways>

@@ -1,0 +1,71 @@
+export const frontmatter = {
+  title: 'CHoCH (Change of Character)',
+  description: 'Learn how a Change of Character signals a potential shift in market direction — and why not every CHoCH leads to a genuine reversal.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+
+# CHoCH (Change of Character)
+
+<ConceptCard title="What Is a Change of Character?" icon="🔄">
+  A **Change of Character (CHoCH)** occurs when price breaks a swing point _against_ the prevailing trend for the first time. In an uptrend, CHoCH happens when price breaks below the most recent swing low. In a downtrend, CHoCH happens when price breaks above the most recent swing high. It's the market's first signal that the dominant side — buyers or sellers — may be losing control.
+</ConceptCard>
+
+## Visualising CHoCH
+
+<AnnotatedChart
+  title="Change of Character — Potential Trend Reversal"
+  showCHoCH={true}
+  showSwingHL={true}
+/>
+
+The dashed line marks the level where the trend character shifts. The swing high and swing low labels show the structure that was intact before the CHoCH. When price crosses the CHoCH line, it breaks the pattern of higher lows (uptrend) or lower highs (downtrend) for the first time.
+
+## How CHoCH Differs from BOS
+
+The distinction is simple but critical:
+
+- **BOS** breaks structure _with_ the trend → continuation signal.
+- **CHoCH** breaks structure _against_ the trend → potential reversal signal.
+
+In an uptrend producing higher highs and higher lows, price breaking above a swing high is BOS (continuation). Price breaking below a swing low is CHoCH (the first lower low — character has changed).
+
+In a downtrend producing lower lows and lower highs, price breaking below a swing low is BOS (continuation). Price breaking above a swing high is CHoCH (the first higher high — character has changed).
+
+## Step-by-Step: Reading and Reacting to CHoCH
+
+1. **Identify the trend and its swing points.** You must know the trend direction and have correctly marked swing highs and swing lows. CHoCH can only be identified relative to existing structure.
+2. **Watch for a break of the most recent swing point against the trend.** In an uptrend, monitor the most recent swing low. In a downtrend, monitor the most recent swing high. A candle body close beyond this level against the trend marks the CHoCH.
+3. **Assess the quality of the break.** Not all CHoCH events are equal. A CHoCH with displacement (a large-bodied candle with minimal wicks) is far more significant than a CHoCH with a slow, grinding break. Displacement signals genuine institutional participation, not just retail stop-hunting.
+4. **Look for supporting evidence.** Does the CHoCH occur after a liquidity sweep of the trend's last swing point? Did price tap a higher-timeframe order block or key level before reversing? Is there a fair value gap left behind by the CHoCH candle? Supporting factors increase the probability that the CHoCH leads to a genuine reversal.
+5. **Wait for structure in the new direction.** A single CHoCH is a warning — not a trade signal. After CHoCH, wait for price to form a new swing point in the reversal direction, then look for a BOS in that new direction. The first BOS after CHoCH confirms the new trend.
+
+## Real-World Example
+
+GBP/USD has been trending down on the 1-hour chart. Price made a lower low at 1.2650, then rallied to a lower high at 1.2700, then dropped again — but this time, it only reached 1.2660 (a higher low compared to the previous 1.2650). Price then rallies through 1.2700, breaking the most recent lower high with a strong bullish candle that closes at 1.2715.
+
+That break of 1.2700 is the CHoCH. The downtrend was defined by lower highs and lower lows. Price just made a higher high — character has changed. But the smart play is not to immediately go long. Instead, you wait for price to pull back and form a higher low (say, at 1.2685), then break above 1.2715 — that's the first BOS in the new uptrend. Now you have confirmation.
+
+<Callout type="trap" title="Common Trap: Treating Every CHoCH as a Reversal">
+  <p>This is one of the most expensive mistakes in price action trading. Not every CHoCH leads to a genuine trend reversal. Many CHoCH events are simply **liquidity grabs** — price breaks the swing point to sweep stops, then resumes the original trend. A CHoCH on a lower timeframe (1M, 5M) within a strong higher-timeframe trend is more likely to be a temporary pullback than a real reversal. Always check the **higher-timeframe context**. If the 4H and daily charts show a strong trend, a CHoCH on the 15M is probably just noise. Wait for the first BOS in the new direction and confirmation from the higher timeframe before committing capital.</p>
+</Callout>
+
+## CHoCH Quality Checklist
+
+Before acting on a CHoCH, evaluate these factors:
+
+- **Displacement present?** A strong, impulsive candle breaking the swing point signals genuine conviction. Slow, overlapping candles suggest weakness.
+- **Preceded by a sweep?** If price swept liquidity (wicked beyond the trend's last swing point) before the CHoCH, the reversal is more credible. The sweep provided the fuel for the move.
+- **Higher-timeframe alignment?** The CHoCH is most powerful when it aligns with a higher-timeframe key level, order block, or the overall higher-timeframe trend direction.
+- **Volume confirmation?** If your platform shows volume data, a CHoCH accompanied by a volume spike is more reliable than one on declining volume.
+
+<KeyTakeaways>
+  - **CHoCH** = the first break of structure _against_ the prevailing trend — a warning signal, not a trade signal.
+  - Not every CHoCH is a reversal — many are **liquidity sweeps** that trap counter-trend traders.
+  - Evaluate CHoCH quality: look for **displacement, preceding sweeps, and higher-timeframe alignment**.
+  - After CHoCH, wait for the **first BOS in the new direction** before entering — this confirms the reversal.
+  - Always check the **higher-timeframe trend** — a CHoCH on a lower timeframe against a strong HTF trend is usually noise.
+</KeyTakeaways>

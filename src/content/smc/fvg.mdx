@@ -1,0 +1,63 @@
+export const frontmatter = {
+  title: 'Fair Value Gap (FVG)',
+  description: 'Identifying imbalance in price delivery and why gaps tend to fill.'
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+
+# Fair Value Gap (FVG)
+
+<ConceptCard title="Fair Value Gap (FVG)" icon="📊">
+  A **Fair Value Gap** is a three-candle price pattern that reveals an **imbalance** in order flow. It forms when the middle candle's body is so large that a gap is left between the high of candle 1 and the low of candle 3 (in a bullish FVG) or between the low of candle 1 and the high of candle 3 (in a bearish FVG). This gap represents a price range where only one side of the market was active — creating inefficient price delivery that the market often returns to fill.
+
+  - **Bullish FVG:** Candle 1 high &lt; Candle 3 low. The gap between them is the FVG zone — price may retrace into this zone as a potential buy opportunity.
+  - **Bearish FVG:** Candle 1 low &gt; Candle 3 high. The gap between them is the FVG zone — price may retrace into this zone as a potential sell opportunity.
+</ConceptCard>
+
+## Identifying an FVG
+
+<AnnotatedChart title="Fair Value Gap Formation" showFVG={true} />
+
+In the annotated chart above, the highlighted zone between candle 1's high and candle 3's low shows the Fair Value Gap. The middle candle (candle 2) drove price aggressively in one direction, leaving behind a range where buy and sell orders did not interact — an **inefficiency** in price delivery.
+
+### Step-by-Step Identification
+
+1. **Locate a large-bodied candle** (candle 2) that moves sharply in one direction.
+2. **Check candles 1 and 3:** For a bullish FVG, the high of candle 1 must be *lower* than the low of candle 3. For a bearish FVG, the low of candle 1 must be *higher* than the high of candle 3.
+3. **Mark the gap:** The FVG zone spans from the high of candle 1 to the low of candle 3 (bullish) or from the low of candle 1 to the high of candle 3 (bearish).
+4. **Monitor for a retracement:** Price frequently returns to partially or fully fill this gap before continuing in the original direction.
+
+## Why FVGs Form
+
+FVGs are the footprint of **aggressive, one-sided order flow**. When a large participant executes a significant order — or when a catalyst like an economic release triggers a cascade of orders — price moves so quickly that there is no meaningful two-way auction in the gap zone. The market effectively "skips" through that price range.
+
+Because markets tend toward **efficiency** (balanced two-way trading at every price), there is a natural tendency for price to return to these gaps and establish proper price discovery. This retracement into the FVG often serves as a high-probability entry zone.
+
+<Callout type="note">Content expanding soon.</Callout>
+
+## Filled vs. Unfilled FVGs
+
+- **Filled (mitigated) FVG:** Price has returned to the gap zone and traded through it. The imbalance is resolved and the zone typically loses its significance.
+- **Partially filled FVG:** Price has retraced into the gap but has not fully traded through it. The remaining portion may still act as support or resistance.
+- **Unfilled (unmitigated) FVG:** Price has not yet returned to the gap zone. These remain as open targets — potential magnets for future price action.
+
+Higher-timeframe FVGs (4H, Daily, Weekly) carry more weight than lower-timeframe ones, as they represent larger imbalances that require more volume to fill.
+
+<Callout type="note">Content expanding soon.</Callout>
+
+<Callout type="trap" title="Common Mistake: Treating Every FVG as a Trade Setup">
+  Not all FVGs are equal. A small FVG on a 1-minute chart inside a ranging session has little institutional significance. Focus on FVGs that form with **displacement** — a strong, impulsive move backed by volume — and align with the higher-timeframe directional bias. An FVG that contradicts the prevailing trend is more likely to be run through than respected.
+</Callout>
+
+<KeyTakeaways>
+  - An FVG is the gap between candle 1's high and candle 3's low (bullish) or candle 1's low and candle 3's high (bearish).
+  - FVGs represent **inefficient price delivery** caused by aggressive one-sided order flow.
+  - Markets tend to retrace into FVGs to re-establish balanced price discovery.
+  - Higher-timeframe FVGs carry more significance and attract larger retracements.
+  - Always confirm FVGs with directional bias — trade *with* the trend, not against it.
+</KeyTakeaways>

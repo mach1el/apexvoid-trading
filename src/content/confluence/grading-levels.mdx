@@ -1,0 +1,45 @@
+export const frontmatter = {
+  title: 'Grading & Classifying Level Quality',
+  description: 'How to score levels to filter out noise.'
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+
+# Grading & Classifying Level Quality
+
+<ConceptCard title="Grading Levels" icon="📊">
+The systematic evaluation of a trade setup based on a predefined set of criteria to determine its probability of success.
+</ConceptCard>
+
+## The Grading System
+
+Not every Order Block or FVG is worth trading. By applying a scoring system, you can objectify your trading and avoid taking low-probability setups.
+
+<ConfluenceMeter grade="A" score={5} maxScore={5}>
+  <ul>
+    <li>Aligned with HTF Trend</li>
+    <li>Swept liquidity prior to forming</li>
+    <li>Clear displacement (strong momentum)</li>
+    <li>Unmitigated (fresh level)</li>
+    <li>Aligns with a major session timing (London/NY Open)</li>
+  </ul>
+</ConfluenceMeter>
+
+<ConfluenceMeter grade="C" score={2} maxScore={5}>
+  <ul>
+    <li>Counter-trend</li>
+    <li>No clear liquidity sweep</li>
+    <li>Weak displacement</li>
+  </ul>
+</ConfluenceMeter>
+
+<Callout type="note">Content expanding soon.</Callout>
+
+<KeyTakeaways>
+- Develop a strict criteria for what constitutes a valid trade setup.
+- Only trade "A" setups to preserve capital and mental energy.
+- If a setup doesn't meet the criteria, sit on your hands.
+</KeyTakeaways>

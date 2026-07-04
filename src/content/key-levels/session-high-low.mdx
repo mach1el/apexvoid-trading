@@ -1,0 +1,67 @@
+export const frontmatter = {
+  title: 'Session Highs & Lows',
+  description: 'Learn how the Asian, London, and New York session ranges define intraday key levels — and why the next session often targets the previous session\'s extremes.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+
+# Session Highs & Lows
+
+<ConceptCard title="Session Ranges as Key Levels" icon="🕐">
+  The forex and futures markets operate across three major trading sessions: **Asian** (Tokyo), **London**, and **New York**. Each session prints its own high and low. These session extremes become critical intraday levels because the next session frequently targets the prior session's liquidity sitting above its high or below its low.
+</ConceptCard>
+
+## Visualising the Asian Session High
+
+<AnnotatedChart
+  title="Asian Session High as Intraday Key Level"
+  keyLevelLabel="Asian Session High"
+  keyLevelY={60}
+/>
+
+The marked level represents the highest price printed during the Asian session. When London opens, price often sweeps this level before establishing the true directional move of the day.
+
+## The Three Sessions Explained
+
+Understanding each session's character is essential:
+
+- **Asian Session (approx. 00:00–08:00 GMT).** Typically the quietest session with the tightest range. It establishes a consolidation zone that London will either continue or reverse. The Asian range high and low become the first liquidity targets of the day.
+- **London Session (approx. 08:00–16:00 GMT).** The most volatile session, responsible for the largest percentage of daily volume in forex. London often sets the high or low of the entire day. It frequently sweeps the Asian session range before committing to a direction.
+- **New York Session (approx. 13:00–21:00 GMT).** Overlaps with London for several hours (the "London-New York overlap"), creating peak volatility. New York either continues London's move or reverses it, often targeting London's session high or low.
+
+## Step-by-Step: Using Session Levels
+
+1. **Mark the Asian range.** Once the Asian session closes (around London open), draw horizontal lines at the session high and session low. This creates a box that frames the pre-London consolidation.
+2. **Wait for the London open.** Observe whether London sweeps the Asian high, the Asian low, or both. A sweep of one extreme followed by a displacement candle in the opposite direction is a powerful intraday signal.
+3. **Note the London high and low.** As the London session progresses, continuously track its developing high and low. Once London closes, these levels become targets for the New York session.
+4. **Apply the "Judas Swing" concept.** The opening of a new session often begins with a deceptive move — a fake breakout in one direction designed to sweep liquidity before reversing. The Asian session high and low are the most common targets for this manoeuvre at the London open.
+5. **Track which sessions have been swept.** If London already swept the Asian low and reversed, the Asian high may not be relevant anymore. Focus shifts to the London session extremes as the new reference levels.
+
+## Real-World Example
+
+On USD/JPY, the Asian session prints a range from 149.50 (low) to 149.80 (high) — a tight 30-pip range. At the London open, price drops sharply to 149.45, sweeping the Asian low by 5 pips. Within 15 minutes, a large bullish engulfing candle forms, and price rallies through the Asian range, breaking the Asian high at 149.80 and continuing to 150.30 over the next four hours.
+
+The Asian low sweep at 149.45 served as the "Judas Swing" — the fake move designed to grab sell-side liquidity (stop-losses from Asian session longs) before the real bullish move began. Traders who recognised the sweep and waited for the displacement candle had a clear entry near 149.55 with a stop below 149.40.
+
+<Callout type="trap" title="Common Trap: Trading Inside the Asian Range">
+  <p>The Asian session is a consolidation period. Trading breakouts within the Asian range itself is low-probability because the range is being _built_, not _targeted_. Wait for the London open before committing to a direction. The Asian range exists to provide context and liquidity targets — not to generate trade signals by itself.</p>
+</Callout>
+
+## Session Level Hierarchy
+
+Not all session levels carry equal weight:
+
+- **Asian range** — Primary liquidity target for the London session. Tight ranges produce the cleanest sweeps.
+- **London range** — Often defines the high or low of the day. London session extremes are the most significant intraday levels.
+- **New York range** — Targets London's extremes. The NY session close often establishes the daily close, influencing the next day's PDH/PDL.
+
+<KeyTakeaways>
+  - Mark the **Asian session high and low** before the London open — these are your first intraday liquidity targets.
+  - London frequently **sweeps** the Asian range extremes before committing to the daily trend direction.
+  - The **London-New York overlap** is the highest-volume period — expect the largest moves here.
+  - Watch for the **"Judas Swing"** — a deceptive move at session open that sweeps one extreme before reversing.
+  - Session levels are **intraday tools** — combine them with higher-timeframe structure (PDH/PDL, swing points) for best results.
+</KeyTakeaways>

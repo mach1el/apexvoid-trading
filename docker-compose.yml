@@ -1,0 +1,17 @@
+services:
+  apexvoid-trading-frontend:
+    container_name: apexvoid-trading-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    expose:
+      - "80"
+    environment:
+      - TRADING_HOST=${TRADING_HOST:-trading.apexvoid.net}
+    networks:
+      - routing
+
+networks:
+  routing:
+    external: true

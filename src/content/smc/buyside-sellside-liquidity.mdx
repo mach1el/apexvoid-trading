@@ -1,0 +1,60 @@
+export const frontmatter = {
+  title: 'Buy-side & Sell-side Liquidity',
+  description: 'Understanding where stop-losses pool above and below key levels.'
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+
+# Buy-side & Sell-side Liquidity
+
+<ConceptCard title="Buy-side & Sell-side Liquidity" icon="💧">
+  Liquidity, in the SMC framework, refers to **clusters of resting orders** — primarily stop-losses — that sit above swing highs (buy-side) and below swing lows (sell-side). These pools act as magnets for institutional order flow because large players need the opposite side of the trade to fill their positions.
+
+  - **Buy-side liquidity (BSL):** Stop-losses from short sellers placed above swing highs, plus breakout buy-stop orders from traders anticipating a continuation higher. When price trades above a swing high into BSL, those stops trigger as market buy orders, providing sell-side fills for institutions looking to distribute.
+  - **Sell-side liquidity (SSL):** Stop-losses from long traders placed below swing lows, plus breakout sell-stop orders. A sweep below a swing low into SSL triggers these stops as market sell orders, giving institutions the buy-side fills they need to accumulate.
+</ConceptCard>
+
+## Visualising Liquidity Pools
+
+<AnnotatedChart title="Swing Highs & Lows with Liquidity Sweeps" showSwingHL={true} showSweep={true} />
+
+In the chart above, each labelled swing high represents a zone of **buy-side liquidity** resting above it, while each swing low represents **sell-side liquidity** below. The sweep annotations show price momentarily piercing these levels before reversing — the hallmark of a liquidity grab.
+
+## Why Liquidity Matters
+
+Markets are not driven by retail breakout entries. Institutional participants require **counterparty liquidity** to execute large orders without excessive slippage. A bank looking to sell 500 lots of EUR/USD cannot simply hit the bid — it needs willing buyers. The densest clusters of willing buyers sit just above obvious swing highs in the form of buy-stops.
+
+This creates a repeating cycle:
+1. Price builds structure (swing highs and lows form).
+2. Retail traders place stops beyond those swings.
+3. Smart money drives price into those stops to fill their own orders.
+4. Price reverses once the liquidity is absorbed.
+
+<Callout type="note">Content expanding soon.</Callout>
+
+## Identifying High-Probability Liquidity Pools
+
+Not all swing highs and lows hold equal liquidity. The most attractive targets are:
+
+- **Equal highs / equal lows:** When price forms two or more highs (or lows) at nearly the same price, the cluster of stops is denser.
+- **Obvious higher-timeframe levels:** Weekly or daily swing points accumulate stops from multiple participant classes.
+- **Extended consolidation ranges:** The longer price respects a level, the more stops build beyond it.
+
+<Callout type="note">Content expanding soon.</Callout>
+
+<Callout type="trap" title="Common Mistake: Trading the Breakout">
+  Many traders buy the break above a swing high expecting continuation. In reality, the move above the high often **is** the liquidity grab — not the start of a trend. Wait for a sweep *and* a structural shift (CHoCH or BOS) before committing to a direction. A wick above a high that closes back below is far more informative than the break itself.
+</Callout>
+
+<KeyTakeaways>
+  - **Buy-side liquidity** sits above swing highs; **sell-side liquidity** sits below swing lows.
+  - Institutions target these pools to fill large orders against the resting stops of retail traders.
+  - Equal highs/lows and higher-timeframe swing points hold the densest liquidity.
+  - A sweep of liquidity followed by a structural shift is a higher-probability signal than a breakout alone.
+  - Always ask: *"Where are the stops?"* before determining directional bias.
+</KeyTakeaways>

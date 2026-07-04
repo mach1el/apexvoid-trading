@@ -1,0 +1,60 @@
+export const frontmatter = {
+  title: 'Swing High / Swing Low',
+  description: 'Learn how to identify swing highs and swing lows using the 3-candle rule — the foundational building block for reading market structure.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+
+# Swing High / Swing Low
+
+<ConceptCard title="What Is a Swing Point?" icon="📐">
+  A **swing high** is a candle whose high is higher than the high of the candle immediately before it _and_ the candle immediately after it. A **swing low** is a candle whose low is lower than the low of the candle immediately before it _and_ the candle immediately after it. These points form the skeleton of market structure.
+</ConceptCard>
+
+## Visualising Swing Points
+
+<AnnotatedChart
+  title="Swing High & Swing Low — 3-Candle Formation"
+  showSwingHL={true}
+/>
+
+The chart above marks a clear swing low (the lowest wick surrounded by two higher lows) and a swing high (the highest wick surrounded by two lower highs). Every trend is just a series of these points connected together.
+
+## The 3-Candle Rule — Step by Step
+
+Identifying swing points is mechanical, not subjective. Follow this process on any timeframe:
+
+1. **Select your timeframe.** Swing points on the 1H chart are different from those on the 15M chart. Always know which timeframe you are reading.
+2. **Look left one candle.** For a swing high candidate, verify the previous candle has a _lower_ high. For a swing low candidate, verify it has a _higher_ low.
+3. **Look right one candle.** Confirm the next candle also has a lower high (swing high) or a higher low (swing low).
+4. **Mark the level.** Draw a horizontal ray from the swing point. This level now represents a structural reference — price must break it to shift structure.
+5. **Label it.** Use consistent notation: "SH" for swing high, "SL" for swing low. This keeps your chart clean and analysis repeatable.
+
+## Real-World Example
+
+Consider a 1-hour EUR/USD chart during the London session. Price rallies from 1.0850 to 1.0920, printing three consecutive bullish candles. The third candle's high is 1.0920, but the fourth candle opens slightly lower and closes at 1.0905 — its high only reaches 1.0915. That third candle is now a confirmed swing high at 1.0920 once the candle to its right closes below its high.
+
+Price then retraces to 1.0870 over the next few candles. The candle that prints the 1.0870 low is surrounded by candles with higher lows on both sides — that's your swing low. You now have a defined range: SH at 1.0920, SL at 1.0870. The next break of either level tells you whether the trend continues or reverses.
+
+<Callout type="trap" title="Common Trap: Marking Every Wick">
+  <p>New traders often mark every minor wick as a swing point, cluttering the chart with dozens of levels. Not every candle that pokes slightly above or below its neighbours is a meaningful swing point. Focus on **prominent** swing points — those that are visually obvious and represent genuine pauses or reversals in price direction. If you have to squint to see it, it probably isn't worth marking.</p>
+</Callout>
+
+## Why Swing Points Matter
+
+Swing highs and lows are not just chart decoration. They serve three critical functions:
+
+- **Defining trend direction.** An uptrend is a series of higher highs (HH) and higher lows (HL). A downtrend is a series of lower highs (LH) and lower lows (LL). Without swing points, you cannot define this.
+- **Providing structural levels.** When price breaks a swing high, that's a Break of Structure (BOS) — trend continuation. When price breaks a swing low during an uptrend, that's a Change of Character (CHoCH) — potential reversal.
+- **Anchoring other concepts.** Order blocks, fair value gaps, and liquidity sweeps all reference swing points. They are the foundation that everything else builds on.
+
+<KeyTakeaways>
+  - A **swing high** has a lower high on both sides; a **swing low** has a higher low on both sides — this is the 3-candle rule.
+  - Always confirm the candle to the right has **closed** before marking a swing point.
+  - Focus on **prominent** swings — not every minor wick qualifies.
+  - Swing points define trend direction: HH + HL = uptrend, LH + LL = downtrend.
+  - Every advanced concept (BOS, CHoCH, OB, sweeps) depends on correctly identified swing points.
+</KeyTakeaways>

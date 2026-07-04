@@ -1,0 +1,91 @@
+export const frontmatter = {
+  title: 'What an Order Block Is & Why It Forms',
+  description: 'How institutional order flow creates high-probability zones on your chart.'
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+
+<ConceptCard title="Order Block" icon="🧱">
+An **order block (OB)** is the last opposing candle before a strong directional move driven by institutional order flow. It marks the price zone where smart money accumulated or distributed positions before displacing price aggressively. When price returns to this zone, unfilled orders may still rest there — creating a high-probability reaction point.
+</ConceptCard>
+
+## Why Order Blocks Form
+
+Large institutions — banks, hedge funds, central bank desks — cannot execute their full position in a single market order without causing excessive slippage. Instead, they break orders into smaller chunks and fill them across a price range during periods of consolidation or counter-trend movement.
+
+This process leaves a footprint on the chart:
+
+1. **Accumulation phase** — Price consolidates or makes a minor counter-trend move. Institutions absorb liquidity from retail traders on the opposite side.
+2. **Displacement** — Once enough orders are filled, the remaining size pushes price aggressively away from the zone. This creates large-bodied candles with minimal wicks, confirming genuine institutional intent.
+3. **Imbalance left behind** — The aggressive move leaves unfilled orders in the origin zone. When price revisits, those resting orders can trigger a reaction.
+
+The order block itself is the **last bearish candle before a bullish displacement** (bullish OB) or the **last bullish candle before a bearish displacement** (bearish OB). It represents the final moment where counter-trend participants were active before institutions overwhelmed them.
+
+<AnnotatedChart title="Bullish Order Block — Displacement From a Base" showOB={true} />
+
+## The Mechanical Logic
+
+Think of it in terms of market microstructure. When a large buyer needs to accumulate 500 lots in a thin market, they use limit orders resting at specific price levels. Sellers fill into those limits, creating bearish candles. Once the buyer has absorbed enough sell-side liquidity, the remaining buy orders push price upward with conviction.
+
+The bearish candle where this absorption peaked is the order block. It is not a random support level — it is a **record of where institutional orders were provably filled**, evidenced by the displacement that followed.
+
+### What qualifies as displacement?
+
+Displacement is the aggressive price move away from the OB. Look for:
+
+- **Multiple consecutive candles** in one direction with large bodies
+- **Minimal or no wicks** against the direction of the move
+- A **break of structure (BOS)** or shift in market character following the move
+- The move should look and feel **impulsive**, not grinding or overlapping
+
+Without displacement, there is no order block — only a random candle in a range.
+
+<Callout type="trap" title="Not Every Last Candle Is an OB">
+A common mistake is labeling every consolidation candle as an order block. If the move that follows is weak, overlapping, or fails to break structure, the candle has no institutional significance. Displacement is the proof — without it, you are drawing arbitrary zones.
+</Callout>
+
+## Bullish vs. Bearish Order Blocks
+
+| Type | Definition | What to Look For |
+|------|-----------|-----------------|
+| **Bullish OB** | Last bearish candle before a strong bullish displacement | Down-close candle at the base of an impulsive rally. Price breaks above recent structure. |
+| **Bearish OB** | Last bullish candle before a strong bearish displacement | Up-close candle at the top of an impulsive sell-off. Price breaks below recent structure. |
+
+The zone is typically drawn from the **open to the low** of a bullish OB candle, or from the **open to the high** of a bearish OB candle. Some traders use the full candle body; others include the wick. Consistency in your method matters more than which variation you choose.
+
+<CompareTable title="Order Block vs. Supply & Demand">
+
+| Dimension | Order Block (ICT/SMC) | Supply & Demand (S&D) |
+|-----------|----------------------|----------------------|
+| **Origin** | Rooted in institutional order flow theory — the last opposing candle before displacement | Rooted in classical economics — areas where buying or selling pressure historically dominated |
+| **Precision** | Typically a single candle or tight cluster; zone is narrow and well-defined | Often a broader zone spanning multiple candles of consolidation |
+| **Validation** | Requires displacement (impulsive move) and ideally a break of structure to confirm | Validated by the number of historical touches or the strength of the prior move |
+| **Context** | Must align with higher-timeframe bias, liquidity targets, and market structure | Often used in isolation as standalone zones regardless of trend context |
+| **Usage** | Treated as a one-time or limited-use zone; mitigated after price fills through it | Often treated as a persistent level that can be tested repeatedly |
+
+</CompareTable>
+
+## Where OBs Fit in Market Structure
+
+Order blocks are not standalone signals. Their value depends on **where** they form within the broader market structure:
+
+- **Premium vs. discount** — A bullish OB in a discount zone (below the 50% equilibrium of the current range) carries more weight than one in premium.
+- **Aligned with higher-timeframe direction** — An OB that aligns with the HTF trend is more likely to hold than one forming against it.
+- **Near liquidity pools** — OBs that form after a sweep of liquidity (equal lows, trend-line liquidity, session highs/lows) tend to be higher probability because institutions often engineer liquidity grabs before positioning.
+
+<Callout type="note" title="OBs Are Context-Dependent">
+An order block is a tool, not a strategy. Marking every OB on your chart without considering structure, trend, and liquidity will produce the same results as random zone trading. The edge comes from **filtering** — knowing which OBs matter and which do not.
+</Callout>
+
+<KeyTakeaways>
+- An order block is the last opposing candle before an impulsive, displacing move — it marks the origin of institutional order flow.
+- Displacement is the non-negotiable proof that an OB is valid. No displacement means no order block.
+- Bullish OBs are bearish candles at the base of a rally; bearish OBs are bullish candles at the top of a sell-off.
+- OBs differ from classical supply and demand zones in precision, validation method, and contextual requirements.
+- Always evaluate OBs within the broader framework of market structure, premium/discount, and liquidity — never in isolation.
+</KeyTakeaways>

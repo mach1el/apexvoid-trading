@@ -1,0 +1,116 @@
+export const frontmatter = {
+  title: 'Mitigation & OB Retest',
+  description: 'Understanding when an order block is consumed, retested, or still valid.'
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+
+<ConceptCard title="OB Mitigation" icon="♻️">
+**Mitigation** is the process by which price returns to an order block and fills the resting orders that created it. Once an OB is fully mitigated, the institutional orders have been consumed — the zone loses its significance and should no longer be treated as a valid point of interest.
+</ConceptCard>
+
+<AnnotatedChart title="OB Mitigation — First Touch Reaction vs. Full Fill" showOB={true} showSwingHL={true} />
+
+## What Mitigation Actually Means
+
+When institutions place large orders at a specific price level, those orders remain in the book until they are filled. The order block marks where these orders originated. When price returns to the zone, it begins to fill those resting orders — this is mitigation.
+
+Think of an OB as a fuel tank. Each time price touches the zone, it burns some fuel. Eventually, the tank runs dry and the zone can no longer produce a reaction.
+
+The practical implication: **not all returns to an OB are equal.** The first touch is the highest-probability reaction. Each subsequent touch diminishes the zone's potency.
+
+## First Touch vs. Second Touch
+
+### First Touch (Highest Probability)
+
+The initial return to an unmitigated order block is the strongest setup. At this point:
+
+- The full cluster of resting institutional orders is still intact
+- No prior reaction has occurred to signal the zone to other market participants
+- The element of surprise is highest — retail traders have not yet identified the level
+
+First-touch trades off clean, unmitigated OBs form the backbone of most institutional-flow strategies.
+
+### Second Touch
+
+If price reacts from an OB on the first touch but fails to continue strongly, a second approach may occur. On this return:
+
+- A portion of the resting orders has already been filled
+- The zone is partially consumed, reducing its remaining potency
+- Other traders have now observed the reaction, potentially crowding the level
+
+Second-touch trades can still work, but they require **additional confluence** — alignment with an HTF level, a liquidity sweep into the zone, or a lower-timeframe confirmation entry.
+
+### Third Touch and Beyond
+
+By the third approach, the OB is likely depleted. Treat it as a **low-probability zone**. Most experienced traders remove OBs from their chart after two touches unless exceptional confluence exists.
+
+## How to Determine if an OB Is Still Valid
+
+Use this checklist to evaluate whether an OB remains tradeable:
+
+### ✅ The OB is likely still valid if:
+
+- **Price has not yet returned to the zone** — It is completely unmitigated. This is the ideal scenario.
+- **Price wicked into the zone but did not close through it** — A wick into the OB suggests a partial fill. The zone may still hold, especially if the reaction was strong.
+- **The reaction from the first touch was impulsive** — A strong displacement away from the zone on first touch confirms that significant orders were filled, but if the move was powerful, some orders may remain.
+
+### ❌ The OB is likely mitigated (invalid) if:
+
+- **Price closed through the entire zone** — A full candle body closing beyond the OB means the resting orders have been absorbed. The zone is consumed.
+- **Price consolidated within the zone** — Multiple candles trading inside the OB zone indicate that the orders were gradually filled through time. The zone is exhausted.
+- **The reaction from the zone was weak or nonexistent** — If price touched the OB and continued without any meaningful reaction, the orders may have already been pulled or the zone was never significant.
+
+## Partial Mitigation
+
+Partial mitigation occurs when price enters the OB zone but does not trade through the entire range. This is common and creates a decision point:
+
+**Scenario**: A bullish OB spans from 1.0850 to 1.0830. Price drops to 1.0845 (entering the zone but not reaching the low) and then rallies.
+
+In this case:
+
+- The upper portion of the OB has been mitigated — orders resting there were filled
+- The lower portion (1.0845 to 1.0830) may still contain unfilled orders
+- If price returns again, you can **refine the zone** to only the unmitigated portion
+
+This refinement technique is sometimes called the **"OB within the OB"** — narrowing your zone to the area price has not yet reached. It improves precision and tightens risk.
+
+<Callout type="trap" title="Treating Mitigated OBs as Fresh Zones">
+One of the most common mistakes is continuing to trade an OB that has already been fully mitigated. Once price has closed through the entire zone, the orders are gone. Marking the same zone repeatedly and hoping for a reaction is not a strategy — it is wishful thinking. Always track which OBs have been touched and remove consumed zones from your chart.
+</Callout>
+
+## Mitigation and Market Structure
+
+Mitigation does not happen in a vacuum. The **structural context** around the mitigation matters:
+
+- **Mitigation during a pullback in trend** — Price retraces to fill the OB as part of a healthy pullback before continuing. This is the highest-quality setup.
+- **Mitigation during a reversal** — Price returns to a previous OB because the trend is changing direction. The OB may react temporarily, but the broader reversal pressure can overwhelm it.
+- **Mitigation during a range** — Price oscillates and repeatedly tests OBs on both sides. In ranging conditions, OBs are consumed faster and produce choppier reactions.
+
+Understanding whether the broader market is trending, reversing, or ranging helps you set realistic expectations for how an OB retest will play out.
+
+## Managing Trades Around Mitigation
+
+When entering on an OB retest, your trade management should account for mitigation dynamics:
+
+- **Stop-loss placement** — Place your stop beyond the far edge of the OB zone (below the low for bullish, above the high for bearish). If price fully mitigates the zone, your thesis is invalidated.
+- **Partial profits** — Consider taking partial profits at the first structural target (previous swing high/low) since not all OB reactions produce full continuations.
+- **Trail with structure** — If the reaction from the OB creates new structure (a higher low in bullish, a lower high in bearish), trail your stop to that new structure point.
+
+<Callout type="tip" title="Track Your OBs">
+Maintain a clean chart by color-coding your OBs: one color for unmitigated (fresh), another for partially mitigated, and remove fully mitigated zones entirely. This discipline prevents you from cluttering your chart with dead levels and keeps your focus on live opportunities.
+</Callout>
+
+<KeyTakeaways>
+- Mitigation is the process of price filling the resting orders within an OB — once filled, the zone is consumed.
+- First-touch reactions are the highest probability. Each subsequent touch diminishes the zone's potency.
+- An OB is invalid once price has closed through the entire zone or consolidated within it.
+- Partial mitigation allows you to refine the zone to the unfilled portion for improved precision.
+- Always consider the structural context (trending, reversing, ranging) when evaluating an OB retest.
+- Remove fully mitigated OBs from your chart to maintain clarity and avoid trading dead zones.
+</KeyTakeaways>

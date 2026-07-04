@@ -1,0 +1,85 @@
+export const frontmatter = {
+  title: 'Liquidity — The Foundational Intuition',
+  description: 'Before understanding order blocks, fair value gaps, or any smart money concept, you need to understand why price moves to liquidity — and what happens when it gets there.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { StepFlow, Step } from '../../components/StepFlow';
+import { CompareTable } from '../../components/CompareTable';
+
+# Liquidity — The Foundational Intuition
+
+Every move in the market has a purpose. Price does not move randomly — it moves **to** liquidity and **away from** liquidity. Understanding this single concept changes how you read every chart.
+
+<ConceptCard title="Liquidity" icon="💧">
+  Liquidity, in the context of price action trading, refers to **resting orders in the market** — specifically, clusters of stop losses and pending orders sitting at predictable price levels. These orders represent the fuel that large participants (institutions, banks, funds) need to fill their positions. Price gravitates toward these pools of orders because that is where the volume exists to execute large trades.
+</ConceptCard>
+
+## Why Institutions Need Your Stop Loss
+
+A retail trader placing a 50-lot order can get filled instantly at any price. A bank looking to deploy a 5,000-lot position cannot. If they tried to buy 5,000 lots at the current price, their own buying would push the price up before the order was filled — they would end up buying at increasingly worse prices.
+
+Instead, they need a pool of **sellers** at a specific price to absorb their buy orders. Where do they find these sellers? At the exact price where retail traders have placed their **stop losses**.
+
+<CompareTable title="Where Liquidity Rests">
+
+| Location | Why Orders Rest There | What Happens When Swept |
+|---|---|---|
+| **Below swing lows** | Retail longs place stops below obvious support | Price dips below, triggers stops (sell orders), institutions buy into those sells |
+| **Above swing highs** | Retail shorts place stops above obvious resistance | Price spikes above, triggers stops (buy orders), institutions sell into those buys |
+| **Round numbers** | Psychological levels attract clusters of stops and limit orders | Price gravitates to these levels, triggers orders, then reverses |
+| **Equal highs / equal lows** | Double tops and bottoms attract stops just beyond the equal level | Classic "fake breakout" — the level was never support/resistance, it was a liquidity target |
+
+</CompareTable>
+
+## The Liquidity Sweep
+
+A **liquidity sweep** (also called a stop hunt) occurs when price moves past a key level just far enough to trigger the resting orders, then reverses. This is not random — it is the mechanism by which large players fill their positions.
+
+<AnnotatedChart showSweep={true} showSwingHL={true} title="Liquidity Sweep Below Swing Low" />
+
+In the chart above, notice how price dips below the swing low (sweeping the liquidity — the stop losses sitting below it), then immediately reverses with strong bullish momentum. The sweep was not a breakdown — it was the market collecting the fuel it needed to move higher.
+
+## How to Identify Liquidity Pools
+
+<StepFlow>
+  <Step>
+    **Mark obvious swing highs and swing lows.** These are the first places to expect liquidity. The more obvious the level, the more stop losses are resting there — because more traders can see it and more traders have placed trades around it.
+  </Step>
+  <Step>
+    **Look for equal highs and equal lows.** When price forms two or more highs at nearly the same price (a "double top"), retail traders see resistance and place shorts with stops just above. Those stops are the liquidity. Same logic applies to equal lows.
+  </Step>
+  <Step>
+    **Identify trendline liquidity.** When price respects a trendline multiple times, traders place stops just beyond it. When the trendline finally "breaks," it is often just a sweep — price grabs those stops and reverses.
+  </Step>
+  <Step>
+    **Watch the reaction after the sweep.** The sweep itself is not the trade — the **reaction** is. If price sweeps a low and then prints a strong bullish candle that closes back above the swept level, that is the confirmation. If price sweeps and keeps going, it was not a sweep — it was a genuine breakout.
+  </Step>
+</StepFlow>
+
+## Real Example: Stop Hunt Below Support
+
+Consider a scenario on GBP/USD. Price has bounced off 1.2650 three times over the past week, creating a clear support level. Hundreds of retail traders are long with stop losses at 1.2640–1.2645 (just below the visible support).
+
+During the London session, price drops sharply to 1.2638 — 12 pips below the support level. All those stop losses trigger, converting into market sell orders. An institutional buyer absorbs all of that selling, filling a massive long position at a discount.
+
+Within 30 minutes, price is back above 1.2650 and continues to 1.2720. The traders who got stopped out had the right idea (long bias) but placed their stops at the most predictable level possible. The institution used those stops as fuel.
+
+<Callout type="note" title="This Is Not a Conspiracy">
+  Liquidity sweeps are not manipulation in the sinister sense. They are a natural consequence of how large orders get filled in a market with finite volume. Institutions are not targeting you personally — they are solving an execution problem. Understanding this removes the emotional reaction of "I got stopped out on purpose" and replaces it with a framework you can trade around.
+</Callout>
+
+<Callout type="trap">
+  **Placing stops at obvious levels without a buffer.** If your stop loss is at the exact bottom of a visible swing low, you are placing it where every other retail trader placed theirs — which means you are providing liquidity. Either give your stop extra room beyond the obvious level, or wait for the sweep to happen first and enter after the reversal.
+</Callout>
+
+<KeyTakeaways>
+- **Liquidity = resting orders** (stop losses and pending orders) at predictable price levels. Price moves toward liquidity because that is where volume exists to fill large positions.
+- Stop losses below swing lows and above swing highs are the **most common liquidity targets**.
+- A **liquidity sweep** occurs when price moves past a key level to trigger orders, then reverses — this is the mechanism, not manipulation.
+- The sweep is not the trade — the **reaction after the sweep** is what you trade.
+- Avoid placing stops at the most obvious levels. Either add a buffer or wait for the sweep to happen before entering.
+</KeyTakeaways>

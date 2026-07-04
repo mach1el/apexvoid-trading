@@ -1,0 +1,59 @@
+export const frontmatter = {
+  title: 'Round Numbers & Psychological Levels',
+  description: 'Discover why price repeatedly reacts at round numbers like 1.3000 and 1.2500 — the psychology behind these levels and how to use them in your trading.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+
+# Round Numbers & Psychological Levels
+
+<ConceptCard title="What Are Psychological Levels?" icon="🧠">
+  **Psychological levels** are price points ending in round numbers — typically **.000** (major) and **.500** (minor) in forex, or **$10, $50, $100** increments in equities and crypto. They attract disproportionate order flow because humans naturally anchor decisions to clean, memorable numbers.
+</ConceptCard>
+
+## Visualising a Round Number Level
+
+<AnnotatedChart
+  title="Price Reacting at the 1.3000 Psychological Level"
+  keyLevelLabel="1.3000"
+  keyLevelY={100}
+/>
+
+The annotated level at 1.3000 acts as a magnet. Price approaches, reacts, and either bounces or breaks through — but rarely ignores it entirely.
+
+## Why Round Numbers Work
+
+This isn't mystical. It's a self-fulfilling prophecy driven by human behaviour and order placement:
+
+1. **Cognitive anchoring.** When a trader thinks "I'll take profit at 1.3000" or "I'll set my stop at 1.2500," they choose round numbers because they're easy to remember and feel like natural targets. Multiply this across thousands of market participants, and you get massive order clustering.
+2. **Institutional order placement.** Banks and fund managers frequently place large orders at round numbers. Central bank interventions, options strikes, and barrier options are often set at these levels.
+3. **Options market influence.** In forex, large option expiries often sit at major round numbers. When a significant options contract expires at 1.3000, the market maker hedging that position can pin price near the strike — creating gravitational pull toward the round number.
+
+## Step-by-Step: Using Round Numbers in Your Analysis
+
+1. **Identify the nearest major (.000) levels.** On any instrument, find the two major round numbers that bracket the current price. For EUR/USD trading at 1.2870, those levels are 1.2500 and 1.3000.
+2. **Mark intermediate (.500) levels.** Between the two majors, mark the .500 level — in this case, 1.2500 is already a major, so 1.2750 is the next .250 level. Some traders also watch .200 and .800 levels, but .000 and .500 carry the most weight.
+3. **Observe price behaviour at these levels.** Does price stall, consolidate, or reverse? Does it wick through and reject? The reaction type tells you whether the level is acting as support, resistance, or a liquidity target.
+4. **Combine with structure.** A round number that coincides with a swing high, an order block, or a PDH/PDL becomes a high-confluence zone. Round numbers alone are context — they become actionable when combined with other concepts.
+5. **Watch for false breaks.** Price often spikes through a round number to grab liquidity above or below it, then reverses. A sweep of the .000 level followed by a bearish engulfing candle, for example, is a classic setup.
+
+## Real-World Example
+
+Gold (XAU/USD) is trading at $1,995. The $2,000 level is a major psychological barrier. As price approaches, buying pressure increases — traders front-run the breakout. Price hits $2,003, but the move stalls immediately. The candle prints a long upper wick, and the next three candles are bearish, pushing price back to $1,985.
+
+What happened? The $2,000 level had massive sell orders resting above it (both take-profits from existing longs and new limit shorts). Retail traders buying the "breakout" provided the liquidity for these larger orders to fill. The round number acted as a trap for late breakout buyers.
+
+<Callout type="trap" title="Common Trap: Placing Stops Exactly at Round Numbers">
+  <p>If you place your stop-loss at exactly 1.3000, you're placing it where everyone else does. Institutional traders know this. They will sweep that level, trigger your stop, and then continue in the direction you originally expected. Instead, give your stops **breathing room** beyond the round number — at least 10–20 pips in forex, or an equivalent buffer for other instruments. Better yet, base your stop placement on the nearest structural level beyond the round number.</p>
+</Callout>
+
+<KeyTakeaways>
+  - **.000** levels are major psychological levels; **.500** levels are secondary — both attract significant order flow.
+  - Round numbers work because of **cognitive anchoring**, institutional order placement, and options market dynamics.
+  - Never trade round numbers in isolation — combine them with **swing structure, order blocks, or session levels** for confluence.
+  - Price often **sweeps** round numbers to grab liquidity before reversing — treat false breaks as potential trade setups.
+  - Avoid placing stops at exact round numbers; give your position **room to breathe** beyond the level.
+</KeyTakeaways>

@@ -1,0 +1,69 @@
+export const frontmatter = {
+  title: 'BOS (Break of Structure)',
+  description: 'Understand Break of Structure — the definitive signal that the prevailing trend is continuing, and how to distinguish it from a Change of Character.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+
+# BOS (Break of Structure)
+
+<ConceptCard title="What Is a Break of Structure?" icon="📈">
+  A **Break of Structure (BOS)** occurs when price breaks beyond a previous swing point _in the direction of the existing trend_. In an uptrend, BOS happens when price closes above the most recent swing high. In a downtrend, BOS happens when price closes below the most recent swing low. It confirms that the current trend remains intact.
+</ConceptCard>
+
+## Visualising BOS
+
+<AnnotatedChart
+  title="Break of Structure — Trend Continuation"
+  showBOS={true}
+  showSwingHL={true}
+/>
+
+The dashed line marks the previous swing high. When price closes decisively above this level, a bullish BOS is confirmed. The swing low and swing high labels show the structural points that define the trend.
+
+## BOS vs CHoCH
+
+<CompareTable title="Break of Structure vs Change of Character">
+
+| Aspect | BOS | CHoCH |
+|--------|-----|-------|
+| **Direction** | Breaks structure _with_ the trend | Breaks structure _against_ the trend |
+| **In an uptrend** | Price breaks above the previous swing high | Price breaks below the previous swing low |
+| **In a downtrend** | Price breaks below the previous swing low | Price breaks above the previous swing high |
+| **Implication** | Trend continuation — stay with the move | Potential trend reversal — reassess bias |
+| **Frequency** | Occurs multiple times per trend | Occurs once at the point of reversal |
+| **Action** | Look for pullback entries in trend direction | Wait for confirmation before trading the new direction |
+
+</CompareTable>
+
+## Step-by-Step: Identifying and Trading BOS
+
+1. **Establish the current trend.** Determine whether price is making higher highs and higher lows (uptrend) or lower highs and lower lows (downtrend). You need correctly identified swing points for this — refer to the Swing High/Low lesson if unsure.
+2. **Mark the most recent swing high (uptrend) or swing low (downtrend).** This is your structural reference level. A close beyond this level in the trend direction constitutes a BOS.
+3. **Wait for a candle body close beyond the level.** Wicks through the level do not count as BOS. You need a decisive close — the body of the candle must be beyond the swing point, not just the wick. This filters out liquidity sweeps disguised as breakouts.
+4. **Identify the new impulse and pullback.** After BOS confirms, price typically makes an impulsive move in the trend direction, then retraces. The retracement is your entry opportunity.
+5. **Look for entry at the pullback zone.** Common entry points after BOS include the order block that preceded the breakout, the fair value gap left by the impulsive move, or a 50% retracement of the impulse leg. These give you a favourable risk-to-reward ratio.
+
+## Real-World Example
+
+EUR/USD has been in an uptrend on the 15-minute chart. Price made a swing high at 1.0880, pulled back to a swing low at 1.0850 (higher low), and then rallied again. The new candle closes at 1.0888 — its body is above 1.0880. This is a confirmed bullish BOS.
+
+After the BOS, price continues to 1.0905 before retracing to 1.0875 — which happens to be the order block (the last bearish candle before the breakout move). A bullish rejection at this level gives you a long entry with your stop below the swing low at 1.0850 and your target at the next logical resistance.
+
+The BOS told you the uptrend is intact. The pullback to the order block gave you the entry. The swing low provided your invalidation level.
+
+<Callout type="trap" title="Common Trap: Chasing the BOS Candle">
+  <p>Many traders enter immediately when they see a candle break structure, buying right at the breakout. This is the worst possible entry because you're buying after the impulsive move has already happened. Price almost always retraces after a BOS. If you enter at the BOS candle's close, your stop-loss must be wide, and your risk-to-reward suffers. **Wait for the pullback.** Let price retrace to an order block, FVG, or Fibonacci level before entering. Patience after BOS is what separates profitable traders from breakout chasers.</p>
+</Callout>
+
+<KeyTakeaways>
+  - **BOS** = price breaks a swing point _in the direction of the trend_, confirming continuation.
+  - Require a **candle body close** beyond the swing point — wicks alone are not valid BOS.
+  - After BOS, wait for a **pullback** to an order block or FVG before entering — never chase the breakout.
+  - BOS tells you the trend is intact; **CHoCH** tells you the trend may be reversing — know the difference.
+  - Multiple BOS events occur during a single trend; each one reaffirms directional bias.
+</KeyTakeaways>

@@ -1,0 +1,62 @@
+export const frontmatter = {
+  title: 'Liquidity Sweep / Stop Hunt',
+  description: 'How smart money engineers liquidity grabs before reversals.'
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+
+# Liquidity Sweep / Stop Hunt
+
+<ConceptCard title="Liquidity Sweep" icon="🎯">
+  A **liquidity sweep** (also called a stop hunt or liquidity grab) occurs when price trades beyond a key swing high or swing low — triggering the clustered stop-loss orders resting there — and then **quickly reverses** back through the level. The sweep is the mechanism by which institutional participants obtain the counterparty fills they need to build or unload positions.
+
+  On a candlestick chart, a sweep often appears as a **long wick** (shadow) that pierces a prior high or low while the candle body closes back inside the prior range. The wick represents the moment liquidity was taken; the close back inside confirms rejection.
+</ConceptCard>
+
+## Anatomy of a Sweep
+
+<AnnotatedChart title="Liquidity Sweep in Action" showSweep={true} />
+
+The chart above highlights a classic sweep pattern. Price pushes past a prior swing level, triggering resting stops, then reverses sharply. The key elements to observe:
+
+1. **The target level** — a well-defined swing high or low with visible stop-loss clustering.
+2. **The pierce** — price trades through the level, often on a single aggressive candle.
+3. **The rejection** — price closes back below (for a BSL sweep) or above (for an SSL sweep) the level, forming a prominent wick.
+4. **The displacement** — the reversal move is typically impulsive, showing institutional commitment to the new direction.
+
+## Why Sweeps Happen
+
+Institutional order flow operates under constraints that retail traders do not face. A fund manager looking to buy 2,000 contracts of ES futures cannot place a single market order without moving the price against themselves. Instead, they need **resting sell orders** to buy against.
+
+The largest concentration of sell orders sits just below obvious swing lows — in the form of long-position stop-losses and breakout sell-stops. By allowing (or engineering) a move into those stops, institutions effectively convert retail panic into their own entry liquidity.
+
+This is not conspiracy — it is a natural consequence of order book mechanics and the need for counterparty volume at scale.
+
+<Callout type="note">Content expanding soon.</Callout>
+
+## Spotting a Sweep in Real-Time
+
+Identifying a sweep as it happens requires attention to three factors:
+
+- **Context:** Is price approaching a level where stops are likely to rest? Look for obvious swing highs/lows, equal highs/lows, or trendline touches.
+- **Aggression of the move into the level:** A sharp, impulsive drive into the stops (especially during high-impact news) often signals an engineered grab rather than genuine breakout momentum.
+- **Post-sweep behaviour:** The most critical confirmation. A candle that sweeps a high and closes *below* it — especially with displacement — is a strong signal that the move was a grab, not a breakout.
+
+<Callout type="note">Content expanding soon.</Callout>
+
+<Callout type="trap" title="Common Mistake: Fading Every Wick">
+  Not every wick beyond a swing level is an institutional sweep. In trending markets, price legitimately breaks and holds beyond prior structure. The difference lies in **what happens after the pierce**. A sweep is only confirmed when price reverses with conviction — ideally producing a CHoCH (Change of Character) on a lower timeframe. Blindly fading every wick leads to counter-trend losses in strong moves.
+</Callout>
+
+<KeyTakeaways>
+  - A liquidity sweep is a **wick beyond a key level** that triggers stops before reversing.
+  - Institutions use sweeps to obtain counterparty fills for large positions.
+  - Confirmation requires price to **close back through** the swept level with displacement.
+  - Always combine sweep identification with structural confirmation (BOS or CHoCH) on a lower timeframe.
+  - Sweeps are highest-probability when they occur at higher-timeframe points of interest, not random intraday swings.
+</KeyTakeaways>

@@ -1,0 +1,122 @@
+export const frontmatter = {
+  title: 'Optimal Trade Entry (OTE)',
+  description: 'The ICT Optimal Trade Entry — understanding the 62–79% Fibonacci retracement zone as a high-probability entry region within an established directional move.',
+};
+
+import { ConceptCard } from '../../components/ConceptCard';
+import { AnnotatedChart } from '../../components/AnnotatedChart';
+import { Callout } from '../../components/Callout';
+import { KeyTakeaways } from '../../components/KeyTakeaways';
+import { CompareTable } from '../../components/CompareTable';
+import { ConfluenceMeter } from '../../components/ConfluenceMeter';
+import { StepFlow, Step } from '../../components/StepFlow';
+import { Term, Glossary } from '../../components/Term';
+
+# Optimal Trade Entry (OTE)
+
+The **Optimal Trade Entry (OTE)** is a specific retracement zone — the **62% to 79% Fibonacci levels** — where ICT methodology suggests the highest-probability entries occur during a pullback within an established trend. The concept combines Fibonacci retracement with structural context to define a "sweet spot" for entries.
+
+---
+
+## The Logic Behind OTE
+
+When price makes an impulsive move (displacement), it often retraces before continuing. The question every trader faces is: *how deep will the retracement go?*
+
+The OTE zone answers this with a probability-weighted framework:
+
+<ConceptCard title="The OTE Zone" icon="🎯">
+  <p>Draw a Fibonacci retracement from the <strong>swing low</strong> to the <strong>swing high</strong> (for bullish OTE) or <strong>swing high</strong> to <strong>swing low</strong> (for bearish OTE).</p>
+  <ul>
+    <li><strong>62% retracement</strong> — The top of the OTE zone. Shallow retracements stop here.</li>
+    <li><strong>70.5% retracement</strong> — The midpoint, often called the "optimal" level. This is where many ICT practitioners focus.</li>
+    <li><strong>79% retracement</strong> — The bottom of the OTE zone. Deep retracements that still maintain trend structure.</li>
+  </ul>
+  <p>Below 79%, the retracement starts to threaten the trend itself. Above 62%, the entry may be too early or too expensive relative to the pullback.</p>
+</ConceptCard>
+
+---
+
+## Applying OTE Step by Step
+
+<StepFlow>
+  <Step>
+    <strong>Identify the impulse leg.</strong> A clear displacement move with a BOS or CHoCH confirming the direction. This is your swing low to swing high (bullish) or swing high to swing low (bearish).
+  </Step>
+  <Step>
+    <strong>Apply Fibonacci retracement.</strong> Anchor the Fibonacci tool at the origin of the impulse (swing low for bullish) and extend it to the terminus (swing high for bullish).
+  </Step>
+  <Step>
+    <strong>Mark the OTE zone.</strong> Highlight the region between the 62% and 79% retracement levels. This is your watch zone.
+  </Step>
+  <Step>
+    <strong>Wait for price to enter the zone.</strong> Do not enter preemptively. Wait for price to actually retrace into the 62–79% region.
+  </Step>
+  <Step>
+    <strong>Look for a confluence trigger within the zone.</strong> An OB, FVG, or session-level alignment within the OTE zone significantly increases the quality of the setup.
+  </Step>
+</StepFlow>
+
+---
+
+## OTE on the Chart
+
+<AnnotatedChart
+  title="Bullish OTE — retracement into 62–79% zone with OB confluence"
+  showSwingHL={true}
+  showBOS={true}
+  showOB={true}
+  keyLevelLabel="OTE Zone (62–79%)"
+  keyLevelY={140}
+/>
+
+In this simplified view:
+
+- Price displaces upward from the swing low, creating a BOS.
+- The retracement pulls back into the OTE zone (~62–79% of the impulse leg).
+- An **order block** sits inside the OTE zone, providing confluence.
+- Entry occurs at or near the OB within the OTE zone, with a stop below the swing low.
+
+<Callout type="note">
+  Content expanding soon. Future updates will include bearish OTE examples, multi-timeframe OTE alignment, and common failure patterns when the OTE zone doesn't hold.
+</Callout>
+
+---
+
+## What OTE Is Not
+
+<Callout type="warn" title="Important Distinctions">
+  <p>OTE is <strong>not</strong> just "any Fibonacci retracement." The concept requires:</p>
+  <ul>
+    <li>A <strong>confirmed directional move</strong> (BOS/CHoCH) — not just any swing.</li>
+    <li><strong>Structural context</strong> — the retracement must occur within a valid trend, not a choppy range.</li>
+    <li><strong>Confluence</strong> — OTE works best when a PD array (OB, FVG) aligns with the fib zone. Naked fib levels alone are weaker.</li>
+  </ul>
+</Callout>
+
+---
+
+## OTE vs. General Fibonacci Trading
+
+<CompareTable title="OTE vs. Standard Fibonacci Retracement">
+
+| Aspect | Standard Fib | ICT OTE |
+|---|---|---|
+| **Levels used** | 38.2%, 50%, 61.8% | 62%, 70.5%, 79% |
+| **Context required** | Often applied mechanically | Requires BOS/CHoCH confirmation first |
+| **Confluence** | Optional | Essential — must align with PD arrays |
+| **Entry trigger** | Touch of level | Reaction at level + structural confirmation |
+| **Stop placement** | Below the fib level | Below the swing origin |
+
+</CompareTable>
+
+---
+
+<KeyTakeaways>
+  <ul>
+    <li><strong>OTE</strong> is the 62–79% Fibonacci retracement zone within a confirmed impulse move.</li>
+    <li>The <strong>70.5% level</strong> is the midpoint and most commonly referenced entry price.</li>
+    <li>OTE requires a <strong>prior BOS or CHoCH</strong> — it's not a standalone fib tool.</li>
+    <li>Highest-quality OTE setups have a <strong>PD array (OB or FVG) inside the zone</strong>.</li>
+    <li>Below 79%, the retracement threatens trend integrity. Above 62%, the pullback may be too shallow for optimal risk:reward.</li>
+  </ul>
+</KeyTakeaways>
