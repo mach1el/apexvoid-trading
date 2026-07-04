@@ -1,68 +1,61 @@
 export const frontmatter = {
-  title: 'Trend Mechanics',
-  description: 'How Dow defined uptrends, downtrends, lines, and reversals.'
+  title: 'Trend Mechanics (HH, HL, LH, LL)',
+  description: 'The fundamental building blocks of market structure derived directly from Dow Theory.'
 };
 
 import { ConceptCard } from '../../components/ConceptCard';
-import { AnnotatedChart } from '../../components/AnnotatedChart';
 import { Callout } from '../../components/Callout';
 import { KeyTakeaways } from '../../components/KeyTakeaways';
 
-# Trend Mechanics
+# Trend Mechanics (HH, HL, LH, LL)
 
-<ConceptCard title="Defining the Trend" icon="📈">
-Before Dow Theory, the concept of a "trend" was abstract. Dow provided the first mechanical, objective definitions for uptrends, downtrends, consolidations (lines), and reversals. 
+<ConceptCard title="The Definition of a Trend" icon="📈">
+Dow Theory defines an uptrend as a successive series of Higher Highs (HH) and Higher Lows (HL). Conversely, a downtrend is a successive series of Lower Highs (LH) and Lower Lows (LL). 
 </ConceptCard>
 
-If you have ever looked for Higher Highs (HH) and Higher Lows (HL) to determine market structure, you are using the mechanical rules Charles Dow laid out over a century ago.
+Before Dow, traders looked at charts as chaotic, random wiggles. Dow was the first to formalize that prices move in zigzag patterns, and that by identifying the peaks and troughs of these zigzags, one could objectively define the direction of the market.
 
----
+This exact definition is still the foundational core of every modern trading strategy, from basic retail Price Action to advanced Smart Money Concepts.
 
-## 1. Uptrends & Downtrends
+## The Anatomy of an Uptrend
 
-Dow defined primary trends by the successive peaks and troughs printed on the chart.
+In a healthy bull market, demand outstrips supply. 
+- Buyers are aggressive, pushing the price to new extremes (Higher Highs).
+- When buyers take profit, the price pulls back. However, because demand is so strong, eager buyers step in *before* the price can reach the previous low, creating a Higher Low.
 
-- **Uptrend (Bull Market):** A situation where each successive rally peaks higher than the previous one, and each successive pullback bottoms higher than the previous one. (Successive Higher Highs and Higher Lows).
-- **Downtrend (Bear Market):** A situation where each successive decline bottoms lower than the previous one, and each successive rally peaks lower than the previous one. (Successive Lower Lows and Lower Highs).
+**The Golden Rule:** An uptrend remains valid *until* price breaks below the most recent Higher Low. A single lower high is not enough to confirm a trend reversal; you must see a structural lower low.
 
-<AnnotatedChart 
-  title="The Mechanical Uptrend" 
-  showSwingHL={true} 
-/>
+## The Anatomy of a Downtrend
 
----
+In a bear market, supply overwhelms demand.
+- Sellers are aggressive, dumping the asset and pushing price to new depths (Lower Lows).
+- When short-sellers take profit (buying to cover), the price briefly rallies. However, eager sellers short the asset again *before* it can reach the previous high, creating a Lower High.
 
-## 2. "Lines" (Consolidations)
+**The Golden Rule:** A downtrend remains valid *until* price breaks above the most recent Lower High. 
 
-Dow used the term "Line" to describe a horizontal line on a chart where price fluctuates within a tight, defined range over a period of weeks. 
-
-In modern terms, this is a **consolidation**, a **range**, or an **accumulation/distribution block**.
-
-- A Line indicates a balance between buying and selling pressure.
-- According to Dow, you cannot predict which way a Line will break. You must wait for the breakout.
-- A breakout above the Line is a bullish signal (Accumulation is complete).
-- A breakdown below the Line is a bearish signal (Distribution is complete).
-
----
-
-## 3. Secondary Reaction vs. True Reversal
-
-The most difficult mechanical task in Dow Theory is distinguishing a normal Secondary Reaction (a healthy pullback) from a True Reversal (the end of the primary trend).
-
-Dow's rule (Tenet 6) states a trend is in force until a definite reversal is signaled. How is it signaled?
-
-### Anatomy of a Bullish Reversal (Bear to Bull)
-1. **The Final Low:** The market makes a Lower Low (LL).
-2. **The Secondary Rally:** Price rallies, but fails to break the previous Lower High (LH).
-3. **The Higher Low:** Price pulls back again, but *fails* to make a new Lower Low. Instead, it forms a Higher Low (HL).
-4. **The Breakout (Confirmation):** Price rallies past the peak of the Secondary Rally. The moment that prior high is breached, a True Reversal is confirmed.
-
-<Callout type="trap" title="The False Breakout">
-A mere break of the previous high is not enough if it isn't preceded by a higher low. Likewise, a failure to make a new high is not a reversal until price subsequently breaks below the previous higher low. Modern traders call this a Change of Character (CHoCH) followed by a Break of Structure (BOS).
+<Callout type="warn" title="The Trap of the Early Reversal">
+Retail traders constantly lose money trying to buy the exact bottom of a downtrend. Until the sequence of Lower Highs is broken, you are fighting the dominant flow of capital. Wait for structural confirmation.
 </Callout>
 
+## The Transition Phase (Consolidation)
+
+Trends do not usually reverse instantly. There is almost always a transitional period where the sequence of HH/HL is broken, but a new sequence of LH/LL has not yet been established. 
+
+This is known as a **Range** or **Consolidation**. 
+In a range, the market prints Equal Highs and Equal Lows. According to Dow Theory, you should not deploy trend-following strategies during this phase. You must wait for the market to breakout and establish a new directional sequence.
+
+## Application in Modern Frameworks
+
+Dow's simple definition of trends is the direct ancestor of modern "Market Structure" concepts.
+
+- When an uptrend prints a new Higher High, modern traders call this a **Break of Structure (BOS)**.
+- When an uptrend fails to print a Higher High, and instead prints a Lower Low, modern traders call this a **Change of Character (CHoCH)**.
+
+The terminology has evolved to sound more sophisticated, but the underlying mechanic is exactly the same as what Charles Dow observed in 1899.
+
 <KeyTakeaways>
-- An uptrend is mechanically defined by successive Higher Highs and Higher Lows.
-- "Lines" are sideways consolidations; wait for the breakout, do not anticipate it.
-- A true reversal requires structural failure: a failure to make a new extreme, followed by a break of the previous swing point.
+- An uptrend is a series of Higher Highs and Higher Lows.
+- A downtrend is a series of Lower Highs and Lower Lows.
+- A trend remains in effect until the structural sequence is broken.
+- Modern terms like "BOS" and "CHoCH" are just rebranding of Dow's original trend definitions.
 </KeyTakeaways>
