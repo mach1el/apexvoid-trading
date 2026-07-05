@@ -32,6 +32,14 @@ const CandlesVolume = () => <MdxPage loader={() => import('./features/kb/content
 const TimeframesMtf = () => <MdxPage loader={() => import('./features/kb/content/foundations/timeframes-mtf.mdx')} />;
 const LiquidityIntuition = () => <MdxPage loader={() => import('./features/kb/content/foundations/liquidity-intuition.mdx')} />;
 
+// Momentum & EMAs
+const WhatIsAnEma = () => <MdxPage loader={() => import('./features/kb/content/momentum/what-an-ema-is.mdx')} />;
+const Ema200TheTrendFilter = () => <MdxPage loader={() => import('./features/kb/content/momentum/ema-200-the-trend-filter.mdx')} />;
+const Ema50AndTheStack = () => <MdxPage loader={() => import('./features/kb/content/momentum/ema-50-and-the-stack.mdx')} />;
+const DynamicSupportResistance = () => <MdxPage loader={() => import('./features/kb/content/momentum/dynamic-support-resistance.mdx')} />;
+const GoldenAndDeathCross = () => <MdxPage loader={() => import('./features/kb/content/momentum/golden-and-death-cross.mdx')} />;
+const MomentumShift = () => <MdxPage loader={() => import('./features/kb/content/momentum/momentum-shift.mdx')} />;
+
 // 2. Key Levels
 const SwingHighLow = () => <MdxPage loader={() => import('./features/kb/content/key-levels/swing-high-low.mdx')} />;
 const PdhPdl = () => <MdxPage loader={() => import('./features/kb/content/key-levels/pdh-pdl-pwh-pwl.mdx')} />;
@@ -109,6 +117,14 @@ export function App() {
         <Route path="/foundations/candles-volume" element={<CandlesVolume />} />
         <Route path="/foundations/timeframes-mtf" element={<TimeframesMtf />} />
         <Route path="/foundations/liquidity-intuition" element={<LiquidityIntuition />} />
+
+        {/* Momentum & EMAs */}
+        <Route path="/momentum/what-an-ema-is" element={<WhatIsAnEma />} />
+        <Route path="/momentum/ema-200-the-trend-filter" element={<Ema200TheTrendFilter />} />
+        <Route path="/momentum/ema-50-and-the-stack" element={<Ema50AndTheStack />} />
+        <Route path="/momentum/dynamic-support-resistance" element={<DynamicSupportResistance />} />
+        <Route path="/momentum/golden-and-death-cross" element={<GoldenAndDeathCross />} />
+        <Route path="/momentum/momentum-shift" element={<MomentumShift />} />
 
         {/* 2. Key Levels */}
         <Route path="/key-levels/swing-high-low" element={<SwingHighLow />} />
