@@ -29,11 +29,40 @@ This mechanism is crucial for traders:
 
 ## 4. Visualizing the EMA
 
-<AnnotatedChart title="EMA vs SMA Reaction Time" showSwingHL={true} />
+<AnnotatedChart chartData={{
+  id: "EMA-VS-SMA", title: "EMA vs SMA Reaction Time", sub: "lag comparison",
+  def: "The EMA assigns more weight to recent data, reacting faster to price changes than the SMA which weights all data equally.",
+  read: [
+    "<b>EMA (Purple):</b> Hugs the price action closely during the sharp reversal.",
+    "<b>SMA (Red):</b> Lags significantly behind, still reflecting the previous downtrend."
+  ],
+  trap: "Using an SMA for short-term momentum trading will often result in late entries and exits.",
+  pMin: 85, pMax: 120,
+  c: [[100,105,95,102], [102,104,98,99], [99,102,90,92], [92,94,88,90], [90,105,88,104], [104,110,100,108], [108,115,105,112], [112,118,110,116]],
+  a: [
+    { t: "curve", color: "ema50", pts: [{i:0,p:101}, {i:1,p:100}, {i:2,p:96}, {i:3,p:93}, {i:4,p:98}, {i:5,p:103}, {i:6,p:107}, {i:7,p:111}], label: "EMA (Fast)" },
+    { t: "curve", color: "ema", pts: [{i:0,p:101}, {i:1,p:100}, {i:2,p:98}, {i:3,p:96}, {i:4,p:96}, {i:5,p:97}, {i:6,p:99}, {i:7,p:101}], label: "SMA (Lagging)" }
+  ]
+}} />
 
 In a fast moving market, the EMA hugs the price action closely, acting as a dynamic gauge of current momentum, whereas the SMA lags far behind, missing the early phase of the trend.
 
-<AnnotatedChart title="Idealized EMA Smoothing" showSwingHL={false} />
+<AnnotatedChart chartData={{
+  id: "EMA-SMOOTH", title: "Idealized EMA Smoothing", sub: "dynamic support",
+  def: "In a healthy trend, the EMA acts as a smooth trailing reference point, filtering out minor price noise.",
+  read: [
+    "Price makes higher highs and higher lows.",
+    "The EMA glides smoothly underneath, acting as dynamic support."
+  ],
+  trap: "Don't confuse minor wicks below the EMA with a trend reversal.",
+  pMin: 90, pMax: 135,
+  c: [[100,105,98,104], [104,106,101,102], [102,110,100,108], [108,112,105,110], [110,118,108,116], [116,117,112,113], [113,122,111,120], [120,128,118,126], [126,127,122,124], [124,132,123,130]],
+  a: [
+    { t: "curve", color: "ema50", pts: [{i:0,p:100}, {i:1,p:101}, {i:2,p:104}, {i:3,p:107}, {i:4,p:111}, {i:5,p:112}, {i:6,p:116}, {i:7,p:121}, {i:8,p:122}, {i:9,p:126}], label: "EMA" },
+    { t: "arrow", i: 2, p1: 100, p2: 104, color: "bull" },
+    { t: "arrow", i: 6, p1: 111, p2: 116, color: "bull" }
+  ]
+}} />
 
 ## 5. How to See It on a Chart
 
