@@ -30,7 +30,25 @@ An EMA reclaim *without* a structural break is often a fakeout. A structural bre
 
 <MomentumShiftQuiz />
 
-<AnnotatedChart title="EMA Reclaim + CHoCH Validation" showSwingHL={true} />
+<AnnotatedChart chartData={{
+  id: "MOM-SHIFT", title: "EMA Reclaim + CHoCH Validation", sub: "reversal confirmation",
+  def: "A momentum shift occurs when price reclaims the 50 EMA and simultaneously breaks structural resistance (CHoCH), confirming the trend has turned.",
+  read: [
+    "Downtrend: Price sets a lower low (Swing Low).",
+    "Expansion: A strong rally reclaims the 50 EMA and breaks the prior lower high (Swing High).",
+    "Confirmation: The subsequent pullback finds support at the newly reclaimed 50 EMA."
+  ],
+  trap: "Buying the EMA reclaim without a structural CHoCH. It often results in a lower high and continuation of the downtrend.",
+  pMin: 85, pMax: 130,
+  c: [[110,112,98,100], [100,105,92,94], [94,108,92,106], [106,122,104,118], [118,120,108,110], [110,118,106,115], [115,126,114,124]],
+  a: [
+    { t: "curve", color: "ema50", pts: [{i:0,p:108}, {i:1,p:102}, {i:2,p:100}, {i:3,p:104}, {i:4,p:108}, {i:5,p:112}, {i:6,p:116}], label: "EMA 50" },
+    { t: "level", i: 0, p: 112, color: "muted", label: "lower high (resistance)" },
+    { t: "arrow", i: 2, p1: 100, p2: 108, color: "bull", label: "reclaim" },
+    { t: "arrow", i: 3, p1: 112, p2: 118, color: "bull", label: "CHoCH" },
+    { t: "swing", i: 5, p: 106, dir: "down", label: "higher low" }
+  ]
+}} />
 
 Observe the sequence: Price sets a low, rallies to reclaim the 50 EMA, breaks the previous lower high (CHoCH), and then the 50 EMA acts as support on the subsequent pullback.
 

@@ -26,11 +26,43 @@ This is why we treat the EMA not as a hard line, but as a **zone**. Price will o
 
 ## 4. Visualizing Dynamic Support
 
-<AnnotatedChart title="50 EMA as Dynamic Support" showSwingHL={true} />
+<AnnotatedChart chartData={{
+  id: "DYN-SUPPORT", title: "50 EMA as Dynamic Support", sub: "fair value reload",
+  def: "During a strong uptrend, the 50 EMA acts as a dynamic floor. Price returns to it to reload liquidity before continuing higher.",
+  read: [
+    "Price is in a clear uptrend.",
+    "Pullbacks precisely tag the 50 EMA (Purple).",
+    "Buyers step in at the 'fair value' mean, forming higher lows."
+  ],
+  trap: "Front-running the EMA touch before seeing a bullish rejection candle.",
+  pMin: 85, pMax: 130,
+  c: [[100,105,98,104], [104,112,100,110], [110,112,105,106], [106,108,102,104], [104,118,102,116], [116,122,110,120], [120,122,115,116], [116,118,110,112], [112,126,110,124], [124,128,122,126]],
+  a: [
+    { t: "curve", color: "ema50", pts: [{i:0,p:98}, {i:2,p:100}, {i:4,p:103}, {i:6,p:108}, {i:8,p:112}], label: "EMA 50" },
+    { t: "arrow", i: 3, p1: 104, p2: 110, color: "bull" },
+    { t: "arrow", i: 7, p1: 112, p2: 120, color: "bull" }
+  ]
+}} />
 
 In this chart, notice how the violet 50 EMA slides neatly beneath the price action. Each time price retraces to touch the EMA, buying pressure resumes, creating a higher low.
 
-<AnnotatedChart title="50 EMA as Dynamic Resistance" showSwingHL={true} />
+<AnnotatedChart chartData={{
+  id: "DYN-RESIST", title: "50 EMA as Dynamic Resistance", sub: "bearish ceiling",
+  def: "In a markdown phase, the 50 EMA acts as a dynamic ceiling. Relief rallies into the EMA offer high-probability short entries.",
+  read: [
+    "Price is cascading downwards.",
+    "Relief rallies tag the 50 EMA.",
+    "Sellers aggressively defend the mean, creating lower highs."
+  ],
+  trap: "Buying the relief rally, mistaking it for a true reversal.",
+  pMin: 85, pMax: 130,
+  c: [[125,128,120,122], [122,124,110,112], [112,118,110,116], [116,120,115,118], [118,120,105,108], [108,110,95,98], [98,105,96,102], [102,106,100,104], [104,106,90,92]],
+  a: [
+    { t: "curve", color: "ema50", pts: [{i:0,p:126}, {i:2,p:122}, {i:4,p:118}, {i:6,p:110}, {i:8,p:102}], label: "EMA 50" },
+    { t: "arrow", i: 3, p1: 118, p2: 112, color: "bear" },
+    { t: "arrow", i: 7, p1: 104, p2: 98, color: "bear" }
+  ]
+}} />
 
 ## 5. How to See It on a Chart
 

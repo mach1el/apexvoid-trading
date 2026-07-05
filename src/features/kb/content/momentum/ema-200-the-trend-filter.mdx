@@ -27,11 +27,40 @@ This concept is often called the "Regime Filter." It doesn't give you the exact 
 
 ## 4. Visualizing the Regime Filter
 
-<AnnotatedChart title="Bullish vs Bearish Regimes" showSwingHL={true} />
+<AnnotatedChart chartData={{
+  id: "EMA200-REGIMES", title: "Bullish vs Bearish Regimes", sub: "macro filter",
+  def: "The 200 EMA serves as the ultimate line in the sand. Above it, the regime is bullish and longs are favored. Below it, the regime is bearish and shorts are favored.",
+  read: [
+    "Left side: Price is above the red 200 EMA. Swings expand upwards.",
+    "Right side: Price breaks below, turning the regime bearish."
+  ],
+  trap: "Buying the dip when price is firmly below the 200 EMA.",
+  pMin: 80, pMax: 140,
+  c: [[100,108,98,106], [106,112,102,110], [110,122,108,120], [120,124,115,118], [118,130,116,128], [128,135,125,126], [126,128,110,112], [112,115,100,102], [102,108,98,105], [105,106,90,92], [92,95,85,88]],
+  a: [
+    { t: "curve", color: "ema", pts: [{i:0,p:95}, {i:2,p:100}, {i:4,p:108}, {i:6,p:118}, {i:8,p:120}, {i:10,p:116}], label: "EMA 200" }
+  ]
+}} />
 
 Notice how price action behaves completely differently depending on its relation to the red `var(--color-ema)` line. Above it, the swings expand upward. Below it, gravity takes over.
 
-<AnnotatedChart title="The Regime Flip" showSwingHL={false} />
+<AnnotatedChart chartData={{
+  id: "EMA200-FLIP", title: "The Regime Flip", sub: "regime change",
+  def: "A true regime flip occurs when price aggressively reclaims the 200 EMA and then uses it as macro support.",
+  read: [
+    "Price ranges below the 200 EMA.",
+    "A massive expansion candle breaks above.",
+    "The pullback respects the 200 EMA as support."
+  ],
+  trap: "Wicks piercing the EMA without closing above it.",
+  pMin: 85, pMax: 135,
+  c: [[100,102,95,98], [98,100,92,94], [94,98,90,92], [92,105,90,104], [104,118,102,116], [116,120,110,112], [112,114,106,108], [108,122,106,120], [120,128,118,126]],
+  a: [
+    { t: "curve", color: "ema", pts: [{i:0,p:105}, {i:2,p:102}, {i:4,p:100}, {i:6,p:100}, {i:8,p:102}], label: "EMA 200" },
+    { t: "arrow", i: 4, p1: 104, p2: 116, color: "bull", label: "expansion break" },
+    { t: "arrow", i: 6, p1: 108, p2: 102, color: "ok", label: "held as support" }
+  ]
+}} />
 
 ## 5. How to See It on a Chart
 
