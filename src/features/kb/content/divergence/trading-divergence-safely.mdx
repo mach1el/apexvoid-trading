@@ -4,6 +4,7 @@ export const frontmatter = {
 };
 
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { Callout } from '../../../../shared/components/Callout';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
@@ -21,25 +22,7 @@ A Change of Character occurs when price breaks the structural point that created
 2.  **Wait for Structure Break:** Wait for price to break the last lower high (for bullish reversals) or higher low (for bearish reversals).
 3.  **Enter on Retest:** Once the CHoCH occurs, wait for price to retest a newly formed supply or demand zone.
 
-<AnnotatedChart 
-  chartData={[
-    { x: 1, y: 100, indicator: 70 },
-    { x: 2, y: 110, indicator: 80 },
-    { x: 3, y: 105, indicator: 60 },
-    { x: 4, y: 115, indicator: 65 },
-    { x: 5, y: 95, indicator: 40 }, 
-    { x: 6, y: 105, indicator: 50 },
-    { x: 7, y: 80, indicator: 20 }  
-  ]}
-  annotations={[
-    { type: 'line', points: [{x:2, y:110}, {x:4, y:115}], label: 'Price HH' },
-    { type: 'line', points: [{x:2, y:80, isIndicator: true}, {x:4, y:65, isIndicator: true}], label: 'Indicator LH (Divergence)' },
-    { type: 'point', point: {x:3, y:105}, label: 'Structural Low' },
-    { type: 'line', points: [{x:3, y:105}, {x:5, y:105}], label: 'CHoCH Line', color: 'red', dashed: true },
-    { type: 'point', point: {x:6, y:105}, label: 'Entry on Retest' }
-  ]}
-  title="Bearish Divergence Confirmed by CHoCH"
-/>
+<AnnotatedChart chartData={chartRegistry.DIV} />
 
 <Callout type="tip">
 The most reliable divergence setups occur at higher timeframe Points of Interest (POIs), such as daily or weekly support/resistance levels.

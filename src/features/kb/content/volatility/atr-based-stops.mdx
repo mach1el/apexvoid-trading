@@ -1,5 +1,6 @@
 export const frontmatter = { title: 'ATR-Based Stop Placement', description: 'Using ATR to objectively place stop losses that accommodate market noise.' };
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { Callout } from '../../../../shared/components/Callout';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
@@ -24,15 +25,7 @@ If a market typically moves 15 pips in a 5-minute candle, placing a 10-pip stop 
 
 While pure ATR trailing stops (like Chandelier Exits) are common, ATR is best used in conjunction with market structure.
 
-<AnnotatedChart 
-  title="ATR Stop Beyond Structure"
-  chartData={[
-    { time: '10:00', price: 2000 },
-    { time: '10:15', price: 1990, label: 'Swing Low' },
-    { time: '10:30', price: 2005, label: 'Entry' },
-    { time: '10:35', price: 1985, label: 'Stop: Swing Low - 1x ATR' }
-  ]}
-/>
+<AnnotatedChart chartData={chartRegistry.ATR} />
 
 <Callout type="info">
   When placing a stop below a swing low, subtract 1x or 0.5x ATR from the absolute low price. This ensures your stop isn't triggered by a marginal liquidity sweep of the exact low.

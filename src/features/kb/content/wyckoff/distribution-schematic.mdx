@@ -4,6 +4,7 @@ export const frontmatter = {
 };
 
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
 
@@ -23,32 +24,7 @@ Distribution ranges map the transition from an uptrend to a downtrend, character
 6.  **Sign of Weakness (SOW):** A strong, high-volume move down that breaks the bottom of the trading range (support).
 7.  **Last Point of Supply (LPSY):** A weak rally that tests the broken support as new resistance. This is the optimal entry point for a short position.
 
-<AnnotatedChart 
-  chartData={[
-    { x: 1, y: 50 },
-    { x: 2, y: 80 },
-    { x: 3, y: 70 },
-    { x: 4, y: 110 },
-    { x: 5, y: 75 },
-    { x: 6, y: 105 },
-    { x: 7, y: 85 }, 
-    { x: 8, y: 120 },
-    { x: 9, y: 65 }, 
-    { x: 10, y: 75 },
-    { x: 11, y: 30 } 
-  ]}
-  annotations={[
-    { type: 'point', point: {x:4, y:110}, label: 'BC' },
-    { type: 'point', point: {x:5, y:75}, label: 'AR' },
-    { type: 'point', point: {x:6, y:105}, label: 'ST' },
-    { type: 'point', point: {x:8, y:120}, label: 'UTAD' },
-    { type: 'point', point: {x:9, y:65}, label: 'SOW' },
-    { type: 'point', point: {x:10, y:75}, label: 'LPSY' },
-    { type: 'line', points: [{x:4, y:110}, {x:7, y:110}], label: 'Resistance', dashed: true },
-    { type: 'line', points: [{x:5, y:75}, {x:8, y:75}], label: 'Support', dashed: true }
-  ]}
-  title="Wyckoff Distribution Schematic"
-/>
+<AnnotatedChart chartData={chartRegistry.WYCK} />
 
 <KeyTakeaways 
   items={[

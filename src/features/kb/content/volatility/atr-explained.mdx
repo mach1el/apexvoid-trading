@@ -1,5 +1,6 @@
 export const frontmatter = { title: 'Average True Range (ATR) Explained', description: 'A deep dive into the ATR indicator and how it measures market volatility.' };
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { Callout } from '../../../../shared/components/Callout';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
@@ -27,16 +28,7 @@ The foundation of ATR is the True Range (TR), which accounts for overnight gaps 
 
 ATR is absolute, not relative. A higher ATR indicates higher volatility, while a lower ATR indicates lower volatility. However, ATR is proportional to the asset's price; a $2000 asset will inherently have a larger ATR than a $50 asset, assuming similar percentage volatility.
 
-<AnnotatedChart 
-  title="ATR Tracking Price Action"
-  chartData={[
-    { time: 'Mon', price: 1950, value: 12 },
-    { time: 'Tue', price: 1955, value: 14 },
-    { time: 'Wed', price: 1940, value: 25, label: 'Trend Acceleration' },
-    { time: 'Thu', price: 1920, value: 30 },
-    { time: 'Fri', price: 1925, value: 22 }
-  ]}
-/>
+<AnnotatedChart chartData={chartRegistry.ATR} />
 
 <Callout type="warning">
   ATR is a measure of volatility, not direction. It will expand during sharp sell-offs just as it will during aggressive rallies.

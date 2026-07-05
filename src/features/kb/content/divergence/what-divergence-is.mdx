@@ -4,6 +4,7 @@ export const frontmatter = {
 };
 
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { Callout } from '../../../../shared/components/Callout';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
@@ -20,20 +21,7 @@ When trading, momentum is just as important as price action. While price dictate
 
 In a healthy trend, price and momentum should agree. If price makes a new high, the oscillator should also make a new high. When they disagree, you have divergence.
 
-<AnnotatedChart 
-  chartData={[
-    { x: 1, y: 10, indicator: 30 },
-    { x: 2, y: 12, indicator: 50 },
-    { x: 3, y: 11, indicator: 45 },
-    { x: 4, y: 15, indicator: 40 },
-    { x: 5, y: 13, indicator: 30 }
-  ]}
-  annotations={[
-    { type: 'line', points: [{x:2, y:12}, {x:4, y:15}], label: 'Higher High (Price)', color: 'red' },
-    { type: 'line', points: [{x:2, y:50, isIndicator: true}, {x:4, y:40, isIndicator: true}], label: 'Lower High (Indicator)', color: 'red' }
-  ]}
-  title="Bearish Divergence Example"
-/>
+<AnnotatedChart chartData={chartRegistry.DIV} />
 
 <Callout type="warning">
 Divergence is not a standalone signal. It simply indicates a loss of momentum, not an immediate reversal. Always look for price structure breaks (like a Change of Character) to confirm the reversal.

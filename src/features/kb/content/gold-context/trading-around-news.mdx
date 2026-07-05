@@ -1,5 +1,6 @@
 export const frontmatter = { title: 'Trading Around News', description: 'Strategies and risk management protocols for high-impact macro events.' };
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { Callout } from '../../../../shared/components/Callout';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
@@ -33,15 +34,7 @@ The best opportunities often arise after the dust has settled.
 1. **The Liquidity Sweep Fade**: If news spikes price above a major high but immediately closes back below it as an aggressive pin bar on the 15m chart, it often signals a liquidity grab and a reversal.
 2. **The Continuation Pullback**: If news breaks market structure cleanly, wait for a lower-timeframe pullback into a newly formed fair value gap or order block to join the new trend.
 
-<AnnotatedChart 
-  title="Post-News Continuation Entry"
-  chartData={[
-    { time: '08:30', price: 2000, label: 'News Release' },
-    { time: '08:45', price: 2020, label: 'Initial Surge (Wait)' },
-    { time: '09:00', price: 2010, label: 'Pullback to Structure (Entry)' },
-    { time: '09:30', price: 2035, label: 'Trend Continuation' }
-  ]}
-/>
+<AnnotatedChart chartData={chartRegistry.NEWS} />
 
 <Callout type="warning">
   Never try to predict the outcome of a news event by placing limit orders beforehand. The risk of devastating slippage far outweighs the potential reward.

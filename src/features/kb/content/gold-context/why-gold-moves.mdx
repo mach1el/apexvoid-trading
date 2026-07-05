@@ -1,5 +1,6 @@
 export const frontmatter = { title: 'Why Gold Moves', description: 'The fundamental drivers of XAUUSD pricing and order flow.' };
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { Callout } from '../../../../shared/components/Callout';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
@@ -25,16 +26,7 @@ To understand why gold moves, traders must look at three primary macroeconomic d
 
 A common misconception is that gold always rises when inflation rises. This is only true if inflation rises *faster* than interest rates. If a central bank hikes rates aggressively to combat inflation, real yields can actually rise, causing gold to sell off despite high headline inflation.
 
-<AnnotatedChart 
-  title="Gold and Macro Catalysts"
-  chartData={[
-    { time: 'Jan', price: 1800, label: 'Fed Signals Rate Cuts (Yields Drop)' },
-    { time: 'Feb', price: 1850 },
-    { time: 'Mar', price: 1950, label: 'Banking Crisis (Safe Haven Flow)' },
-    { time: 'Apr', price: 2050 },
-    { time: 'May', price: 1980, label: 'Hot CPI Data (Rate Hike Fears)' }
-  ]}
-/>
+<AnnotatedChart chartData={chartRegistry.NEWS} />
 
 <Callout type="info">
   Intraday technical traders don't need to forecast macroeconomics, but understanding *why* a major structural level is breaking helps distinguish a false breakout from a fundamental trend shift.

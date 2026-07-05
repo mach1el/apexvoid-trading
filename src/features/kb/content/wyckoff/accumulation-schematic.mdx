@@ -4,6 +4,7 @@ export const frontmatter = {
 };
 
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
 
@@ -24,32 +25,7 @@ Accumulation ranges can be broken down into specific events that map the psychol
 7.  **Sign of Strength (SOS):** A strong, high-volume bullish move that breaks the top of the trading range (resistance).
 8.  **Last Point of Support (LPS) / Backup (BU):** Following the SOS, price pulls back to retest the broken resistance as new support. This is the optimal entry point.
 
-<AnnotatedChart 
-  chartData={[
-    { x: 1, y: 100 },
-    { x: 2, y: 70 },
-    { x: 3, y: 80 },
-    { x: 4, y: 40 },
-    { x: 5, y: 75 },
-    { x: 6, y: 45 },
-    { x: 7, y: 65 }, 
-    { x: 8, y: 30 },
-    { x: 9, y: 85 },
-    { x: 10, y: 75 },
-    { x: 11, y: 120 }
-  ]}
-  annotations={[
-    { type: 'point', point: {x:4, y:40}, label: 'SC' },
-    { type: 'point', point: {x:5, y:75}, label: 'AR' },
-    { type: 'point', point: {x:6, y:45}, label: 'ST' },
-    { type: 'point', point: {x:8, y:30}, label: 'Spring' },
-    { type: 'point', point: {x:9, y:85}, label: 'SOS' },
-    { type: 'point', point: {x:10, y:75}, label: 'LPS' },
-    { type: 'line', points: [{x:4, y:40}, {x:7, y:40}], label: 'Support', dashed: true },
-    { type: 'line', points: [{x:5, y:75}, {x:8, y:75}], label: 'Resistance', dashed: true }
-  ]}
-  title="Wyckoff Accumulation Schematic #1"
-/>
+<AnnotatedChart chartData={chartRegistry.WYCK} />
 
 <KeyTakeaways 
   items={[

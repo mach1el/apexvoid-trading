@@ -4,6 +4,7 @@ export const frontmatter = {
 };
 
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { Callout } from '../../../../shared/components/Callout';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
@@ -21,23 +22,7 @@ Institutional buying and selling are not executed at single price points. Large 
 *   **Demand Zone (Base of an uptrend):** Found at the origin of a strong impulsive move upwards. Look for the last bearish candle (or consolidation range) before a strong bullish expansion that breaks structure.
 *   **Supply Zone (Origin of a downtrend):** Found at the origin of a strong impulsive move downwards. Look for the last bullish candle (or consolidation range) before a strong bearish expansion that breaks structure.
 
-<AnnotatedChart 
-  chartData={[
-    { x: 1, y: 50 },
-    { x: 2, y: 48 },
-    { x: 3, y: 49 },
-    { x: 4, y: 75 },
-    { x: 5, y: 65 },
-    { x: 6, y: 49 },
-    { x: 7, y: 80 }
-  ]}
-  annotations={[
-    { type: 'box', bounds: { xMin: 1.5, xMax: 6.5, yMin: 47, yMax: 51 }, label: 'Demand Zone', color: 'rgba(0,255,0,0.2)' },
-    { type: 'point', point: {x:4, y:75}, label: 'Strong Imbalance' },
-    { type: 'point', point: {x:6, y:49}, label: 'Test of Demand' }
-  ]}
-  title="Demand Zone Creation and Test"
-/>
+<AnnotatedChart chartData={chartRegistry.SR} />
 
 ## Drawing the Zones
 

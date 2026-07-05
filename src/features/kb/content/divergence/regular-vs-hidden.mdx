@@ -4,6 +4,7 @@ export const frontmatter = {
 };
 
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { CompareTable } from '../../../../shared/components/CompareTable';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
@@ -19,20 +20,7 @@ Regular divergence is used to identify the end of a trend. It occurs when price 
 *   **Bullish Regular Divergence:** Price makes a Lower Low (LL), but the indicator makes a Higher Low (HL). Indicates weakening downside momentum and a potential reversal to the upside.
 *   **Bearish Regular Divergence:** Price makes a Higher High (HH), but the indicator makes a Lower High (LH). Indicates weakening upside momentum and a potential reversal to the downside.
 
-<AnnotatedChart 
-  chartData={[
-    { x: 1, y: 20, indicator: 40 },
-    { x: 2, y: 15, indicator: 20 },
-    { x: 3, y: 18, indicator: 30 },
-    { x: 4, y: 12, indicator: 35 },
-    { x: 5, y: 16, indicator: 50 }
-  ]}
-  annotations={[
-    { type: 'line', points: [{x:2, y:15}, {x:4, y:12}], label: 'Lower Low (Price)', color: 'green' },
-    { type: 'line', points: [{x:2, y:20, isIndicator: true}, {x:4, y:35, isIndicator: true}], label: 'Higher Low (Indicator)', color: 'green' }
-  ]}
-  title="Regular Bullish Divergence"
-/>
+<AnnotatedChart chartData={chartRegistry.DIV} />
 
 ## Hidden Divergence (Trend Continuation)
 

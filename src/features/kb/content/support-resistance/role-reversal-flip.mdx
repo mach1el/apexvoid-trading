@@ -4,6 +4,7 @@ export const frontmatter = {
 };
 
 import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { chartRegistry } from '../chartRegistry';
 import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
 import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
 
@@ -20,24 +21,7 @@ When price breaks through a strong resistance level, traders who sold short at t
 
 The inverse psychology applies when support breaks, turning it into resistance.
 
-<AnnotatedChart 
-  chartData={[
-    { x: 1, y: 40 },
-    { x: 2, y: 60 },
-    { x: 3, y: 50 },
-    { x: 4, y: 60 },
-    { x: 5, y: 55 },
-    { x: 6, y: 80 },
-    { x: 7, y: 60 },
-    { x: 8, y: 90 }
-  ]}
-  annotations={[
-    { type: 'line', points: [{x:2, y:60}, {x:4, y:60}], label: 'Old Resistance', color: 'red' },
-    { type: 'line', points: [{x:6, y:60}, {x:7, y:60}], label: 'New Support', color: 'green', dashed: true },
-    { type: 'point', point: {x:7, y:60}, label: 'Role Reversal Entry' }
-  ]}
-  title="Resistance Turning Into Support"
-/>
+<AnnotatedChart chartData={chartRegistry.SR} />
 
 ## Trading the S/R Flip
 
