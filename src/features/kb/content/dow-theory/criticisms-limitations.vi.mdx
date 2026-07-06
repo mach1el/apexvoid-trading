@@ -1,0 +1,55 @@
+export const frontmatter = {
+  title: 'Chỉ Trích & Hạn Chế',
+  description: 'Hiểu nơi Lý Thuyết Dow còn thiếu sót trong kỷ nguyên giao dịch thuật toán hiện đại.'
+};
+
+import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { Callout } from '../../../../shared/components/Callout';
+import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
+
+# Chỉ Trích & Hạn Chế Của Lý Thuyết Dow
+
+<ConceptCard title="Không Phải Chén Thánh" icon="⚖️">
+Dù Lý Thuyết Dow là nền móng nền tảng của phân tích kỹ thuật, nó được thiết kế vào cuối thế kỷ 19 cho dự báo kinh tế vĩ mô, không phải cho đầu cơ trong ngày, tần suất cao.
+</ConceptCard>
+
+Không framework nào hoàn hảo. Để là một trader bậc thầy, bạn phải hiểu điểm yếu của phương pháp luận của mình rõ như điểm mạnh của nó. Trong 100 năm qua, một số chỉ trích hợp lý về Lý Thuyết Dow đã xuất hiện, đặc biệt khi các thị trường số hóa.
+
+## 1. Nó Trễ Quá Mức
+
+Chỉ trích phổ biến nhất về Lý Thuyết Dow là nó là một chỉ báo trễ.
+
+Lý Thuyết Dow đòi hỏi một xu hướng phải được chứng minh dứt khoát trước khi hành động. Để một thị trường gấu được xác nhận, thị trường phải in một đỉnh, hồi lại, cố gắng tăng (in một đỉnh thấp hơn), rồi phá đáy trước đó (đáy thấp hơn).
+
+Đến lúc toàn bộ chuỗi này diễn ra trên biểu đồ Ngày hoặc Tuần, thị trường có thể đã giảm 20% tới 30%. Các nhà phê bình lập luận rằng chờ xác nhận Dow tuyệt đối buộc trader bỏ lỡ những phần có lãi nhất của cú đi.
+
+<Callout type="note" title="Sự Đánh Đổi">
+Độ trễ này là một tính năng, không phải một lỗi. Dow ưu tiên sự chắc chắn hơn điểm vào sớm. Trader hiện đại cố giải quyết độ trễ này bằng cách áp dụng Lý Thuyết Dow lên các Khung Thời Gian Nhỏ Hơn (Phân Tích Từ Trên Xuống).
+</Callout>
+
+## 2. Nó Không Thể Dự Đoán Đỉnh Hay Đáy
+
+Lý Thuyết Dow cấm rõ ràng việc cố bắt đỉnh hay đáy. Nó giả định xu hướng còn hiệu lực cho tới khi được chứng minh ngược lại. Do đó, một nhà lý thuyết Dow nghiêm ngặt sẽ luôn mua muộn và bán muộn.
+
+Trong giao dịch hiện đại, nơi các thuật toán săn thanh khoản tại các đỉnh và đáy chính xác, các trader bán lẻ mua muộn vào một xu hướng thường chính là thanh khoản mà tổ chức dùng để thoát các vị thế của họ.
+
+## 3. Sự Không Còn Liên Quan Của Vận Tải
+
+Nguyên Lý #4 nói rằng Chỉ Số Công Nghiệp và Chỉ Số Vận Tải phải xác nhận lẫn nhau.
+
+Năm 1899, điều này hoàn toàn hợp lý. Nếu bạn làm ra một sản phẩm vật lý, bạn phải chở nó trên một chuyến tàu. Ngày nay, các công ty lớn nhất thế giới là những gã khổng lồ công nghệ (Apple, Microsoft, Google) giao hàng hóa số ngay lập tức qua internet. Họ không dựa vào đường sắt hay các đội tàu vận chuyển.
+
+Do đó, đòi hỏi chỉ số Vận Tải xác nhận chỉ số Công Nghiệp là một luật lỗi thời không còn liên quan cao tới nền kinh tế số hiện đại.
+
+## 4. Do Dự Trong Các Range
+
+Lý Thuyết Dow tỏa sáng trong các thị trường có xu hướng nhưng cung cấp rất ít hướng dẫn trong các giai đoạn tích lũy kéo dài. Khi thị trường đi ngang lộn xộn, in các đỉnh bằng nhau và đáy bằng nhau, Lý Thuyết Dow đơn giản nói "chờ".
+
+Dù chờ đợi thì an toàn, các framework hiện đại (như Wyckoff và SMC) cung cấp các bản thiết kế chi tiết về cách giao dịch bên trong các range và cách xác định sự tích lũy của tổ chức *trước khi* cú phá vỡ xảy ra.
+
+<KeyTakeaways>
+- Lý Thuyết Dow là một framework trễ; nó xác nhận xu hướng muộn một cách có chủ đích.
+- Không thể bắt đỉnh hay đáy bằng Lý Thuyết Dow nghiêm ngặt.
+- Yêu cầu chỉ số Vận Tải xác nhận Công Nghiệp là lỗi thời trong một nền kinh tế số.
+- Lý Thuyết Dow cung cấp ít lời khuyên khả thi trong các thị trường lộn xộn, đi ngang.
+</KeyTakeaways>

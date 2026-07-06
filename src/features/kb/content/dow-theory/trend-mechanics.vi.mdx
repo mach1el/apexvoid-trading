@@ -1,0 +1,61 @@
+export const frontmatter = {
+  title: 'Cơ Chế Xu Hướng (HH, HL, LH, LL)',
+  description: 'Các khối xây dựng cơ bản của cấu trúc thị trường được rút ra trực tiếp từ Lý Thuyết Dow.'
+};
+
+import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { Callout } from '../../../../shared/components/Callout';
+import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
+
+# Cơ Chế Xu Hướng (HH, HL, LH, LL)
+
+<ConceptCard title="Định Nghĩa Của Một Xu Hướng" icon="📈">
+Lý Thuyết Dow định nghĩa một xu hướng tăng là một chuỗi liên tiếp các Đỉnh Cao Hơn (HH) và Đáy Cao Hơn (HL). Ngược lại, một xu hướng giảm là một chuỗi liên tiếp các Đỉnh Thấp Hơn (LH) và Đáy Thấp Hơn (LL).
+</ConceptCard>
+
+Trước Dow, các trader nhìn biểu đồ như những dao động hỗn loạn, ngẫu nhiên. Dow là người đầu tiên chính thức hóa rằng giá di chuyển theo các mẫu zigzag, và rằng bằng cách xác định các đỉnh và đáy của những zigzag này, ta có thể định nghĩa một cách khách quan hướng của thị trường.
+
+Chính định nghĩa này vẫn là cốt lõi nền tảng của mọi chiến lược giao dịch hiện đại, từ Price Action bán lẻ cơ bản tới Smart Money Concepts nâng cao.
+
+## Giải Phẫu Một Xu Hướng Tăng
+
+Trong một thị trường bò lành mạnh, cầu vượt cung.
+- Người mua quyết liệt, đẩy giá tới các cực trị mới (Đỉnh Cao Hơn).
+- Khi người mua chốt lời, giá hồi lại. Tuy nhiên, vì cầu quá mạnh, những người mua háo hức bước vào *trước khi* giá có thể chạm đáy trước đó, tạo ra một Đáy Cao Hơn.
+
+**Quy Tắc Vàng:** Một xu hướng tăng còn hợp lệ *cho tới khi* giá phá xuống dưới Đáy Cao Hơn gần nhất. Một đỉnh thấp hơn đơn lẻ không đủ để xác nhận một cú đảo chiều xu hướng; bạn phải thấy một đáy thấp hơn về mặt cấu trúc.
+
+## Giải Phẫu Một Xu Hướng Giảm
+
+Trong một thị trường gấu, cung áp đảo cầu.
+- Người bán quyết liệt, xả tài sản và đẩy giá tới các độ sâu mới (Đáy Thấp Hơn).
+- Khi người bán khống chốt lời (mua để đóng), giá tăng nhẹ. Tuy nhiên, những người bán háo hức short tài sản lần nữa *trước khi* nó có thể chạm đỉnh trước đó, tạo ra một Đỉnh Thấp Hơn.
+
+**Quy Tắc Vàng:** Một xu hướng giảm còn hợp lệ *cho tới khi* giá phá lên trên Đỉnh Thấp Hơn gần nhất.
+
+<Callout type="warn" title="Bẫy Của Cú Đảo Chiều Sớm">
+Trader bán lẻ liên tục mất tiền khi cố mua chính xác đáy của một xu hướng giảm. Cho tới khi chuỗi các Đỉnh Thấp Hơn bị phá, bạn đang chống lại dòng chảy vốn thống trị. Hãy chờ xác nhận cấu trúc.
+</Callout>
+
+## Giai Đoạn Chuyển Tiếp (Tích Lũy)
+
+Xu hướng thường không đảo chiều tức thì. Gần như luôn có một giai đoạn chuyển tiếp nơi chuỗi HH/HL bị phá, nhưng một chuỗi LH/LL mới chưa được thiết lập.
+
+Đây được gọi là một **Range** hay **Tích Lũy (Consolidation)**.
+Trong một range, thị trường in các Đỉnh Bằng Nhau và Đáy Bằng Nhau. Theo Lý Thuyết Dow, bạn không nên triển khai các chiến lược theo xu hướng trong giai đoạn này. Bạn phải chờ thị trường phá vỡ và thiết lập một chuỗi định hướng mới.
+
+## Ứng Dụng Trong Các Framework Hiện Đại
+
+Định nghĩa đơn giản của Dow về xu hướng là tổ tiên trực tiếp của các khái niệm "Cấu Trúc Thị Trường" hiện đại.
+
+- Khi một xu hướng tăng in một Đỉnh Cao Hơn mới, trader hiện đại gọi đây là một **Break of Structure (BOS)**.
+- Khi một xu hướng tăng thất bại in một Đỉnh Cao Hơn, và thay vào đó in một Đáy Thấp Hơn, trader hiện đại gọi đây là một **Change of Character (CHoCH)**.
+
+Thuật ngữ đã tiến hóa để nghe tinh vi hơn, nhưng cơ chế nền tảng chính xác giống hệt những gì Charles Dow quan sát năm 1899.
+
+<KeyTakeaways>
+- Một xu hướng tăng là một chuỗi các Đỉnh Cao Hơn và Đáy Cao Hơn.
+- Một xu hướng giảm là một chuỗi các Đỉnh Thấp Hơn và Đáy Thấp Hơn.
+- Một xu hướng còn hiệu lực cho tới khi chuỗi cấu trúc bị phá.
+- Các thuật ngữ hiện đại như "BOS" và "CHoCH" chỉ là sự đổi thương hiệu của các định nghĩa xu hướng gốc của Dow.
+</KeyTakeaways>
