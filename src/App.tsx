@@ -1,16 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useMemo } from 'react';
 import { AppShell } from './features/kb/layouts/AppShell';
 import { MdxLayout } from './features/kb/layouts/MdxLayout';
 import { useLanguage } from './shared/contexts/LanguageContext';
 
+const mdxPages = import.meta.glob('./features/kb/content/**/*.mdx');
+
 // A wrapper for MDX page lazy imports
 function MdxPage({ path }: { path: string }) {
   const { lang } = useLanguage();
-  const LazyComponent = lazy(() => 
-    import(`./features/kb/content/${path}.${lang}.mdx`)
-      .catch(() => import(`./features/kb/content/${path}.en.mdx`))
-  );
+  
+  const LazyComponent = useMemo(() => {
+    let loader = mdxPages[`./features/kb/content/${path}.${lang}.mdx`];
+    if (!loader) {
+      loader = mdxPages[`./features/kb/content/${path}.en.mdx`];
+    }
+    if (!loader) {
+      return lazy(() => Promise.resolve({ default: () => <div className="text-center py-20 text-text-muted">Content not found for: {path}</div> }));
+    }
+    return lazy(loader as any);
+  }, [path, lang]);
+
   return (
     <Suspense fallback={<div className="text-text-muted py-10 text-center animate-pulse">Loading…</div>}>
       <MdxLayout>
