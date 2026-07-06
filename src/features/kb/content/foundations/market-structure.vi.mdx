@@ -1,0 +1,131 @@
+export const frontmatter = {
+  title: 'Cấu Trúc Thị Trường (HH/HL/LH/LL)',
+  description: 'Bảng chữ cái nền tảng của thị trường. Cách đọc hướng xu hướng một cách khách quan mà không cần chỉ báo trễ.'
+};
+
+import { ConceptCard } from '../../../../shared/components/ConceptCard';
+import { Callout } from '../../../../shared/components/Callout';
+import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
+import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
+import { StructureLabeler } from '../../components/StructureLabeler';
+import { TideWaveRipple } from '../../components/TideWaveRipple';
+
+{/* 1. Hook */}
+Mọi chỉ báo kỹ thuật đều trễ hơn giá. Nếu bạn muốn biết thị trường đang làm gì *ngay lúc này*, bạn phải học cách đọc dấu chân thô mà nó để lại: cấu trúc thị trường.
+
+{/* 2. Definition */}
+**Cấu trúc thị trường (Market structure)** là sự phân loại khách quan các xu hướng giá dựa trên mối quan hệ tuần tự giữa các đỉnh và các đáy.
+
+{/* 3. Deep Explanation */}
+## Hiểu Cơ Chế Của Cấu Trúc
+
+Về bản chất cốt lõi nhất, thị trường tài chính không di chuyển theo đường thẳng. Chúng thở. Chúng đẩy theo một hướng (một cú đi mạnh hay giãn nở), rồi hồi lại để lấy hơi (một cú hồi hay điều chỉnh). Sự lên xuống liên tục này tạo ra các đỉnh và đáy trên biểu đồ, thường được gọi là swing high và swing low.
+
+Cấu trúc thị trường là việc nghiên cứu cách các điểm swing này liên hệ với nhau. Charles Dow là một trong những người đầu tiên chính thức hóa điều này vào cuối thế kỷ 19 [^1]. Ông quan sát rằng một thị trường tăng được đặc trưng bởi một chuỗi các đỉnh liên tiếp đẩy cao hơn đỉnh trước, kèm theo các đáy cũng hình thành cao hơn đáy trước. Ngược lại, một thị trường giảm tạo thành một cầu thang bước xuống.
+
+Đây không phải là một mẫu hình chủ quan; nó là một tất yếu toán học của thị trường đấu giá. Để một tài sản tăng giá trị theo thời gian, người mua phải sẵn sàng trả giá cao hơn (phá các đỉnh cũ), và trong các cú hồi, người mua mới phải bước vào ở các mức cao hơn trước (tạo các đáy cao hơn). Nếu chuỗi này bị phá vỡ, tính toàn vẹn cấu trúc của xu hướng bị tổn hại.
+
+Có ba trạng thái chính của cấu trúc thị trường:
+
+1. **Xu Hướng Tăng (Cấu Trúc Bullish):** Một chuỗi **Đỉnh Cao Hơn (Higher Highs - HH)** và **Đáy Cao Hơn (Higher Lows - HL)**. Người mua nắm quyền kiểm soát tuyệt đối.
+2. **Xu Hướng Giảm (Cấu Trúc Bearish):** Một chuỗi **Đáy Thấp Hơn (Lower Lows - LL)** và **Đỉnh Thấp Hơn (Lower Highs - LH)**. Người bán nắm quyền kiểm soát tuyệt đối.
+3. **Tích Lũy (Cấu Trúc Đi Ngang):** Các đỉnh bằng nhau và các đáy bằng nhau, hoặc các đỉnh và đáy không phá ra khỏi một hộp xác định. Thị trường ở trạng thái cân bằng, tích lũy hoặc phân phối lệnh trước xu hướng tiếp theo.
+
+Hiểu cơ chế này buộc bạn từ bỏ dự đoán và tập trung vào bằng chứng. Bạn không cần một điểm cắt đường trung bình động để biết xu hướng đang tăng; nếu giá đang in các đỉnh cao hơn và các đáy cao hơn, xu hướng khách quan là tăng cho tới khi nó tự chứng minh ngược lại bằng cách phá một đáy cao hơn trước đó.
+
+{/* 4. Visuals */}
+## Bản Thiết Kế Của Một Xu Hướng
+
+Bên dưới là một bản đồ tương tác về cách cấu trúc thị trường phát triển.
+
+<StructureLabeler />
+
+Chú ý cách quá trình chuyển từ xu hướng giảm sang xu hướng tăng không xảy ra ngay lập tức. Nó đòi hỏi một thất bại cấu trúc cụ thể—Đỉnh Thấp Hơn (LH) cuối cùng phải bị phá, in ra một Đỉnh Cao Hơn (HH). Điều này chuyển đổi trạng thái thị trường.
+
+<TideWaveRipple />
+
+{/* 5. How to see it on a chart */}
+## Cách Vẽ Bản Đồ Cấu Trúc Trên Biểu Đồ (Từng Bước)
+
+Vẽ bản đồ cấu trúc đúng cách là kỹ năng quan trọng nhất trong phân tích kỹ thuật. Đừng bỏ qua quy trình này.
+
+1. **Phóng To Ra:** Bắt đầu ở khung thời gian lớn hơn (ví dụ Ngày hoặc 4 Giờ) để thấy bức tranh vĩ mô. Bạn không thể vẽ bản đồ cấu trúc khi đang bị phóng vào nhiễu 1 phút.
+2. **Xác Định Các Cực Trị:** Tìm điểm thấp nhất tuyệt đối và điểm cao nhất trên biểu đồ hiển thị. Đây là các điểm swing lớn của bạn.
+3. **Truy Vết Các Cú Đẩy:** Theo dõi hành động giá từ điểm thấp nhất đi lên. Khi giá hồi lại đáng kể, đánh dấu đỉnh là một Swing High.
+4. **Đánh Dấu Các Cú Hồi:** Khi giá ngừng hồi và bắt đầu đẩy lên lại, phá đỉnh trước đó, đánh dấu đáy là một Swing Low.
+5. **Gán Nhãn Chuỗi:**
+   - Đỉnh mới có cao hơn đỉnh cũ không? Gán nhãn **HH**.
+   - Đáy mới có cao hơn đáy cũ không? Gán nhãn **HL**.
+6. **Chờ Xác Nhận:** Một Đỉnh Cao Hơn chỉ được xác nhận khi giá hồi lại. Một Đáy Cao Hơn chỉ được xác nhận khi giá phá Đỉnh Cao Hơn trước đó.
+
+{/* 6. Worked Examples */}
+## Ví Dụ Thực Hành
+
+Hãy xem điều này diễn ra trong môi trường lý thuyết và thực tế.
+
+### Ví Dụ 1: Xu Hướng Tăng Lý Tưởng
+
+<AnnotatedChart 
+  title="Cấu Trúc Bullish Kiểu Mẫu"
+  isBull={true}
+  keyLevelY={100}
+  keyLevelLabel="Phá Cấu Trúc (BOS)"
+/>
+
+**Diễn giải:**
+Trong kịch bản lý tưởng này, giá bắt đầu ở một đáy, đẩy lên tạo một đỉnh, rồi hồi lại. Khoảnh khắc giá phá lên trên đỉnh đầu tiên, đáy được xác nhận là một Đáy Cao Hơn (HL), và xu hướng chính thức là bullish. Chú ý cách mỗi lần giá hồi vào 'vùng chiết khấu' của chân trước, người mua bước vào bảo vệ cấu trúc. Miễn là các HL còn nguyên vẹn, xu hướng vẫn là bullish.
+
+### Ví Dụ 2: Cú Phá Vỡ Bearish Thực Tế
+
+Hãy tưởng tượng biểu đồ EUR/USD khung 4 Giờ. Giá đã in các HH và HL trong nhiều tuần.
+1. Giá in một HH mới tại 1.1000.
+2. Giá hồi về 1.0900 (một HL mới).
+3. Giá tăng nhưng thất bại phá 1.1000, đạt đỉnh ở 1.0950. Đây là một Đỉnh Thấp Hơn (LH).
+4. Giá bán mạnh và phá xuống dưới HL 1.0900, chạm 1.0850. Đây là một Đáy Thấp Hơn (LL).
+
+**Diễn giải:**
+Tính toàn vẹn cấu trúc của xu hướng tăng bị tổn hại ở bước 3 khi người mua thất bại in một HH. Tuy nhiên, xu hướng chưa chính thức đảo chiều cho tới bước 4, khi HL trước đó bị phá. Chuỗi này (Thất bại tạo HH → Phá HL) là chữ ký dứt khoát của một sự chuyển đổi cấu trúc từ bullish sang bearish.
+
+### Phản Ví Dụ: Cú Quét Nội Bộ (Bẫy)
+
+Một lỗi phổ biến là nhận nhầm các cú hồi nội bộ thành các cú phá cấu trúc lớn. Nếu giá đang trong một xu hướng tăng ngày khổng lồ (từ 1.0000 lên 1.1000), một cú giảm mạnh 100 pip trên biểu đồ 15 phút sẽ trông như một chuỗi LL và LH. Tuy nhiên, đây chỉ là cấu trúc nội bộ (một cú hồi) bên trong chân vĩ mô. Nó KHÔNG phải là một sự chuyển đổi cấu trúc thị trường ngày cho tới khi HL ngày bị phá.
+
+{/* 7. Trap Callout */}
+<Callout type="trap" title="Bẫy Vi Cấu Trúc">
+  Người mới thường vẽ bản đồ mọi dao động nến đỏ/xanh thành một điểm swing. Điều này dẫn tới "mù cấu trúc". Nếu bạn đang gán nhãn 20 HH và HL trong một ngày trên biểu đồ 1 Giờ, bạn đang vẽ nhiễu, không phải cấu trúc. Các điểm swing thật thì rõ ràng và nổi bật về mặt thị giác. Khi nghi ngờ, chuyển sang biểu đồ đường để lọc nhiễu từ râu nến.
+</Callout>
+
+{/* 8. Modern Restatements / Cross-links */}
+## Diễn Giải Theo Các Framework Hiện Đại
+
+Cấu trúc thị trường là khái niệm cổ xưa nhất trong giao dịch, nghĩa là nó đã bị đổi tên rất nhiều bởi marketing hiện đại.
+- Trong **Smart Money Concepts (SMC)**, một cú phá cấu trúc theo hướng xu hướng được gọi là [Break of Structure (BOS)](/price-action/bos). Một cú phá cấu trúc đảo chiều xu hướng được gọi là [Change of Character (CHoCH)](/price-action/choch).
+- Trong **ICT**, chính xác các khái niệm này được gọi là Market Structure Shifts (MSS).
+- Trong **Wyckoff**, sự chuyển đổi từ cấu trúc bearish sang bullish được trình bày chi tiết qua các sơ đồ tích lũy (Spring → Sign of Strength).
+
+Bất kể bạn gọi nó là gì, thực tế toán học là như nhau: Đỉnh Cao Hơn và Đáy Cao Hơn.
+
+{/* 9. FAQ */}
+## Câu Hỏi Thường Gặp
+
+**Hỏi: Tôi vẽ bản đồ cấu trúc dùng thân nến hay râu nến?**
+Đáp: Điều này gây tranh cãi nhiều, nhưng cách tiếp cận vững chắc nhất là vẽ các swing dùng các râu cực trị, vì một râu nến đại diện cho một mức giá thật đã được giao dịch. Tuy nhiên, để xác nhận một cú *phá* cấu trúc (BOS), nhiều trader chuyên nghiệp đòi hỏi một *thân* nến đóng vượt qua râu cũ để chứng minh sự dịch chuyển (displacement) thật, thay vì chỉ là một cú quét thanh khoản.
+
+**Hỏi: Làm sao tôi biết một cú hồi đủ sâu để được coi là một điểm swing mới?**
+Đáp: Không có phần trăm cố định phổ quát. Nó phụ thuộc vào biến động của tài sản. Một quy tắc ngón tay cái tốt là một điểm swing hợp lệ phải hồi về mặt thị giác ít nhất 30-50% chân đẩy trước đó. Một số trader dùng chỉ báo như Williams Fractal để định nghĩa swing một cách cơ học, nhưng luyện mắt tốt hơn về lâu dài.
+
+**Hỏi: Nếu giá tạo một Đỉnh Cao Hơn rồi ngay lập tức tạo một Đáy Thấp Hơn thì sao?**
+Đáp: Đây được gọi là một mô hình nở rộng hay cái nêm mở rộng. Nó là dấu hiệu của biến động cao và do dự cực độ. Trong các điều kiện này, cấu trúc bị phá ở cả hai phía, khiến các kỹ thuật theo xu hướng tiêu chuẩn trở nên nguy hiểm. Thường tốt nhất là đứng ngoài thị trường cho tới khi cấu trúc HH/HL hoặc LL/LH rõ ràng trở lại.
+
+{/* 10. Key Takeaways */}
+<KeyTakeaways points={[
+  "Cấu trúc thị trường là chuỗi khách quan của các swing high và swing low.",
+  "Xu hướng tăng cần Đỉnh Cao Hơn (HH) và Đáy Cao Hơn (HL); Xu hướng giảm cần Đáy Thấp Hơn (LL) và Đỉnh Thấp Hơn (LH).",
+  "Một xu hướng được giả định là còn hiệu lực cho tới khi điểm swing lớn cuối cùng của nó (HL trong xu hướng tăng, hay LH trong xu hướng giảm) bị phá dứt khoát.",
+  "Đừng bao giờ phóng vào quá xa đến mức mất tầm nhìn cấu trúc vĩ mô. Nhiễu nội bộ không phải là cấu trúc thật.",
+  "Các thuật ngữ hiện đại như BOS và CHoCH đơn giản là những tên gọi cụ thể cho sự tiếp diễn và đảo chiều của các chuỗi Dow Theory cổ điển này."
+]} />
+
+---
+*Tài liệu tham khảo:*
+[^1]: Hamilton, W. P. (1922). *The Stock Market Barometer*. Giải thích Lý Thuyết Dow và chuỗi các đỉnh và đáy.

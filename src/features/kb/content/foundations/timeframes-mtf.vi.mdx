@@ -1,0 +1,119 @@
+export const frontmatter = {
+  title: 'Khung Thời Gian & Đồng Bộ Đa Khung (MTF)',
+  description: 'Cách tổng hợp nhiều khung thời gian để xây dựng một thiên hướng định hướng xác suất cao.'
+};
+
+import { Callout } from '../../../../shared/components/Callout';
+import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
+import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
+import { MTFSync } from '../../components/MTFSync';
+import { StepFlow } from '../../../../shared/components/StepFlow';
+
+{/* 1. Hook */}
+Một xu hướng trên biểu đồ 5 phút có thể trông cực kỳ bullish, nhưng nếu xu hướng 5 phút đó chỉ là một cú hồi nhỏ bên trong một xu hướng giảm Ngày khổng lồ, bạn đang mua thẳng vào một bức tường. Bí quyết của giao dịch xác suất cao là đồng bộ nhiều khung thời gian.
+
+{/* 2. Definition */}
+**Đồng Bộ Đa Khung Thời Gian (MTF Alignment)** là quá trình phân tích quan sát một tài sản qua các mức nén thời gian khác nhau (ví dụ Ngày, 1 Giờ, 15 Phút) để đảm bảo điểm vào ngắn hạn của bạn được đồng bộ với momentum tổ chức dài hạn.
+
+{/* 3. Deep Explanation */}
+## Bản Chất Fractal Của Thị Trường
+
+Thị trường tài chính là các fractal. Điều này nghĩa là chính xác các mẫu hình, cấu trúc và hành vi xảy ra trên biểu đồ 1 phút cũng xảy ra như trên biểu đồ tháng. Một cú đẩy lớn lên trên biểu đồ 4 Giờ thực ra được cấu thành từ hàng trăm cú zig-zag nhỏ hơn trên biểu đồ 1 Phút.
+
+Khi một trader chỉ nhìn vào một khung thời gian duy nhất, họ mắc chứng "cận thị khung thời gian". Họ có thể phát hiện cái trông như một setup bullish hoàn hảo trên biểu đồ 15 phút, hoàn toàn không hay biết rằng biểu đồ Ngày đang ở một mức kháng cự lớn sẵn sàng đảo chiều.
+
+Để giải quyết điều này, trader chuyên nghiệp dùng một **Cách Tiếp Cận Từ Trên Xuống (Top-Down)**:
+1. **Vĩ Mô (Khung Lớn Hơn - HTF):** Quyết định thiên hướng và hướng tổng thể. (ví dụ biểu đồ Ngày).
+2. **Trung Gian:** Quyết định chu kỳ swing hiện tại. (ví dụ biểu đồ 1 Giờ hoặc 4 Giờ).
+3. **Vi Mô (Khung Nhỏ Hơn - LTF):** Cung cấp điểm vào chính xác với rủi ro tối thiểu. (ví dụ biểu đồ 5 Phút hoặc 15 Phút).
+
+Khi cả ba khung thời gian đồng ý (ví dụ Ngày bullish, 1 Giờ vừa hoàn thành một cú hồi và đang chuyển bullish, 5 Phút in một cú phá vỡ bullish), bạn có sự đồng bộ MTF thật. Đây là nơi các lệnh xác suất cao nhất cư ngụ.
+
+{/* 4. Visuals */}
+## Tương Tác: Đồng Bộ Khung Thời Gian
+
+Di chuột qua các biểu đồ bên dưới. Chú ý cách một cây nến đơn trên khung Vĩ Mô bao gồm nhiều cú swing trên các khung Vi Mô.
+
+<MTFSync />
+
+Hiểu rằng một "xu hướng" Vi Mô thường chỉ là một "cú hồi" Vĩ Mô là chìa khóa để mở khóa phân tích MTF.
+
+{/* 5. How to see it on a chart */}
+## Cách Thực Hiện Phân Tích MTF (Từng Bước)
+
+Đừng cố đồng bộ 10 khung thời gian khác nhau; bạn sẽ bị tê liệt vì phân tích. Hãy giữ một tổ hợp 2 hoặc 3 khung thời gian cách nhau một hệ số 4x tới 6x.
+
+<StepFlow steps={[
+  "Mở Khung Lớn Hơn (ví dụ Ngày) và vẽ bản đồ Cấu Trúc Thị Trường vĩ mô (HH/HL). Xác định xu hướng vĩ mô là Bullish, Bearish, hay Đi Ngang.",
+  "Xác định các Mức Chính HTF lớn (hỗ trợ/kháng cự, Order Block, FVG) nơi giá có khả năng phản ứng.",
+  "Hạ xuống Khung Trung Gian (ví dụ 4 Giờ). Chờ giá tiến tới Mức Chính HTF.",
+  "Hạ xuống Khung Nhỏ Hơn (ví dụ 15 Phút). Bạn đang tìm một sự chuyển đổi cấu trúc (CHoCH) trên khung này đồng bộ với thiên hướng HTF. Một khi khung LTF chuyển đổi, thực thi lệnh."
+]} />
+
+{/* 6. Worked Examples */}
+## Ví Dụ Thực Hành
+
+Hãy xem cách đồng bộ MTF cứu bạn khỏi các lệnh tồi và dựng cho bạn những lệnh tuyệt vời.
+
+### Ví Dụ 1: Setup MTF Lý Tưởng (Thực Tế)
+
+**Kịch bản:** Bạn đang giao dịch S&P 500 (ES futures).
+- **Biểu Đồ Ngày:** Xu hướng bullish mạnh, tạo HH và HL. Giá vừa hồi vào một vùng cầu Ngày (Order Block).
+- **Biểu Đồ 1 Giờ:** Giá đang rơi nhanh vào vùng Ngày. Cấu trúc 1H là bearish (LL và LH).
+- **Biểu Đồ 15 Phút:** Giá chạm vùng Ngày, tích lũy, rồi phá quyết liệt Đỉnh Thấp Hơn 15M của nó, in một Đỉnh Cao Hơn 15M (một CHoCH).
+
+**Diễn giải:**
+Đây là điểm vào MTF kiểu mẫu. Bạn dùng biểu đồ Ngày để biết *nơi* cần nhìn (vùng cầu) và *hướng* nào cần giao dịch (mua). Bạn không mua mù khi nó chạm vùng, vì 1H vẫn còn bearish. Thay vào đó, bạn phóng vào biểu đồ 15M và chờ đúng khoảnh khắc xu hướng vi mô đồng bộ với xu hướng vĩ mô (CHoCH 15M).
+
+### Ví Dụ 2: Bẫy Ngược Xu Hướng
+
+<AnnotatedChart 
+  title="Xu Hướng Vi Mô và Bức Tường Vĩ Mô"
+  isBull={true}
+  keyLevelY={60}
+  keyLevelLabel="Mức Kháng Cự Ngày"
+/>
+
+**Diễn giải:**
+Trong góc nhìn lý tưởng này, biểu đồ 15 phút đang in những Đỉnh Cao Hơn và Đáy Cao Hơn đẹp đẽ. Một trader tân binh thấy điều này và mua cú phá vỡ. Tuy nhiên, ngay phía trên giá hiện tại một chút là một mức Kháng Cự Ngày khổng lồ. Xu hướng vĩ mô là bearish. "Xu hướng tăng" 15M chỉ là một cú hồi kéo giá về vùng định giá premium để người bán HTF short. Ngay khi giá chạm mức HTF, xu hướng 15M bị đè bẹp dữ dội.
+
+{/* 7. Trap Callout */}
+<Callout type="trap" title="Bẫy Tương Quan Khung Thời Gian">
+  Một lỗi phổ biến là dùng các khung thời gian quá gần nhau (ví dụ 1 Giờ và 45 Phút). Vì chúng quá giống nhau, chúng sẽ hầu như luôn hiển thị chính xác cùng thông tin, phá hỏng mục đích của phân tích MTF. Luôn dùng một hệ số nhân ít nhất 4x tới 6x giữa các khung thời gian của bạn (ví dụ 1H tới 4H tới Ngày).
+</Callout>
+
+{/* 8. Modern Restatements / Cross-links */}
+## Diễn Giải Theo Các Framework Hiện Đại
+
+Phân tích MTF được áp dụng phổ quát trong mọi phương pháp luận:
+- **ICT:** Khái niệm HTF POI (Điểm Quan Tâm Khung Lớn Hơn) ghép với các thực thi LTF (như mô hình 2022 Mentorship dùng một cú chuyển đổi 15M).
+- **SMC:** Tìm một [Order Block](/order-block/what-is-ob) 4H và hạ xuống biểu đồ 5M để tìm một [Change of Character (CHoCH)](/price-action/choch) bên trong khối.
+- **Wyckoff:** Chờ một sơ đồ tích lũy vĩ mô, và thực thi trên một cú test spring vi mô.
+
+{/* 9. FAQ */}
+## Câu Hỏi Thường Gặp
+
+**Hỏi: Tôi nên dùng tổ hợp khung thời gian nào?**
+Đáp: Tùy phong cách giao dịch của bạn.
+- *Swing Trader:* Tuần (Thiên hướng) → Ngày (Setup) → 4 Giờ (Điểm vào).
+- *Day Trader:* Ngày (Thiên hướng) → 1 Giờ (Setup) → 15 Phút hoặc 5 Phút (Điểm vào).
+- *Scalper:* 4 Giờ (Thiên hướng) → 15 Phút (Setup) → 1 Phút (Điểm vào).
+
+**Hỏi: Tôi làm gì nếu các khung thời gian xung đột?**
+Đáp: Nếu Ngày bullish nhưng 4 Giờ bearish, bạn đang trong một cú hồi vĩ mô. Bạn có hai lựa chọn: khoanh tay và chờ 4 Giờ chuyển bullish trở lại (an toàn nhất), hoặc vào một lệnh ngược xu hướng ngắn hạn trên 4 Giờ, biết rằng mục tiêu lợi nhuận của bạn phải nhỏ (nâng cao).
+
+**Hỏi: Tôi có cần kiểm tra tất cả các khung thời gian trước mỗi lệnh không?**
+Đáp: Có, tuyệt đối. Kiểm tra HTF chỉ mất đúng 5 giây, nhưng nó cứu bạn khỏi 80% các lệnh thua bằng cách ngăn bạn giao dịch ngược momentum thống trị.
+
+{/* 10. Key Takeaways */}
+<KeyTakeaways points={[
+  "Thị trường là fractal; cùng các cấu trúc tồn tại trên mọi khung thời gian.",
+  "Đừng bao giờ giao dịch một setup khung nhỏ mà không kiểm tra bối cảnh khung lớn trước.",
+  "Các setup đáng tin cậy nhất xảy ra khi thiên hướng vĩ mô, cấu trúc trung gian và điểm vào vi mô đều đồng bộ cùng một hướng.",
+  "Dùng hệ số nhân khung thời gian 4x tới 6x (ví dụ 1H, 4H, Ngày) để tránh trùng lặp.",
+  "Các mức HTF hoạt động như nam châm và tường gạch; các xu hướng LTF sẽ đảo chiều dữ dội khi chạm chúng."
+]} />
+
+---
+*Tài liệu tham khảo:*
+Elder, A. (1993). *Trading for a Living*. Giới thiệu hệ thống giao dịch "Triple Screen", một tài liệu nền tảng về đồng bộ đa khung thời gian.

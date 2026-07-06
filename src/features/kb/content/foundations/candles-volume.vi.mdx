@@ -1,0 +1,132 @@
+export const frontmatter = {
+  title: 'Nến & Khối Lượng',
+  description: 'Hiểu cơ chế phân phối giá qua dữ liệu OCHL và hoạt động giao dịch.'
+};
+
+import { Callout } from '../../../../shared/components/Callout';
+import { KeyTakeaways } from '../../../../shared/components/KeyTakeaways';
+import { AnnotatedChart } from '../../../../shared/components/AnnotatedChart';
+import { CompareTable } from '../../../../shared/components/CompareTable';
+
+{/* 1. Hook */}
+Mỗi cây nến kể một câu chuyện về trận chiến giữa người mua và người bán trong một khoảng thời gian cụ thể. Nếu bạn đọc được cây nến, bạn đọc được trận chiến.
+
+{/* 2. Definition */}
+**Nến (Candlesticks)** là biểu diễn trực quan của chuyển động giá qua một khung thời gian xác định, hiển thị Giá Mở, Cao, Thấp và Đóng (OHLC). **Khối lượng (Volume)** đại diện cho tổng lượng tài sản được giao dịch trong cùng khoảng thời gian đó.
+
+{/* 3. Deep Explanation */}
+## Giải Phẫu Một Cây Nến
+
+Một cây nến được hình thành bởi bốn điểm dữ liệu riêng biệt trong vòng đời của nó (ví dụ trong 1 giờ với một nến H1):
+1. **Giá Mở (Open):** Mức giá đầu tiên được giao dịch khi giai đoạn bắt đầu.
+2. **Giá Cao (High):** Mức giá cao nhất được giao dịch trong giai đoạn.
+3. **Giá Thấp (Low):** Mức giá thấp nhất được giao dịch trong giai đoạn.
+4. **Giá Đóng (Close):** Mức giá cuối cùng được giao dịch khi giai đoạn kết thúc.
+
+Vùng giữa Giá Mở và Giá Đóng gọi là **Thân (Body)**. Thân được tô màu để cho biết hướng ròng của giá.
+- **Nến Tăng (Giãn Nở):** Giá Đóng *cao hơn* Giá Mở. Người mua thắng giai đoạn. Thường tô màu xanh lá hoặc xanh dương.
+- **Nến Giảm (Co Lại):** Giá Đóng *thấp hơn* Giá Mở. Người bán thắng giai đoạn. Thường tô màu đỏ hoặc cam.
+
+Các đường mảnh kéo dài phía trên và dưới thân gọi là **Râu (Wicks)** (hay bóng nến). Chúng đại diện cho các cực trị của hành động giá trong giai đoạn nơi giá được đẩy tới, nhưng cuối cùng bị từ chối trước khi đóng.
+
+## Đọc Câu Chuyện
+
+Kích thước của thân so với râu cho bạn biết ai đang kiểm soát:
+- **Thân Lớn, Râu Nhỏ:** Sự thống trị hoàn toàn của một phía. Một thân bullish khổng lồ cho thấy áp lực mua quyết liệt (momentum).
+- **Thân Nhỏ, Râu Lớn:** Do dự. Một cây nến với thân nhỏ và râu lớn ở cả hai phía cho thấy một trận chiến dữ dội nơi cả người mua lẫn người bán đều không giành được chỗ đứng.
+- **Thân Nhỏ, Một Râu Khổng Lồ (Pin Bar):** Một cú từ chối mạnh. Nếu giá đẩy xuống sâu, rồi đảo chiều dữ dội để đóng gần giá mở, để lại một râu dưới dài, nó cho thấy áp lực mua mãnh liệt bước vào từ chối các mức giá thấp hơn.
+
+## Vai Trò Của Khối Lượng
+
+Khối lượng đo lường nỗ lực. Giá đo lường kết quả. Nếu giá đẩy lên mạnh (một nến bullish lớn) với khối lượng rất cao, cú đi được xác nhận bởi sự tham gia lớn. Đó là một cú đi thật.
+
+Nếu giá đẩy lên mạnh, nhưng với khối lượng cực *thấp*, nó rất đáng ngờ. Nó ngụ ý sự thiếu kháng cự hơn là áp lực mua mạnh. Trong giao dịch tổ chức, các bất thường giữa biên độ giá (kích thước cây nến) và khối lượng là chỉ báo chính của tích lũy hoặc phân phối (một khái niệm được tiên phong bởi Richard Wyckoff).
+
+{/* 4. Visuals */}
+## So Sánh Các Loại Nến
+
+<CompareTable 
+  headers={["Loại Nến", "Hình Dạng Trực Quan", "Tâm Lý / Ý Nghĩa"]}
+  rows={[
+    ["Momentum (Marubozu)", "Thân lớn, không râu/râu nhỏ", "Thống trị tuyệt đối. Tổ chức tham gia mạnh theo một hướng."],
+    ["Từ Chối (Pin Bar / Hammer)", "Thân nhỏ, một râu rất dài", "Một cú quét thanh khoản. Giá thăm dò một mức và bị phía đối lập từ chối quyết liệt."],
+    ["Do Dự (Doji)", "Thân bé xíu, râu trên/dưới bằng nhau", "Cân bằng. Người mua và người bán giằng co bế tắc. Xu hướng có thể tạm dừng hoặc đảo chiều."],
+    ["Inside Bar", "Nằm hoàn toàn trong biên độ nến trước", "Tích lũy và co biến động. Thị trường đang nén lại chuẩn bị một cú phá."]
+  ]}
+/>
+
+<AnnotatedChart 
+  title="Giải Phẫu Nến & Momentum"
+  isBull={true}
+  keyLevelY={90}
+  keyLevelLabel="Momentum Bullish Mạnh"
+/>
+
+{/* 5. How to see it on a chart */}
+## Cách Đọc Bối Cảnh Nến (Từng Bước)
+
+Một cây nến đơn lẻ tách biệt chẳng có ý nghĩa gì. Một cây nến "từ chối bullish" ở giữa hư vô chỉ là nhiễu ngẫu nhiên. Bạn phải đọc nến trong bối cảnh.
+
+1. **Định Vị Các Mức Chính:** Chỉ chú ý tới hình dạng nến khi giá đang tương tác với một mức chính khung lớn (hỗ trợ/kháng cự, PDH/PDL, Order Block).
+2. **Quan Sát Cách Tiếp Cận:** Chú ý kích thước các nến đang tiến tới mức đó. Chúng đang lớn dần (tăng tốc momentum) hay nhỏ dần (giảm tốc momentum)?
+3. **Chờ Đóng Nến:** ĐỪNG BAO GIỜ ra quyết định dựa trên một nến đang hình thành. Một cây nến trông như một cú phá vỡ bearish khổng lồ với 1 phút còn lại có thể đảo chiều dữ dội và đóng thành một pin bar từ chối bullish. **Giá đóng là thứ duy nhất quan trọng.**
+4. **Phân Tích Phản Ứng:** Tại mức chính, giá có in một râu từ chối khối lượng cao không? Hay nó in một nến momentum thân lớn xuyên thẳng qua?
+
+{/* 6. Worked Examples */}
+## Ví Dụ Thực Hành
+
+### Ví Dụ 1: Cú Quét Thanh Khoản (Thực Tế)
+
+**Kịch bản:** Vàng (XAUUSD) đang giảm về đáy ngày hôm qua (PDL).
+1. Khi giá chạm PDL, nó tăng tốc đi xuống, in ra cái trông như một nến bearish 15M khổng lồ phá qua hỗ trợ. Các trader breakout bán lẻ ào vào bán.
+2. Trong 3 phút cuối của giai đoạn 15M, khối lượng mua khổng lồ bước vào.
+3. Cây nến đóng trở lại trên PDL, để lại một râu dưới dài và một thân bullish nhỏ.
+
+**Diễn giải:**
+Đây là một cái bẫy kinh điển. Râu dưới dài chứng minh rằng cú đi xuống dưới PDL đã bị từ chối. Nó không phải là một cú phá vỡ thật; nó là một cuộc đột kích vào thanh khoản (các stop-loss của người mua sớm). Sự kết hợp của vị trí (PDL) và hình dạng nến (râu dưới dài từ chối) mang lại một thiên hướng bullish xác suất cao.
+
+### Ví Dụ 2: Cú Phá Vỡ Momentum (Lý Tưởng)
+
+**Kịch bản:** AAPL đang tích lũy dưới kháng cự $150.
+1. Giá đẩy vào $150 và in ba nến Doji (do dự) nhỏ ngay dưới mức đó. Khối lượng cực thấp.
+2. Đột nhiên, một nến 5M khổng lồ in ra, đóng ở $152 không có râu trên. Khối lượng gấp 3 lần trung bình.
+
+**Diễn giải:**
+Cú tích lũy chặt (các Doji) trên khối lượng thấp cho thấy sự thiếu áp lực bán tại kháng cự. Nến phá vỡ thân lớn trên khối lượng cao xác nhận sự tài trợ của tổ chức. Đây không phải là một cú giả; chính kích thước thân nến và khối lượng xác nhận cú đi.
+
+{/* 7. Trap Callout */}
+<Callout type="trap" title="Bẫy Nến Đang Hình Thành">
+  Lỗi số một mà trader mới mắc phải là hành động trên một cây nến trước khi nó đóng. Các thuật toán tổ chức được thiết kế để tạo áp lực thị giác cực độ giữa nến nhằm dụ giao dịch cảm xúc của bán lẻ. Một cây nến chỉ là một bóng ma cho tới khi đồng hồ chạm 00:00 và giá đóng được in ra. Hãy chờ đóng nến.
+</Callout>
+
+{/* 8. Modern Restatements / Cross-links */}
+## Diễn Giải Theo Các Framework Hiện Đại
+
+- **SMC/ICT:** Các khái niệm [Displacement](/price-action/displacement-imbalance) và [Fair Value Gaps (FVG)](/smc/fvg) hoàn toàn dựa vào các nến momentum thân lớn. Một râu từ chối thường được gọi là [Liquidity Sweep](/smc/liquidity-sweep) hay một "Judas Swing".
+- **Wyckoff:** Phân Tích Biên Độ Khối Lượng (VSA) là toàn bộ nền tảng của Wyckoff. Khối lượng cao trên biên độ nến nhỏ ngụ ý nguồn cung đang vào thị trường (Nỗ Lực và Kết Quả).
+- **Price Action:** Thuật ngữ cổ điển dùng "Pin Bar" cho từ chối, "Engulfing bar" cho chuyển đổi momentum, và "Inside bar" cho tích lũy.
+
+{/* 9. FAQ */}
+## Câu Hỏi Thường Gặp
+
+**Hỏi: Tôi có cần chỉ báo khối lượng để giao dịch Forex không?**
+Đáp: Forex là phi tập trung, nên không có dữ liệu khối lượng trung tâm. "Tick volume" do sàn cung cấp là một đại lượng thay thế cho hoạt động, nhưng nó không phải là khối lượng giao dịch thật. Trong Forex, hành động giá (kích thước nến và tốc độ phân phối) là chỉ báo chính về sự tham gia của tổ chức. Trong các thị trường tập trung như Cổ Phiếu hay Futures, khối lượng thật rất quan trọng.
+
+**Hỏi: Vì sao một số nền tảng tô màu nến dựa trên giá đóng trước đó?**
+Đáp: Biểu đồ Nhật Bản truyền thống tô màu nến dựa trên Mở so với Đóng của nến *hiện tại*. Một số nền tảng biểu đồ hiện đại (như Heikin Ashi) dùng các trung bình phức tạp, trong khi số khác tô màu dựa trên việc giá đóng có cao hơn giá đóng của nến *trước* hay không. Hãy giữ cách tô màu OHLC tiêu chuẩn (Mở so với Đóng của giai đoạn hiện tại) để phân tích hành động giá thuần túy.
+
+**Hỏi: Các mẫu nến đơn (như một Doji) có đủ để vào lệnh không?**
+Đáp: Không. Một mẫu nến đơn chỉ quan trọng nếu nó xuất hiện tại một mức cấu trúc có ý nghĩa cao. Một Doji ở giữa một range chẳng có nghĩa gì.
+
+{/* 10. Key Takeaways */}
+<KeyTakeaways points={[
+  "Nến ánh xạ Giá Mở, Cao, Thấp và Đóng của một giai đoạn thời gian cụ thể.",
+  "Thân lớn cho thấy momentum và sự kiểm soát. Râu dài cho thấy từ chối và các cú quét thanh khoản.",
+  "Đừng bao giờ hành động trên một nến đang hình thành; thuật toán tổ chức thao túng hành động giá giữa nến để dụ lỗi cảm xúc. Hãy chờ đóng nến.",
+  "Hình dạng nến vô nghĩa khi tách biệt; chúng chỉ mang lại lợi thế khi phản ứng với các Mức Chính Khung Lớn Hơn.",
+  "Khối lượng xác nhận giá. Một cú đi giá khổng lồ trên khối lượng thấp là đáng ngờ, trong khi khối lượng cao xác nhận sự tham gia của tổ chức."
+]} />
+
+---
+*Tài liệu tham khảo:*
+Nison, S. (1991). *Japanese Candlestick Charting Techniques*. Cuốn sách nền tảng đưa biểu đồ nến tới thế giới phương Tây.
